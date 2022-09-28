@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/APP/NewsApp/app/src/main/res/drawable/ic_news.xml" value="0.127" />
+        <entry key="..\:/APP/NewsApp/app/src/main/res/drawable/ic_trend.xml" value="0.127" />
+        <entry key="..\:/APP/NewsApp/app/src/main/res/drawable/ic_user.xml" value="0.127" />
+        <entry key="..\:/APP/NewsApp/app/src/main/res/drawable/nav_item_color_selected.xml" value="0.127" />
+        <entry key="..\:/APP/NewsApp/app/src/main/res/layout/activity_trangchu.xml" value="0.22" />
+        <entry key="..\:/APP/NewsApp/app/src/main/res/layout/fragment_taikhoan.xml" value="0.1796875" />
+        <entry key="..\:/APP/NewsApp/app/src/main/res/layout/fragment_tintuc.xml" value="0.1796875" />
+        <entry key="..\:/APP/NewsApp/app/src/main/res/layout/fragment_xuhuong.xml" value="0.1796875" />
+        <entry key="..\:/APP/NewsApp/app/src/main/res/menu/bottom_navigation.xml" value="0.17864583333333334" />
+      </map>
+    </option>
+  </component>
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK" />
+</project>
