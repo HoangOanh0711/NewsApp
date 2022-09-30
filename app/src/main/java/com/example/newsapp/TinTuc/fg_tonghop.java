@@ -1,19 +1,20 @@
-package com.example.newsapp;
+package com.example.newsapp.TinTuc;
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class tintuc extends Fragment {
+import androidx.fragment.app.Fragment;
+
+import com.example.newsapp.R;
+
+public class fg_tonghop extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_tintuc, container, false);
+        return inflater.inflate(R.layout.fragment_fg_tonghop, container, false);
     }
 }

@@ -1,4 +1,4 @@
-package com.example.newsapp;
+package com.example.newsapp.TinTuc;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -7,12 +7,14 @@ import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
 
-public class xuhuong extends Fragment {
+import com.example.newsapp.R;
+
+public class fg_nong extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_xuhuong, container, false);
+        return inflater.inflate(R.layout.fragment_fg_nong, container, false);
     }
 }

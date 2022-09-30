@@ -3,16 +3,17 @@ package com.example.newsapp;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import androidx.viewpager.widget.ViewPager;
-import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.example.newsapp.TrangChu.AdapterViewPaper;
+import com.example.newsapp.TrangChu.taikhoan;
+import com.example.newsapp.TrangChu.tintuc;
+import com.example.newsapp.TrangChu.xuhuong;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
-import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
 
