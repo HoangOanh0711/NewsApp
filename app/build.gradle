@@ -38,4 +38,7 @@ dependencies {
 
     //thư viện lottie
     implementation 'com.airbnb.android:lottie:5.2.0'
+
+    //thư viện mã số đt
+    implementation 'com.hbb20:ccp:2.6.1'
 }

@@ -3,14 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TrangChu.tintuc">
+    tools:context=".TinTuc.fg_theodoi">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Xu hướng"
-        android:gravity="center"
-        android:background="@color/xanh2"/>
+        android:text="Theo dõi"
+        android:background="@color/xam"
+        android:gravity="center"/>
 
 </FrameLayout>

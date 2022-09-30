@@ -1,4 +1,4 @@
-package com.example.newsapp;
+package com.example.newsapp.TrangChu;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
