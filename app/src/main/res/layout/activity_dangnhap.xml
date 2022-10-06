@@ -65,18 +65,19 @@
                 android:textColor="@color/den"
                 android:textSize="20sp" />
 
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
                 android:layout_marginTop="5dp">
 
                 <com.hbb20.CountryCodePicker
+                    android:id="@+id/ccp_dnhap"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     app:ccp_showNameCode="false"
                     app:ccp_flagBorderColor="@color/den"
-                    app:ccp_defaultNameCode="VN" />
+                    app:ccp_defaultNameCode="VN"
+                    android:layout_centerVertical="true"/>
 
                 <EditText
                     android:id="@+id/ed_sdt_dnhap"
@@ -84,12 +85,24 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/roboto_regular"
                     android:hint="Nhập số điện thoại của bạn"
-                    android:inputType="phone"
+                    android:layout_toStartOf="@id/img_check_dnhap"
+                    android:layout_toEndOf="@id/ccp_dnhap"
+                    android:inputType="number"
                     android:maxLength="11"
                     android:textColor="@color/den"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    android:layout_centerVertical="true"/>
 
-            </LinearLayout>
+                <ImageView
+                    android:id="@+id/img_check_dnhap"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_checkok"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:visibility="gone"/>
+
+            </RelativeLayout>
         </LinearLayout>
 
         <LinearLayout
