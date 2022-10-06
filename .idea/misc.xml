@@ -23,6 +23,10 @@
         <entry key="..\:/APP/NewsApp/app/src/main/res/layout/activity_quenmatkhau4.xml" value="0.1796875" />
         <entry key="..\:/APP/NewsApp/app/src/main/res/layout/activity_splash.xml" value="0.1796875" />
         <entry key="..\:/APP/NewsApp/app/src/main/res/layout/activity_trangchu.xml" value="0.22" />
+        <entry key="..\:/APP/NewsApp/app/src/main/res/layout/card_tonghop.xml" value="0.22" />
+        <entry key="..\:/APP/NewsApp/app/src/main/res/layout/card_trangchu.xml" value="0.22" />
+        <entry key="..\:/APP/NewsApp/app/src/main/res/layout/card_xuhuong.xml" value="0.22" />
+        <entry key="..\:/APP/NewsApp/app/src/main/res/layout/cardview_dang1.xml" value="0.22" />
         <entry key="..\:/APP/NewsApp/app/src/main/res/layout/fragment_fg_bongda.xml" value="0.1796875" />
         <entry key="..\:/APP/NewsApp/app/src/main/res/layout/fragment_fg_moi.xml" value="0.19166666666666668" />
         <entry key="..\:/APP/NewsApp/app/src/main/res/layout/fragment_fg_nong.xml" value="0.19166666666666668" />
@@ -40,7 +44,7 @@
   <component name="VisualizationToolProject">
     <option name="state">
       <ProjectState>
-        <option name="scale" value="0.1" />
+        <option name="scale" value="0.14666666666666667" />
       </ProjectState>
     </option>
   </component>
