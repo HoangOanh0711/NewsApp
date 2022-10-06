@@ -22,26 +22,25 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.hbb20.CountryCodePicker;
 
-public class dangnhap extends AppCompatActivity {
+public class dangky extends AppCompatActivity {
 
     DatabaseReference databaseReference = FirebaseDatabase.getInstance()
             .getReferenceFromUrl("https://newsapp-a5dc3-default-rtdb.firebaseio.com/");
 
-    TextView btn_quenmk,btn_taiday;
-    Button btn_dangnhap;
-    EditText sdt,matkhau;
-    String st_sdt, st_matkhau;
+    TextView btn_taiday;
+    Button btn_dangky;
+    EditText sdt,ten,matkhau,nhaplaimk;
+    String st_sdt, st_ten, st_matkhau, st_nhaplaimk;
+
     CountryCodePicker countryCodePicker;
     ImageView img_check;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dangnhap);
+        setContentView(R.layout.activity_dangky);
 
         khaibao();
-
-        //kiểm tra định dạng số điện thoại ở từng quốc gia
         countryCodePicker.registerCarrierNumberEditText(sdt);
         countryCodePicker.setPhoneNumberValidityChangeListener(new CountryCodePicker.PhoneNumberValidityChangeListener() {
             @Override
@@ -75,68 +74,78 @@ public class dangnhap extends AppCompatActivity {
             }
         });
 
-        btn_quenmk.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(dangnhap.this, quenmatkhau1.class);
-                startActivity(intent);
-                finish();
-            }
-        });
-
         btn_taiday.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(dangnhap.this, dangky.class);
+                Intent intent = new Intent(dangky.this, dangnhap.class);
                 startActivity(intent);
                 finish();
             }
         });
 
-        btn_dangnhap.setOnClickListener(new View.OnClickListener() {
+        btn_dangky.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 gangiatri();
-                databaseReference.child("Users").addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        if (snapshot.hasChild(st_sdt)) {
-                            final String getMatkhau = snapshot.child(st_sdt).child("Mật khẩu").getValue(String.class);
-                            Log.e("hi",getMatkhau);
-                            if (getMatkhau.equals(st_matkhau)) {
-                                Intent intent = new Intent(dangnhap.this, trangchu.class);
+                if (ktra()) {
+                    databaseReference.child("Users").addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            if (snapshot.hasChild(st_sdt)) {
+                                Toast.makeText(dangky.this, "Số điện thoại đã được đăng ký", Toast.LENGTH_SHORT).show();
+                            } else {
+                                databaseReference.child("Users").child(st_sdt).child("Tên người dùng").setValue(st_ten);
+                                databaseReference.child("Users").child(st_sdt).child("Mật khẩu").setValue(st_matkhau);
+
+                                Intent intent = new Intent(dangky.this, dangnhap.class);
                                 startActivity(intent);
                             }
-                            else {
-                                Toast.makeText(dangnhap.this, "Sai mật khẩu", Toast.LENGTH_SHORT).show();
-                            }
-                        } else {
-                            Toast.makeText(dangnhap.this, "Số điện thoại không tồn tại", Toast.LENGTH_SHORT).show();
                         }
-                    }
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
-                        Toast.makeText(dangnhap.this, "Lỗi", Toast.LENGTH_SHORT).show();
-                    }
-                });
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+                            Toast.makeText(dangky.this, "Lỗi", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                }
+
             }
         });
-    }
-
-    private void khaibao(){
-        btn_quenmk = findViewById(R.id.btn_quenmatkhau);
-        btn_taiday = findViewById(R.id.btn_taiday_dnhap);
-        btn_dangnhap = findViewById(R.id.btn_dangnhap_dnhap);
-
-        sdt = findViewById(R.id.ed_sdt_dnhap);
-        matkhau = findViewById(R.id.ed_matkhau_dnhap);
-
-        img_check = findViewById(R.id.img_check_dnhap);
-        countryCodePicker = findViewById(R.id.ccp_dnhap);
     }
 
     private void gangiatri() {
         st_sdt = sdt.getText().toString().trim();
+        st_ten = ten.getText().toString().trim();
         st_matkhau = matkhau.getText().toString().trim();
+        st_nhaplaimk = nhaplaimk.getText().toString().trim();
+    }
+
+    private void khaibao(){
+        btn_taiday = findViewById(R.id.btn_taiday_dky);
+        btn_dangky = findViewById(R.id.btn_dangky_dky);
+
+        sdt = findViewById(R.id.ed_sdt_dky);
+        ten = findViewById(R.id.ed_ten_dky);
+        matkhau = findViewById(R.id.ed_matkhau_dky);
+        nhaplaimk = findViewById(R.id.ed_nhaplaimatkhau_dky);
+
+        img_check = findViewById(R.id.img_check_dky);
+        countryCodePicker = findViewById(R.id.ccp_dky);
+    }
+
+    private boolean ktra() {
+        if (st_matkhau.isEmpty()) {
+            Toast.makeText(this, "Mật khẩu đang để trống", Toast.LENGTH_SHORT).show();
+            return false;
+        } if (st_matkhau.length()<5) {
+            Toast.makeText(this, "Mật khẩu quá ngắn", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        if (!st_matkhau.equals(st_nhaplaimk)) {
+            Toast.makeText(this, "Mật khẩu khác nhau", Toast.LENGTH_SHORT).show();
+            return false;
+        }else {
+            return true;
+        }
     }
 }

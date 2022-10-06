@@ -14,7 +14,25 @@
         android:theme="@style/Theme.NewsApp"
         tools:targetApi="31">
         <activity
+            android:name=".quenmatkhau2"
+            android:exported="false" />
+        <activity
+            android:name=".dangky"
+            android:exported="false" />
+        <activity
             android:name=".dangnhap"
+            android:exported="false" />
+        <activity
+            android:name=".quenmatkhau3"
+            android:exported="false" />
+        <activity
+            android:name=".quenmatkhau1"
+            android:exported="false" />
+        <activity
+            android:name=".quenmatkhau4"
+            android:exported="false" />
+        <activity
+            android:name=".trangchu"
             android:exported="false" />
         <activity
             android:name=".splash"
