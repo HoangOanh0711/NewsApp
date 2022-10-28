@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/trang"
+    android:orientation="vertical"
+    >
+    <TextView
+        android:layout_marginTop="20dp"
+        android:id="@+id/txt_loai_TenLoai"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="20dp"
+        android:textStyle="bold"
+        android:text="Toàn Quốc"
+        android:textColor="@color/den"
+        android:textSize="18sp"
+        />
+    <androidx.recyclerview.widget.RecyclerView
+        android:background="@color/trang"
+        android:layout_width="match_parent"
+        android:layout_marginTop="8dp"
+        android:id="@+id/rcv_loai_TenLoai"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="15dp"
+        />
+
+</LinearLayout>

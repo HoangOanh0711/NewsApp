@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TaiKhoan.doimatkhau"
+    android:background="@color/xanhnhat"
+    android:orientation="vertical"
+    android:id="@+id/LayoutDMK"
+    >
+
+    <LinearLayout
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="100dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageButton
+            android:background="@null"
+            android:layout_gravity="center"
+            android:id="@+id/img_dmk_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_arrow_back_25"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="25dp"
+            android:text="Đổi mật khẩu"
+            android:textColor="@color/xanhdam"
+            android:textSize="30sp"
+            android:fontFamily="@font/roboto_bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/bg_khung_dnhap"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/txt_doimatkhau_chuy"
+            android:fontFamily="@font/roboto_bold"
+            android:textColor="@color/den"
+            android:textSize="18sp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="50dp"
+            android:text="Mật khẩu phải bao gồm chữ hoặc số"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/txt_doimatkhau_chuy2"
+            android:fontFamily="@font/roboto_bold"
+            android:textColor="@color/den"
+            android:textSize="18sp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:text="và không chứa kí tự đặc biệt."
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <!--layout mật khẩu hiện tại-->
+        <LinearLayout
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="40dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/txt_doimatkhau_matkhauhientai"
+                android:fontFamily="@font/roboto_bold"
+                android:textSize="20sp"
+                android:textColor="@color/den"
+                android:text="Mật khẩu hiện tại"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/txtl_doimatkhau_MatKhau"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nhập mật khẩu hiện tại"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                app:startIconTint="@color/den"
+                app:hintTextColor="@color/den"
+                android:textColorHint="@color/den"
+                app:passwordToggleEnabled="true"
+                app:passwordToggleTint="@color/den"
+                app:endIconTint="@color/den"
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:inputType="textPassword"
+                    android:textColor="@color/den"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/roboto_regular"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+        </LinearLayout>
+        <!--        kết thúc layout mật khẩu hiện tại-->
+
+        <!--        layout mật khẩu mới -->
+        <LinearLayout
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <TextView
+                android:id="@+id/txt_doimatkhau_matkhaumoi"
+                android:fontFamily="@font/roboto_bold"
+                android:textSize="20sp"
+                android:textColor="@color/den"
+                android:text="Mật khẩu mới"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/txtl_doimatkhau_MatKhau1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nhập mật khẩu của bạn"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                app:startIconTint="@color/den"
+                app:hintTextColor="@color/den"
+                android:textColorHint="@color/den"
+                app:passwordToggleEnabled="true"
+                app:passwordToggleTint="@color/den"
+                app:endIconTint="@color/den"
+                >
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textSize="16sp"
+                    android:textColor="@color/den"
+                    android:inputType="textPassword"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/txtl_doimatkhau_MatKhaumoi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nhập lại mật khẩu"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                app:startIconTint="@color/den"
+                app:hintTextColor="@color/den"
+                android:textColorHint="@color/den"
+                app:passwordToggleEnabled="true"
+                app:passwordToggleTint="@color/den"
+                app:endIconTint="@color/den"
+                >
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textSize="16sp"
+                    android:textColor="@color/den"
+                    android:inputType="textPassword"
+                    android:fontFamily="@font/roboto_regular"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+        <!--        kết thúc layout mật khẩu mới-->
+        </LinearLayout>
+        <Button
+            app:backgroundTint="@color/xanhdam"
+            android:backgroundTint="@color/xanhdam"
+            android:layout_marginTop="30dp"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:background="@drawable/corner_border_gray"
+            android:textColor="@color/trang"
+            android:textSize="18sp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="Cập nhật"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+</LinearLayout>

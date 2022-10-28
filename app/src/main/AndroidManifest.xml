@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.newsapp">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@drawable/img_logo"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/img_logo"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.NewsApp"
+        tools:targetApi="31">
+        <activity
+            android:name=".DocBao.docbao"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".TaiKhoan.doimatkhau"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".TaiKhoan.thongtinnguoidung"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".LichVanNien.lichvannien"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".XoSo.xoso"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".GiaVang.giavang"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".TaiKhoan.quenmatkhau2"
+            android:exported="false" />
+        <activity
+            android:name=".TaiKhoan.dangky"
+            android:exported="false" />
+        <activity
+            android:name=".TaiKhoan.dangnhap"
+            android:exported="false" />
+        <activity
+            android:name=".TaiKhoan.quenmatkhau3"
+            android:exported="false" />
+        <activity
+            android:name=".TaiKhoan.quenmatkhau1"
+            android:exported="false" />
+        <activity
+            android:name=".TaiKhoan.quenmatkhau4"
+            android:exported="false" />
+        <activity
+            android:name=".TrangChu.trangchu"
+            android:exported="false" />
+        <activity
+            android:name=".splash"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
