@@ -47,5 +47,6 @@ dependencies {
     //thư viện mã số đt
     implementation 'com.hbb20:ccp:2.6.1'
 
+
     implementation platform('com.google.firebase:firebase-bom:30.5.0')
 }

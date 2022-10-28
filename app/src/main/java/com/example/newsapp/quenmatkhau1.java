@@ -14,8 +14,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.newsapp.TrangChu.ShowNotification;
+import com.google.firebase.auth.AuthResult;
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.firebase.FirebaseException;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseTooManyRequestsException;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
@@ -39,19 +44,24 @@ public class quenmatkhau1 extends AppCompatActivity {
     private Button btn_guiotp;
 
     private EditText sdt;
-    private String st_sdt;
+    //private String st_sdt;
 
 
     CountryCodePicker countryCodePicker;
     ImageView img_check;
+    private FirebaseAuth.AuthStateListener mAuthListener;
+
+
 
     private static final String TAG = "PhoneAuthActivity";
 
     private FirebaseAuth mAuth;
 
+    private PhoneAuthProvider.ForceResendingToken forceResendingToken;
     private String mVerificationId;
     private PhoneAuthProvider.ForceResendingToken mResendToken;
-    private PhoneAuthProvider.OnVerificationStateChangedCallbacks mCallbacks;
+
+    //private PhoneAuthProvider.OnVerificationStateChangedCallbacks mCallbacks;
 
 
 
@@ -71,10 +81,19 @@ public class quenmatkhau1 extends AppCompatActivity {
         sdt = findViewById(R.id.ed_sdt_quenmk);
         img_check = findViewById(R.id.img_check_quenmk);
         countryCodePicker = findViewById(R.id.ccp_quenmk);
+        mAuth = FirebaseAuth.getInstance();
 
 
-        countryCodePicker.registerCarrierNumberEditText(sdt);
-        countryCodePicker.setPhoneNumberValidityChangeListener(new CountryCodePicker.PhoneNumberValidityChangeListener() {
+        btn_taiday.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(quenmatkhau1.this, dangnhap.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+        //countryCodePicker.registerCarrierNumberEditText(sdt);
+        /*countryCodePicker.setPhoneNumberValidityChangeListener(new CountryCodePicker.PhoneNumberValidityChangeListener() {
             @Override
             public void onValidityChanged(boolean isValidNumber) {
                 if (isValidNumber) {
@@ -106,14 +125,7 @@ public class quenmatkhau1 extends AppCompatActivity {
             }
         });
 
-        btn_taiday.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(quenmatkhau1.this, dangnhap.class);
-                startActivity(intent);
-                finish();
-            }
-        });
+
 
         mAuth = FirebaseAuth.getInstance();
         mCallbacks = new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
@@ -134,29 +146,17 @@ public class quenmatkhau1 extends AppCompatActivity {
 
             }
 
-            @Override
-            public void onCodeSent(@NonNull String verificationId,
-                                   @NonNull PhoneAuthProvider.ForceResendingToken token) {
-                Log.d(TAG, "onCodeSent:" + verificationId);
 
-                mVerificationId = verificationId;
-                mResendToken = token;
-            }
-        };
+        };*/
 
 
         btn_guiotp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                st_sdt = sdt.getText().toString().trim();
-                    PhoneAuthOptions options =
-                            PhoneAuthOptions.newBuilder(mAuth)
-                                    .setPhoneNumber(st_sdt)
-                                    .setTimeout(60L, TimeUnit.SECONDS)
-                                    //.setActivity(this)
-                                    //.setCallbacks(mCallbacks)
-                                    .build();
-                    PhoneAuthProvider.verifyPhoneNumber(options);
+
+                //ShowNotification.showProgressDialog(quenmatkhau1.this, "Vui lòng đợi");
+                sendVerificationCode("+84" + sdt.getText().toString());
+
                 
                 Intent intent = new Intent(quenmatkhau1.this, quenmatkhau2.class);
                 startActivity(intent);
@@ -165,5 +165,51 @@ public class quenmatkhau1 extends AppCompatActivity {
         });
 
 
+
+
+
+
+
     }
+    private PhoneAuthProvider.OnVerificationStateChangedCallbacks
+            mCallbacks = new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
+
+
+
+        //fail
+        @Override
+        public void onVerificationFailed(FirebaseException e) {
+
+        }
+
+        @Override
+        public void onCodeSent(@NonNull String verificationId,
+                               @NonNull PhoneAuthProvider.ForceResendingToken token) {
+            Log.d(TAG, "onCodeSent:" + verificationId);
+            ShowNotification.dismissProgressDialog();
+            Toast.makeText(getApplicationContext(), "Đã gửi OTP", Toast.LENGTH_SHORT).show();
+            mVerificationId = verificationId;
+            mResendToken = token;
+        }
+
+        @Override
+        public void onVerificationCompleted(@NonNull PhoneAuthCredential phoneAuthCredential) {
+
+        }
+    };
+
+
+
+    private void sendVerificationCode(String number){
+
+        PhoneAuthOptions options =
+                PhoneAuthOptions.newBuilder(mAuth)
+                        .setPhoneNumber(number)
+                        .setTimeout(60L, TimeUnit.SECONDS)
+                        .setActivity(this)
+                        .setCallbacks(mCallbacks)
+                        .build();
+        PhoneAuthProvider.verifyPhoneNumber(options);
+    }
+
 }
