@@ -7,9 +7,11 @@ import android.view.ContentInfo;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Switch;
 import android.widget.TextView;
 
@@ -22,6 +24,7 @@ import com.example.newsapp.LichVanNien.lichvannien;
 import com.example.newsapp.R;
 import com.example.newsapp.TaiKhoan.doimatkhau;
 import com.example.newsapp.TaiKhoan.thongtinnguoidung;
+import com.example.newsapp.Thoitiet.thoitiet;
 import com.example.newsapp.XoSo.xoso;
 
 public class taikhoan extends Fragment {
@@ -29,42 +32,26 @@ public class taikhoan extends Fragment {
             IMG_caidat_lichviet, IMG_caidat_ttnd, IMG_caidat_dmk;
     private TextView TXT_caidat_tecmmguoidung, TXT_caidat_tienich, TXT_caidat_thoitiet, TXT_caidat_xoso, TXT_caidat_giavang,
             TXT_caidat_lichviet,  txt_caidat_dangxuat, TXT_caidat_ttnd, TXT_caidat_dmk;
-
+    LinearLayout thongtinngdung,doimk,thoitiet,xoso,giavang,lichviet,dangxuat;
     private SaveState saveState;
     private Context context;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_taikhoan, container, false);
 
         //Ánh xạ
-        IMG_caidat_anhdaidien =view.findViewById(R.id.img_caidat_anhdaidien);
-        IMG_caidat_thoitiet =view.findViewById(R.id.img_caidat_thoitiet);
-        IMG_caidat_xoso =view.findViewById(R.id.img_caidat_xoso);
-        IMG_caidat_giavang =view.findViewById(R.id.img_caidat_giavang);
-        IMG_caidat_lichviet =view.findViewById(R.id.img_caidat_lichviet);
+        thongtinngdung =view.findViewById(R.id.layout_caidat_ttnd);
+        doimk =view.findViewById(R.id.layout_caidat_dmk);
+        thoitiet =view.findViewById(R.id.layout_caidat_thoitiet);
+        xoso =view.findViewById(R.id.layout_caidat_xoso);
+        giavang =view.findViewById(R.id.layout_caidat_giavang);
+        lichviet =view.findViewById(R.id.layout_caidat_lichviet);
+        dangxuat = view.findViewById(R.id.layout_caidat_dangxuat);
 
-        IMG_caidat_dangxuat =view.findViewById(R.id.img_caidat_dangxuat);
-        IMG_caidat_ttnd = view.findViewById(R.id.img_caidat_ttnd);
-        IMG_caidat_dmk = view.findViewById(R.id.img_caidat_dmk);
-        //
-        TXT_caidat_tecmmguoidung = view.findViewById(R.id.txt_caidat_tecmmguoidung);
-        TXT_caidat_tienich = view.findViewById(R.id.txt_caidat_tienich);
-        TXT_caidat_thoitiet = view.findViewById(R.id.txt_caidat_thoitiet);
-        TXT_caidat_xoso = view.findViewById(R.id.txt_caidat_xoso);
-        TXT_caidat_giavang = view.findViewById(R.id.txt_caidat_giavang);
-        TXT_caidat_lichviet = view.findViewById(R.id.txt_caidat_lichviet);
-
-        txt_caidat_dangxuat = view.findViewById(R.id.txt_caidat_dangxuat);
-        TXT_caidat_ttnd = view.findViewById(R.id.txt_caidat_ttnd);
-        TXT_caidat_dmk = view.findViewById(R.id.txt_caidat_dmk);
-        //
-//        SW_sang_toi = view.findViewById(R.id.sw_taikhoan_sangtoi);
         // chuyển màn hình giá vàng
-        IMG_caidat_giavang.setOnClickListener(new View.OnClickListener() {
+        giavang.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intentgiavang = new Intent(getActivity(), giavang.class);
@@ -72,7 +59,7 @@ public class taikhoan extends Fragment {
             }
         });
         // chuyển qua màn hình xổ số
-        IMG_caidat_xoso.setOnClickListener(new View.OnClickListener() {
+        xoso.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intentxoso = new Intent(getActivity(), xoso.class);
@@ -80,7 +67,7 @@ public class taikhoan extends Fragment {
             }
         });
         // chuyển qua màn hình lịch việt
-        IMG_caidat_lichviet.setOnClickListener(new View.OnClickListener() {
+        lichviet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intentlichviet = new Intent(getActivity(), lichvannien.class);
@@ -88,7 +75,7 @@ public class taikhoan extends Fragment {
             }
         });
         // chuyển qua màn hình thông tin đăng nhập
-        IMG_caidat_ttnd.setOnClickListener(new View.OnClickListener() {
+        thongtinngdung.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intentttnd = new Intent(getActivity(), thongtinnguoidung.class);
@@ -96,35 +83,22 @@ public class taikhoan extends Fragment {
             }
         });
         //chuyển qua màn hình đổi mật khẩu
-        IMG_caidat_dmk.setOnClickListener(new View.OnClickListener() {
+        doimk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intentdmk = new Intent(getActivity(), doimatkhau.class);
                 startActivity(intentdmk);
             }
         });
-        //
-//        DarkMode();
-        //  xử lý switch
-//            if(saveState.getState()==true)
-//                 SW_sang_toi.setChecked(true);
-//            SW_sang_toi.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-//                @Override
-//                public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-//                    if (b) {
-//                        saveState.setState(true);
-//                        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-//                    }
-//                    else {
-//                            saveState.setState(false);
-//                              AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-//                    }
-//                }
-//            });
+        //chuyển qua màn hình đổi mật khẩu
+        thoitiet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentdmk = new Intent(getActivity(), com.example.newsapp.Thoitiet.thoitiet.class);
+                startActivity(intentdmk);
+            }
+        });
         return view;
-    }
-    public taikhoan() {
-
     }
 
     public static taikhoan newInstance() {
@@ -138,15 +112,4 @@ public class taikhoan extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
     }
-//    public void DarkMode() {
-//
-//        saveState = new SaveState(getActivity());
-//        if (saveState.getState() == true)  {
-//              AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-//        }
-//        else  {
-//               AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-//        }
-//
-//    }
 }

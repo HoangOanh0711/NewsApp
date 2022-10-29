@@ -64,6 +64,7 @@
             android:textSize="20sp" />
 
         <LinearLayout
+            android:id="@+id/layout_caidat_ttnd"
             android:layout_width="match_parent"
             android:layout_height="35dp"
             android:gravity="center_vertical"
@@ -99,6 +100,7 @@
             android:background="@color/xanh2" />
 
         <LinearLayout
+            android:id="@+id/layout_caidat_dmk"
             android:layout_width="match_parent"
             android:layout_height="35dp"
             android:gravity="center_vertical"
@@ -158,6 +160,7 @@
             android:textSize="20sp" />
 
         <LinearLayout
+            android:id="@+id/layout_caidat_thoitiet"
             android:layout_width="match_parent"
             android:layout_height="35dp"
             android:gravity="center_vertical"
@@ -193,6 +196,7 @@
             android:background="@color/xanh2" />
 
         <LinearLayout
+            android:id="@+id/layout_caidat_xoso"
             android:layout_width="match_parent"
             android:layout_height="35dp"
             android:gravity="center_vertical"
@@ -228,6 +232,7 @@
             android:background="@color/xanh2" />
 
         <LinearLayout
+            android:id="@+id/layout_caidat_giavang"
             android:layout_width="match_parent"
             android:layout_height="35dp"
             android:gravity="center_vertical"
@@ -263,6 +268,7 @@
             android:background="@color/xanh2" />
 
         <LinearLayout
+            android:id="@+id/layout_caidat_lichviet"
             android:layout_width="match_parent"
             android:layout_height="35dp"
             android:gravity="center_vertical"
@@ -300,11 +306,13 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout8" />
 
     <LinearLayout
-        android:layout_width="150dp"
-        android:layout_height="40dp"
-        android:layout_gravity="center"
+        android:id="@+id/layout_caidat_dangxuat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:background="@drawable/corner_border_gray"
         android:orientation="horizontal"
+        android:gravity="center"
+        android:padding="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -315,7 +323,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginLeft="10dp"
             android:src="@drawable/ic_baseline_logout_24" />
 
         <TextView
@@ -323,7 +330,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginLeft="15dp"
+            android:layout_marginLeft="5dp"
             android:fontFamily="@font/roboto_bold"
             android:text="Đăng xuất"
             android:textColor="@color/doo"
