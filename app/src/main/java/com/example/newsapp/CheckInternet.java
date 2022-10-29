@@ -6,7 +6,7 @@ import android.view.View;
 
 public class CheckInternet {
     public boolean isConnected(View.OnClickListener context){
-        ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        /*ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo wifiConn = connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
         NetworkInfo mobileConn = connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
 
@@ -14,6 +14,7 @@ public class CheckInternet {
             return true;
         } else {
             return false;
-        }
+        }*/
+        return false;
     }
 }

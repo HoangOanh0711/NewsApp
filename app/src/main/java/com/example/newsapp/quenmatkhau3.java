@@ -38,7 +38,7 @@ public class quenmatkhau3 extends AppCompatActivity {
         btn_capnhat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                CheckInternet checkInternet = new CheckInternet();
+                //CheckInternet checkInternet = new CheckInternet();
 
                 String _Phone = getIntent().getStringExtra("Phone");
                 String _newpass = ed_matkhau.getText().toString().trim();
