@@ -26,8 +26,8 @@
             android:gravity="center"
             android:layout_marginTop="8dp"
             android:id="@+id/txt_giavang_tieude"
-            android:textStyle="bold"
-            android:textSize="20sp"
+            android:fontFamily="@font/roboto_bold"
+            android:textSize="23sp"
             android:textColor="@color/den"
 
             android:text="Vàng SCJ"
@@ -39,7 +39,7 @@
             android:layout_marginBottom="10dp"
             android:layout_marginTop="10dp"
 
-            android:textSize="16sp"
+            android:textSize="18sp"
             android:textStyle="normal"
             android:textColor="@color/den"
             android:text="Ngày cập nhật: 10:37:38 24/09/2022"

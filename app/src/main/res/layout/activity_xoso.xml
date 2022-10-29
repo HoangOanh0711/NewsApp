@@ -25,689 +25,482 @@
             android:onClick="backFromXoso"
             />
 <!--        layout top-->
-        <LinearLayout
-            android:background="@color/xanhreunnhat"
-            android:weightSum="2"
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="45dp"
-            >
-            <LinearLayout
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="45dp">
-                <ImageView
-                    android:layout_marginLeft="8dp"
-                    android:layout_gravity="center"
-                    android:src="@drawable/ic_baseline_location_on_24"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-                <TextView
-                    android:layout_marginLeft="10dp"
-                    android:textColor="@color/den"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:layout_gravity="center"
-                    android:text="Miền Nam"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-            </LinearLayout>
-
-            <View
-                android:layout_width="3dp"
-                android:layout_height="50dp"
-                android:background="@color/den"
-                />
-
-            <LinearLayout
-                android:layout_weight="1"
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="45dp">
-                <ImageView
-                    android:layout_marginLeft="8dp"
-                    android:layout_gravity="center"
-                    android:src="@drawable/ic_baseline_calendar_month_24"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-                <TextView
-                    android:layout_marginLeft="10dp"
-                    android:textColor="@color/den"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:layout_gravity="center"
-                    android:text="24/09/2022"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-            </LinearLayout>
-
-        </LinearLayout>
-
-<!--        kết thúc layout top-->
 
         <LinearLayout
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="10dp"
-            android:background="@color/xanh5"
-            android:weightSum="10"
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             >
-<!--            layout bottom 1-->
+            <!--        layout top-->
             <LinearLayout
-                android:layout_weight="1"
+                android:background="@color/xanhreunnhat"
+                android:weightSum="2"
                 android:orientation="horizontal"
-                android:layout_width="wrap_content"
-                android:layout_height="60dp"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
                 >
-                <TextView
-                    android:gravity="center"
+                <LinearLayout
                     android:layout_gravity="center"
-                    android:layout_marginLeft="8dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp">
+                    <ImageView
+                        android:layout_marginLeft="8dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_baseline_location_on_24"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
 
-                    android:textStyle="bold"
-                    android:textSize="16sp"
-                    android:textColor="@color/den"
-                    android:text="Giải"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="10dp"
+                        android:fontFamily="@font/roboto_bold"
+                        android:text="Miền Nam"
+                        android:textColor="@color/den"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
                 <View
-                    android:layout_marginLeft="10dp"
                     android:layout_width="3dp"
-                    android:layout_height="60dp"
+                    android:layout_height="50dp"
                     android:background="@color/den"
                     />
 
-                <TextView
-                    android:gravity="center"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="8dp"
-
-                    android:textStyle="bold"
-                    android:textSize="16sp"
-                    android:textColor="@color/den"
-                    android:text="Tiền Giang"
-                    android:layout_width="150dp"
-                    android:layout_height="50dp"/>
-                <View
-                    android:layout_marginLeft="10dp"
-                    android:layout_width="3dp"
-                    android:layout_height="60dp"
-                    android:background="@color/den"
-                    />
-                <TextView
-                    android:gravity="center"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="8dp"
-
-                    android:textStyle="bold"
-                    android:textSize="16sp"
-                    android:textColor="@color/den"
-                    android:text="Kiên Giang"
-                    android:layout_width="150dp"
-                    android:layout_height="50dp"/>
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp">
+                    <ImageView
+                        android:layout_marginLeft="8dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_baseline_calendar_month_24"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                    <TextView
+                        android:layout_marginLeft="10dp"
+                        android:textColor="@color/den"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/roboto_bold"
+                        android:layout_gravity="center"
+                        android:text="24/09/2022"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
 
             </LinearLayout>
-<!--            kết thúc botttom 1-->
-            <View
-                android:layout_width="wrap_content"
-                android:layout_height="2dp"
-                android:background="@color/den"
-                />
-<!--            bottom 2-->
 
-            <LinearLayout
-                android:layout_weight="1"
-                android:orientation="horizontal"
-                android:layout_width="wrap_content"
-                android:layout_height="60dp"
+            <!--        kết thúc layout top-->
+
+            <TableLayout
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/bg_border"
+
+                android:weightSum="10"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 >
-                <TextView
-                    android:gravity="center"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="8dp"
+                <!--            table heading-->
 
-                    android:textStyle="bold"
-                    android:textSize="16sp"
-                    android:textColor="@color/den"
-                    android:text="G.8"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"/>
-                <View
-                    android:layout_marginLeft="10dp"
-                    android:layout_width="3dp"
-                    android:layout_height="60dp"
-                    android:background="@color/den"
-                    />
+                <TableRow>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Gỉai"
+                        android:fontFamily="@font/roboto_bold"
+                        android:textColor="@color/trang"
+                        android:padding="10sp"
+                        android:textSize="18sp"
+                        android:layout_weight="2"
+                        android:gravity="center_horizontal"
+                        android:background="@drawable/bg_border"/>
 
-                <TextView
-                    android:gravity="center"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="8dp"
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Bạc Liêu"
+                        android:fontFamily="@font/roboto_bold"
+                        android:textColor="@color/trang"
+                        android:padding="10sp"
+                        android:textSize="18sp"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:background="@drawable/bg_border"
+                        />
 
-                    android:textStyle="bold"
-                    android:textSize="16sp"
-                    android:textColor="@color/den"
-                    android:text="123456"
-                    android:layout_width="150dp"
-                    android:layout_height="50dp"/>
-                <View
-                    android:layout_marginLeft="10dp"
-                    android:layout_width="3dp"
-                    android:layout_height="60dp"
-                    android:background="@color/den"
-                    />
-                <TextView
-                    android:gravity="center"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="8dp"
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:background="@drawable/bg_border"
+                        android:gravity="center_horizontal"
+                        android:padding="10sp"
+                        android:text="An Giang"
+                        android:fontFamily="@font/roboto_bold"
+                        android:textColor="@color/trang"
+                        android:textSize="18sp" />
 
-                    android:textStyle="bold"
-                    android:textSize="16sp"
-                    android:textColor="@color/den"
-                    android:text="123456"
-                    android:layout_width="150dp"
-                    android:layout_height="50dp"/>
 
-            </LinearLayout>
-<!--            kết thúc bottom 2-->
-            <View
-                android:layout_width="wrap_content"
-                android:layout_height="2dp"
-                android:background="@color/den"
-                />
-<!--            bottom 3-->
-            <LinearLayout
-                android:layout_weight="1"
-                android:orientation="horizontal"
-                android:layout_width="wrap_content"
-                android:layout_height="60dp"
-                >
-                <TextView
-                    android:gravity="center"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="8dp"
+                </TableRow>
 
-                    android:textStyle="bold"
-                    android:textSize="16sp"
-                    android:textColor="@color/den"
-                    android:text="G.7"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"/>
-                <View
-                    android:layout_marginLeft="10dp"
-                    android:layout_width="3dp"
-                    android:layout_height="60dp"
-                    android:background="@color/den"
-                    />
+                <TableRow>
 
-                <TextView
-                    android:gravity="center"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="8dp"
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:gravity="center_horizontal"
+                        android:padding="10sp"
+                        android:text="G.8"
+                        android:textColor="@color/trang"
+                        android:textSize="20sp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:background="@drawable/bg_border"/>
 
-                    android:textStyle="bold"
-                    android:textSize="16sp"
-                    android:textColor="@color/den"
-                    android:text="654321"
-                    android:layout_width="150dp"
-                    android:layout_height="50dp"/>
-                <View
-                    android:layout_marginLeft="10dp"
-                    android:layout_width="3dp"
-                    android:layout_height="60dp"
-                    android:background="@color/den"
-                    />
-                <TextView
-                    android:gravity="center"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="8dp"
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="123456"
+                        android:textColor="@color/trang"
+                        android:padding="10sp"
+                        android:textSize="20sp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:background="@drawable/bg_border"
+                        />
 
-                    android:textStyle="bold"
-                    android:textSize="16sp"
-                    android:textColor="@color/den"
-                    android:text="654321"
-                    android:layout_width="150dp"
-                    android:layout_height="50dp"/>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="123456"
+                        android:textColor="@color/trang"
+                        android:padding="10sp"
+                        android:textSize="20sp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:background="@drawable/bg_border"/>
+                </TableRow>
 
-            </LinearLayout>
-<!--            kết thúc bottom 3-->
-            <View
-                android:layout_width="wrap_content"
-                android:layout_height="2dp"
-                android:background="@color/den"
-                />
-<!--            bottom 4-->
-            <LinearLayout
-                android:layout_weight="1"
-                android:orientation="horizontal"
-                android:layout_width="wrap_content"
-                android:layout_height="60dp"
-                >
-                <TextView
-                    android:gravity="center"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="8dp"
+                <TableRow>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="G.7"
+                        android:textColor="@color/trang"
+                        android:padding="10sp"
+                        android:textSize="20sp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:layout_weight="2"
+                        android:gravity="center_horizontal"
+                        android:background="@drawable/bg_border"/>
 
-                    android:textStyle="bold"
-                    android:textSize="16sp"
-                    android:textColor="@color/den"
-                    android:text="G.6"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"/>
-                <View
-                    android:layout_marginLeft="10dp"
-                    android:layout_width="3dp"
-                    android:layout_height="60dp"
-                    android:background="@color/den"
-                    />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:background="@drawable/bg_border"
+                        android:gravity="center_horizontal"
+                        android:padding="10sp"
+                        android:text="123456"
+                        android:textColor="@color/trang"
+                        android:textSize="20sp"
+                        android:fontFamily="@font/roboto_regular" />
 
-                <TextView
-                    android:gravity="center"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="8dp"
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="123456"
+                        android:textColor="@color/trang"
+                        android:padding="10sp"
+                        android:textSize="20sp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:background="@drawable/bg_border"/>
+                </TableRow>
 
-                    android:textStyle="bold"
-                    android:textSize="16sp"
-                    android:textColor="@color/den"
-                    android:text="123456"
-                    android:layout_width="150dp"
-                    android:layout_height="50dp"/>
-                <View
-                    android:layout_marginLeft="10dp"
-                    android:layout_width="3dp"
-                    android:layout_height="60dp"
-                    android:background="@color/den"
-                    />
-                <TextView
-                    android:gravity="center"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="8dp"
+                <TableRow>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="G.6"
+                        android:textColor="@color/trang"
+                        android:padding="10sp"
+                        android:textSize="20sp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:layout_weight="2"
+                        android:gravity="center_horizontal"
+                        android:background="@drawable/bg_border"/>
 
-                    android:textStyle="bold"
-                    android:textSize="16sp"
-                    android:textColor="@color/den"
-                    android:text="123456"
-                    android:layout_width="150dp"
-                    android:layout_height="50dp"/>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:padding="10sp"
+                        android:text="123456"
+                        android:textColor="@color/trang"
+                        android:textSize="20sp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:background="@drawable/bg_border" />
 
-            </LinearLayout>
-<!--            kết thúc bottom 4-->
-            <View
-                android:layout_width="wrap_content"
-                android:layout_height="2dp"
-                android:background="@color/den"
-                />
-<!--            bottom 5-->
-            <LinearLayout
-                android:layout_weight="1"
-                android:orientation="horizontal"
-                android:layout_width="wrap_content"
-                android:layout_height="60dp"
-                >
-                <TextView
-                    android:gravity="center"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="8dp"
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="123456"
+                        android:textColor="@color/trang"
+                        android:padding="10sp"
+                        android:textSize="20sp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:background="@drawable/bg_border"/>
+                </TableRow>
 
-                    android:textStyle="bold"
-                    android:textSize="16sp"
-                    android:textColor="@color/den"
-                    android:text="G.5"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"/>
-                <View
-                    android:layout_marginLeft="10dp"
-                    android:layout_width="3dp"
-                    android:layout_height="60dp"
-                    android:background="@color/den"
-                    />
+                <TableRow>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="G.5"
+                        android:textColor="@color/trang"
+                        android:padding="10sp"
+                        android:textSize="20sp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:layout_weight="2"
+                        android:gravity="center_horizontal"
+                        android:background="@drawable/bg_border"/>
 
-                <TextView
-                    android:gravity="center"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="8dp"
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="123456"
+                        android:textColor="@color/trang"
+                        android:padding="10sp"
+                        android:textSize="20sp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:background="@drawable/bg_border" />
 
-                    android:textStyle="bold"
-                    android:textSize="16sp"
-                    android:textColor="@color/den"
-                    android:text="654321"
-                    android:layout_width="150dp"
-                    android:layout_height="50dp"/>
-                <View
-                    android:layout_marginLeft="10dp"
-                    android:layout_width="3dp"
-                    android:layout_height="60dp"
-                    android:background="@color/den"
-                    />
-                <TextView
-                    android:gravity="center"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="8dp"
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="123456"
+                        android:textColor="@color/trang"
+                        android:padding="10sp"
+                        android:textSize="20sp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:background="@drawable/bg_border"/>
+                </TableRow>
 
-                    android:textStyle="bold"
-                    android:textSize="16sp"
-                    android:textColor="@color/den"
-                    android:text="654321"
-                    android:layout_width="150dp"
-                    android:layout_height="50dp"/>
+                <TableRow>
 
-            </LinearLayout>
-<!--            kết thúc bottom 5-->
-            <View
-                android:layout_width="wrap_content"
-                android:layout_height="2dp"
-                android:background="@color/den"
-                />
-<!--            bottom 6-->
-            <LinearLayout
-                android:layout_weight="1"
-                android:orientation="horizontal"
-                android:layout_width="wrap_content"
-                android:layout_height="60dp"
-                >
-                <TextView
-                    android:gravity="center"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="8dp"
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:background="@drawable/bg_border"
+                        android:fontFamily="@font/roboto_regular"
+                        android:gravity="center_horizontal"
+                        android:padding="10sp"
+                        android:text="G.4"
+                        android:textColor="@color/trang"
+                        android:textSize="20sp" />
 
-                    android:textStyle="bold"
-                    android:textSize="16sp"
-                    android:textColor="@color/den"
-                    android:text="G.4"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"/>
-                <View
-                    android:layout_marginLeft="10dp"
-                    android:layout_width="3dp"
-                    android:layout_height="60dp"
-                    android:background="@color/den"
-                    />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="123456"
+                        android:textColor="@color/trang"
+                        android:padding="10sp"
+                        android:textSize="20sp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:background="@drawable/bg_border" />
 
-                <TextView
-                    android:gravity="center"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="8dp"
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="123456"
+                        android:textColor="@color/trang"
+                        android:padding="10sp"
+                        android:textSize="20sp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:background="@drawable/bg_border"/>
+                </TableRow>
 
-                    android:textStyle="bold"
-                    android:textSize="16sp"
-                    android:textColor="@color/den"
-                    android:text="123456"
-                    android:layout_width="150dp"
-                    android:layout_height="50dp"/>
-                <View
-                    android:layout_marginLeft="10dp"
-                    android:layout_width="3dp"
-                    android:layout_height="60dp"
-                    android:background="@color/den"
-                    />
-                <TextView
-                    android:gravity="center"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="8dp"
+                <TableRow>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="G.3"
+                        android:textColor="@color/trang"
+                        android:padding="10sp"
+                        android:textSize="20sp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:layout_weight="2"
+                        android:gravity="center_horizontal"
+                        android:background="@drawable/bg_border" />
 
-                    android:textStyle="bold"
-                    android:textSize="16sp"
-                    android:textColor="@color/den"
-                    android:text="123456"
-                    android:layout_width="150dp"
-                    android:layout_height="50dp"/>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="123456"
+                        android:textColor="@color/trang"
+                        android:padding="10sp"
+                        android:textSize="20sp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:background="@drawable/bg_border" />
 
-            </LinearLayout>
-<!--            kết thúc bottom 6-->
-            <View
-                android:layout_width="wrap_content"
-                android:layout_height="2dp"
-                android:background="@color/den"
-                />
-<!--            bottom 7-->
-            <LinearLayout
-                android:layout_weight="1"
-                android:orientation="horizontal"
-                android:layout_width="wrap_content"
-                android:layout_height="60dp"
-                >
-                <TextView
-                    android:gravity="center"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="8dp"
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="123456"
+                        android:textColor="@color/trang"
+                        android:padding="10sp"
+                        android:textSize="20sp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:background="@drawable/bg_border"/>
+                </TableRow>
 
-                    android:textStyle="bold"
-                    android:textSize="16sp"
-                    android:textColor="@color/den"
-                    android:text="G.3"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"/>
-                <View
-                    android:layout_marginLeft="10dp"
-                    android:layout_width="3dp"
-                    android:layout_height="60dp"
-                    android:background="@color/den"
-                    />
+                <TableRow>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="G.2"
+                        android:textColor="@color/trang"
+                        android:padding="10sp"
+                        android:textSize="20sp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:layout_weight="2"
+                        android:gravity="center_horizontal"
+                        android:background="@drawable/bg_border"/>
 
-                <TextView
-                    android:gravity="center"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="8dp"
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="123456"
+                        android:textColor="@color/trang"
+                        android:padding="10sp"
+                        android:textSize="20sp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:background="@drawable/bg_border"/>
 
-                    android:textStyle="bold"
-                    android:textSize="16sp"
-                    android:textColor="@color/den"
-                    android:text="123456"
-                    android:layout_width="150dp"
-                    android:layout_height="50dp"/>
-                <View
-                    android:layout_marginLeft="10dp"
-                    android:layout_width="3dp"
-                    android:layout_height="60dp"
-                    android:background="@color/den"
-                    />
-                <TextView
-                    android:gravity="center"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="8dp"
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="123456"
+                        android:textColor="@color/trang"
+                        android:padding="10sp"
+                        android:textSize="20sp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:background="@drawable/bg_border" />
+                </TableRow>
 
-                    android:textStyle="bold"
-                    android:textSize="16sp"
-                    android:textColor="@color/den"
-                    android:text="Kiên Giang"
-                    android:layout_width="150dp"
-                    android:layout_height="50dp"/>
+                <TableRow>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="G.1"
+                        android:textColor="@color/trang"
+                        android:padding="10sp"
+                        android:textSize="20sp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:layout_weight="2"
+                        android:gravity="center_horizontal"
+                        android:background="@drawable/bg_border" />
 
-            </LinearLayout>
-<!--            kết thúc bottom 7-->
-            <View
-                android:layout_width="wrap_content"
-                android:layout_height="2dp"
-                android:background="@color/den"
-                />
-<!--            bottom 8-->
-            <LinearLayout
-                android:layout_weight="1"
-                android:orientation="horizontal"
-                android:layout_width="wrap_content"
-                android:layout_height="60dp"
-                >
-                <TextView
-                    android:gravity="center"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="8dp"
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="123456"
+                        android:textColor="@color/trang"
+                        android:padding="10sp"
+                        android:textSize="20sp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:background="@drawable/bg_border"
+                        />
 
-                    android:textStyle="bold"
-                    android:textSize="16sp"
-                    android:textColor="@color/den"
-                    android:text="G.2"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"/>
-                <View
-                    android:layout_marginLeft="10dp"
-                    android:layout_width="3dp"
-                    android:layout_height="60dp"
-                    android:background="@color/den"
-                    />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="123456"
+                        android:textColor="@color/trang"
+                        android:padding="10sp"
+                        android:textSize="20sp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:background="@drawable/bg_border" />
+                </TableRow>
 
-                <TextView
-                    android:gravity="center"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="8dp"
+                <TableRow>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="G.0"
+                        android:textColor="@color/trang"
+                        android:padding="10sp"
+                        android:textSize="20sp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:layout_weight="2"
+                        android:gravity="center_horizontal"
+                        android:background="@drawable/bg_border" />
 
-                    android:textStyle="bold"
-                    android:textSize="16sp"
-                    android:textColor="@color/den"
-                    android:text="654321"
-                    android:layout_width="150dp"
-                    android:layout_height="50dp"/>
-                <View
-                    android:layout_marginLeft="10dp"
-                    android:layout_width="3dp"
-                    android:layout_height="60dp"
-                    android:background="@color/den"
-                    />
-                <TextView
-                    android:gravity="center"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="8dp"
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="123456"
+                        android:textColor="@color/trang"
+                        android:padding="10sp"
+                        android:textSize="20sp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:background="@drawable/bg_border"
+                        />
 
-                    android:textStyle="bold"
-                    android:textSize="16sp"
-                    android:textColor="@color/den"
-                    android:text="654321"
-                    android:layout_width="150dp"
-                    android:layout_height="50dp"/>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="123456"
+                        android:textColor="@color/trang"
+                        android:padding="10sp"
+                        android:textSize="20sp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:background="@drawable/bg_border" />
 
-            </LinearLayout>
-<!--            kết thúc bottom 8 -->
-            <View
-                android:layout_width="wrap_content"
-                android:layout_height="2dp"
-                android:background="@color/den"
-                />
-<!--            bottom 9-->
-            <LinearLayout
-                android:layout_weight="1"
-                android:orientation="horizontal"
-                android:layout_width="wrap_content"
-                android:layout_height="60dp"
-                >
-                <TextView
-                    android:gravity="center"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="8dp"
 
-                    android:textStyle="bold"
-                    android:textSize="16sp"
-                    android:textColor="@color/den"
-                    android:text="G.1"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"/>
-                <View
-                    android:layout_marginLeft="10dp"
-                    android:layout_width="3dp"
-                    android:layout_height="60dp"
-                    android:background="@color/den"
-                    />
 
-                <TextView
-                    android:gravity="center"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="8dp"
+                </TableRow>
+            </TableLayout>
 
-                    android:textStyle="bold"
-                    android:textSize="16sp"
-                    android:textColor="@color/den"
-                    android:text="123456"
-                    android:layout_width="150dp"
-                    android:layout_height="50dp"/>
-                <View
-                    android:layout_marginLeft="10dp"
-                    android:layout_width="3dp"
-                    android:layout_height="60dp"
-                    android:background="@color/den"
-                    />
-                <TextView
-                    android:gravity="center"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="8dp"
-
-                    android:textStyle="bold"
-                    android:textSize="16sp"
-                    android:textColor="@color/den"
-                    android:text="123456"
-                    android:layout_width="150dp"
-                    android:layout_height="50dp"/>
-
-            </LinearLayout>
-<!--            kết thúc bottom 9-->
-            <View
-                android:layout_width="wrap_content"
-                android:layout_height="2dp"
-                android:background="@color/den"
-                />
-<!--            bottom 10-->
-            <LinearLayout
-                android:layout_weight="1"
-                android:orientation="horizontal"
-                android:layout_width="wrap_content"
-                android:layout_height="60dp"
-                >
-                <TextView
-                    android:gravity="center"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="8dp"
-
-                    android:textStyle="bold"
-                    android:textSize="16sp"
-                    android:textColor="@color/den"
-                    android:text="G.0"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"/>
-                <View
-                    android:layout_marginLeft="10dp"
-                    android:layout_width="3dp"
-                    android:layout_height="60dp"
-                    android:background="@color/den"
-                    />
-
-                <TextView
-                    android:gravity="center"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="8dp"
-
-                    android:textStyle="bold"
-                    android:textSize="16sp"
-                    android:textColor="@color/den"
-                    android:text="123456"
-                    android:layout_width="150dp"
-                    android:layout_height="50dp"/>
-                <View
-                    android:layout_marginLeft="10dp"
-                    android:layout_width="3dp"
-                    android:layout_height="60dp"
-                    android:background="@color/den"
-                    />
-                <TextView
-                    android:gravity="center"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="8dp"
-
-                    android:textStyle="bold"
-                    android:textSize="16sp"
-                    android:textColor="@color/den"
-                    android:text="123456"
-                    android:layout_width="150dp"
-                    android:layout_height="50dp"/>
-            </LinearLayout>
-            <View
-                android:layout_width="wrap_content"
-                android:layout_height="2dp"
-                android:background="@color/den"
-                />
         </LinearLayout>
-
     </LinearLayout>
 
 
