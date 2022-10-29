@@ -19,9 +19,9 @@
         android:layout_alignParentBottom="true"
         android:background="?android:attr/windowBackground"
         app:itemBackground="@color/nen"
-        app:menu="@menu/bottom_navigation"
         app:itemIconTint="@drawable/nav_item_color_selected"
-        app:itemTextColor="@drawable/nav_item_color_selected" />
+        app:itemTextColor="@drawable/nav_item_color_selected"
+        app:menu="@menu/bottom_navigation" />
 
 
 </RelativeLayout>

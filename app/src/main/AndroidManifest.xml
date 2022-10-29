@@ -84,10 +84,10 @@
             android:name=".TaiKhoan.quenmatkhau4"
             android:exported="false" />
         <activity
-            android:name=".TrangChu.trangchu"
+            android:name=".splash"
             android:exported="false" />
         <activity
-            android:name=".splash"
+            android:name=".TrangChu.trangchu"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

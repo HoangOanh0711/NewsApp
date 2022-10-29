@@ -62,7 +62,7 @@ public class fg_thoisu extends Fragment {
 
         @Override
         protected Void doInBackground(Void... voids) {
-            /*try {
+            try {
                 String url = "https://tuoitre.vn/thoi-su.htm";
                 document = Jsoup.connect(url).get();
                 data = document.select("ul.list-news-content").select("li.news-item");
@@ -72,22 +72,6 @@ public class fg_thoisu extends Fragment {
                     String thoigian = data.select("p.sapo").eq(i).text();
                     String anhbao = data.select("a.img212x132.pos-rlt").eq(i).select("img").attr("src");
                     noiDungModelList.add(new NoiDungModel(tieude, thoigian, anhbao));
-                }
-            } catch (Exception e) {
-                e.printStackTrace();
-            }*/
-            try {
-                String url = "https://tv.tuoitre.vn/";
-                document = Jsoup.connect(url).get();
-                data = document.select("div.list-video.box-highlight").select("li.clsVideo.autonext-item.count-processed");
-                int size = data.size();
-                for (int i = 0; i < size; i++) {
-                    Log.e(TAG,"OK");
-                    String tieude = data.select("h3").eq(i).select("a.name-video-list").text();
-                    String thoigian = data.select("p.sapo").eq(i).text();
-                    String anhbao = data.select("a.item").eq(i).select("img").attr("src");
-                    Log.e("anhbao",tieude.toString());
-                    //noiDungModelList.add(new NoiDungModel(tieude, thoigian, anhbao));
                 }
             } catch (Exception e) {
                 e.printStackTrace();

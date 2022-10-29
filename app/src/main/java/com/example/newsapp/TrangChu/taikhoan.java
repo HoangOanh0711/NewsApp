@@ -25,8 +25,7 @@ import com.example.newsapp.TaiKhoan.thongtinnguoidung;
 import com.example.newsapp.XoSo.xoso;
 
 public class taikhoan extends Fragment {
-    private ImageView IMG_caidat_anhdaidien,  IMG_caidat_dangxuat;
-    private ImageButton       IMG_caidat_thoitiet, IMG_caidat_xoso, IMG_caidat_giavang,
+    private ImageView IMG_caidat_anhdaidien,  IMG_caidat_dangxuat,IMG_caidat_thoitiet, IMG_caidat_xoso, IMG_caidat_giavang,
             IMG_caidat_lichviet, IMG_caidat_ttnd, IMG_caidat_dmk;
     private TextView TXT_caidat_tecmmguoidung, TXT_caidat_tienich, TXT_caidat_thoitiet, TXT_caidat_xoso, TXT_caidat_giavang,
             TXT_caidat_lichviet,  txt_caidat_dangxuat, TXT_caidat_ttnd, TXT_caidat_dmk;
