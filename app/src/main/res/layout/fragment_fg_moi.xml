@@ -3,14 +3,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TinTuc.fg_theodoi">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".TinTuc.fg_moi"
+    android:background="@color/trang">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_fg_moi"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Mới"
-        android:background="@color/xanh2"
-        android:gravity="center"/>
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
 
 </FrameLayout>

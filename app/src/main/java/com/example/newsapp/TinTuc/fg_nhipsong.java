@@ -2,7 +2,6 @@ package com.example.newsapp.TinTuc;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,7 +9,6 @@ import android.view.ViewGroup;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.airbnb.lottie.animation.content.Content;
 import com.example.newsapp.Card.CardTrangChu_Adapter;
 import com.example.newsapp.Card.NoiDungModel;
 import com.example.newsapp.R;
@@ -22,7 +20,7 @@ import org.jsoup.select.Elements;
 import java.util.ArrayList;
 import java.util.List;
 
-public class fg_moi extends Fragment {
+public class fg_nhipsong extends Fragment {
     private View view;
 
     private RecyclerView recyclerView;
@@ -35,11 +33,10 @@ public class fg_moi extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        view = inflater.inflate(R.layout.fragment_fg_moi, container, false);
-        recyclerView = view.findViewById(R.id.recycler_fg_moi);
+        view = inflater.inflate(R.layout.fragment_fg_nhipsong, container, false);
+        recyclerView = view.findViewById(R.id.recycler_fg_nhipsong);
 
-        cardTrangChu_adapter = new CardTrangChu_Adapter((ArrayList<NoiDungModel>) noiDungModelList, this);
-
+        cardTrangChu_adapter = new CardTrangChu_Adapter((ArrayList<NoiDungModel>) noiDungModelList,this);
         Content content = new Content();
         content.execute();
 
@@ -47,7 +44,6 @@ public class fg_moi extends Fragment {
     }
 
     private class Content extends AsyncTask<Void,Void,Void> {
-
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
@@ -56,7 +52,7 @@ public class fg_moi extends Fragment {
         @Override
         protected void onPostExecute(Void unused) {
             super.onPostExecute(unused);
-            cardTrangChu_adapter = new CardTrangChu_Adapter((ArrayList<NoiDungModel>) noiDungModelList, fg_moi.this);
+            cardTrangChu_adapter = new CardTrangChu_Adapter((ArrayList<NoiDungModel>) noiDungModelList,fg_nhipsong.this);
             recyclerView.setAdapter(cardTrangChu_adapter);
             cardTrangChu_adapter.notifyDataSetChanged();
         }
@@ -64,15 +60,15 @@ public class fg_moi extends Fragment {
         @Override
         protected Void doInBackground(Void... voids) {
             try {
-                String url = "https://tuoitre.vn/tin-moi-nhat.htm";
+                String url = "https://tuoitre.vn/nhip-song-tre.htm";
                 document = Jsoup.connect(url).get();
                 data = document.select("ul.list-news-content").select("li.news-item");
                 int size = data.size();
-                for (int i=0; i<size;i++) {
+                for (int i = 0; i < size; i++) {
                     String tieude = data.select("h3.title-news").eq(i).text();
                     String thoigian = data.select("p.sapo").eq(i).text();
                     String anhbao = data.select("a.img212x132.pos-rlt").eq(i).select("img").attr("src");
-                    noiDungModelList.add(new NoiDungModel(tieude,thoigian,anhbao));
+                    noiDungModelList.add(new NoiDungModel(tieude, thoigian, anhbao));
                 }
             } catch (Exception e) {
                 e.printStackTrace();

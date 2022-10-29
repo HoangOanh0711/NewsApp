@@ -4,11 +4,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".TrangChu.xuhuong"
+    tools:context=".TinTuc.fg_thegioi"
     android:background="@color/trang">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_fg_xuhuong"
+        android:id="@+id/recycler_fg_thegioi"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>

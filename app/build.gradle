@@ -45,5 +45,9 @@ dependencies {
     //thư viện mã số đt
     implementation 'com.hbb20:ccp:2.6.1'
 
+    //lấy dữ liệu web báo
+    implementation 'org.jsoup:jsoup:1.15.3'
+    implementation 'com.squareup.picasso:picasso:2.8'
+
     implementation platform('com.google.firebase:firebase-bom:30.5.0')
 }

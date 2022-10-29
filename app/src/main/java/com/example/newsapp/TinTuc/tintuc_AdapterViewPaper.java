@@ -21,23 +21,25 @@ public class tintuc_AdapterViewPaper extends FragmentStateAdapter {
     public Fragment createFragment(int position) {
         switch (position) {
             case 0:
-                return new fg_theodoi();
-            case 1:
-                return new fg_nong();
-            case 2:
                 return new fg_moi();
+            case 1:
+                return new fg_thoisu();
+            case 2:
+                return new fg_thegioi();
             case 3:
-                return new fg_tonghop();
+                return new fg_phapluat();
             case 4:
                 return new fg_bongda();
+            case 5:
+                return new fg_nhipsong();
             default:
-                return new fg_theodoi();
+                return new fg_moi();
         }
     }
 
     @Override
     public int getItemCount() {
-        return 5;
+        return 6;
     }
 
 }
