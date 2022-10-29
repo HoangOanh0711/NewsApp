@@ -25,12 +25,12 @@ import com.example.newsapp.TaiKhoan.thongtinnguoidung;
 import com.example.newsapp.XoSo.xoso;
 
 public class taikhoan extends Fragment {
-    private ImageView IMG_caidat_anhdaidien, IMG_caidat_chedo, IMG_caidat_dangxuat;
+    private ImageView IMG_caidat_anhdaidien,  IMG_caidat_dangxuat;
     private ImageButton       IMG_caidat_thoitiet, IMG_caidat_xoso, IMG_caidat_giavang,
             IMG_caidat_lichviet, IMG_caidat_ttnd, IMG_caidat_dmk;
     private TextView TXT_caidat_tecmmguoidung, TXT_caidat_tienich, TXT_caidat_thoitiet, TXT_caidat_xoso, TXT_caidat_giavang,
-            TXT_caidat_lichviet, TXT_caidat_nangcao, TXT_caidat_chedo, txt_caidat_dangxuat, TXT_caidat_ttnd, TXT_caidat_dmk;
-    private Switch SW_sang_toi;
+            TXT_caidat_lichviet,  txt_caidat_dangxuat, TXT_caidat_ttnd, TXT_caidat_dmk;
+
     private SaveState saveState;
     private Context context;
 
@@ -47,7 +47,7 @@ public class taikhoan extends Fragment {
         IMG_caidat_xoso =view.findViewById(R.id.img_caidat_xoso);
         IMG_caidat_giavang =view.findViewById(R.id.img_caidat_giavang);
         IMG_caidat_lichviet =view.findViewById(R.id.img_caidat_lichviet);
-        IMG_caidat_chedo =view.findViewById(R.id.img_caidat_chedo);
+
         IMG_caidat_dangxuat =view.findViewById(R.id.img_caidat_dangxuat);
         IMG_caidat_ttnd = view.findViewById(R.id.img_caidat_ttnd);
         IMG_caidat_dmk = view.findViewById(R.id.img_caidat_dmk);
@@ -58,8 +58,7 @@ public class taikhoan extends Fragment {
         TXT_caidat_xoso = view.findViewById(R.id.txt_caidat_xoso);
         TXT_caidat_giavang = view.findViewById(R.id.txt_caidat_giavang);
         TXT_caidat_lichviet = view.findViewById(R.id.txt_caidat_lichviet);
-        TXT_caidat_nangcao = view.findViewById(R.id.txt_caidat_nangcao);
-        TXT_caidat_chedo = view.findViewById(R.id.txt_caidat_chedo);
+
         txt_caidat_dangxuat = view.findViewById(R.id.txt_caidat_dangxuat);
         TXT_caidat_ttnd = view.findViewById(R.id.txt_caidat_ttnd);
         TXT_caidat_dmk = view.findViewById(R.id.txt_caidat_dmk);

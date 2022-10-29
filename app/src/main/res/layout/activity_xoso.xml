@@ -24,7 +24,7 @@
             android:padding="5dp"
             android:onClick="backFromXoso"
             />
-<!--        layout top-->
+        <!--        layout top-->
 
         <LinearLayout
             android:orientation="vertical"
