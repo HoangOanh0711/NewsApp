@@ -1,9 +1,12 @@
 package com.example.newsapp;
 
+import static android.content.ContentValues.TAG;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ActivityOptions;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
@@ -28,8 +31,12 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthOptions;
 import com.google.firebase.auth.PhoneAuthProvider;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.database.core.utilities.Pair;
 import com.hbb20.CountryCodePicker;
 
@@ -39,50 +46,26 @@ public class quenmatkhau1 extends AppCompatActivity {
 
     DatabaseReference databaseReference = FirebaseDatabase.getInstance()
             .getReferenceFromUrl("https://newsapp-a5dc3-default-rtdb.firebaseio.com/");
-    FirebaseAuth auth = FirebaseAuth.getInstance();
+
     TextView btn_taiday;
-    private Button btn_guiotp;
-
-    private EditText sdt;
-    //private String st_sdt;
-
-
+    Button btn_guiotp;
+    EditText sdt;
     CountryCodePicker countryCodePicker;
     ImageView img_check;
-    private FirebaseAuth.AuthStateListener mAuthListener;
 
-
-
-    private static final String TAG = "PhoneAuthActivity";
-
-    private FirebaseAuth mAuth;
-
-    private PhoneAuthProvider.ForceResendingToken forceResendingToken;
-    private String mVerificationId;
-    private PhoneAuthProvider.ForceResendingToken mResendToken;
-
-    //private PhoneAuthProvider.OnVerificationStateChangedCallbacks mCallbacks;
-
-
-
-    @Override
-    public void onStart() {
-        super.onStart();
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-    }
+    FirebaseAuth mAuth;
+    String verificationId;
+    ProgressDialog progressdialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quenmatkhau1);
 
-        btn_taiday = findViewById(R.id.btn_taiday_quenmk);
-        btn_guiotp = findViewById(R.id.btn_guiotp);
-        sdt = findViewById(R.id.ed_sdt_quenmk);
-        img_check = findViewById(R.id.img_check_quenmk);
-        countryCodePicker = findViewById(R.id.ccp_quenmk);
+        khaibao();
         mAuth = FirebaseAuth.getInstance();
-
+        progressdialog = new ProgressDialog(quenmatkhau1.this);
+        progressdialog.setMessage("OTP đang được gửi, bạn đợi chút nha!");
 
         btn_taiday.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -92,8 +75,8 @@ public class quenmatkhau1 extends AppCompatActivity {
                 finish();
             }
         });
-        //countryCodePicker.registerCarrierNumberEditText(sdt);
-        /*countryCodePicker.setPhoneNumberValidityChangeListener(new CountryCodePicker.PhoneNumberValidityChangeListener() {
+        countryCodePicker.registerCarrierNumberEditText(sdt);
+        countryCodePicker.setPhoneNumberValidityChangeListener(new CountryCodePicker.PhoneNumberValidityChangeListener() {
             @Override
             public void onValidityChanged(boolean isValidNumber) {
                 if (isValidNumber) {
@@ -125,15 +108,10 @@ public class quenmatkhau1 extends AppCompatActivity {
             }
         });
 
-
-
-        mAuth = FirebaseAuth.getInstance();
         mCallbacks = new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
-
             @Override
             public void onVerificationCompleted(PhoneAuthCredential credential) {
                 Log.d(TAG, "onVerificationCompleted:" + credential);
-
             }
 
             @Override
@@ -145,63 +123,73 @@ public class quenmatkhau1 extends AppCompatActivity {
                 }
 
             }
-
-
-        };*/
-
+        };
 
         btn_guiotp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                progressdialog.show();
+                String str_sdt="+" + countryCodePicker.getFullNumber();
+                sendVerificationCode(str_sdt);
 
-                //ShowNotification.showProgressDialog(quenmatkhau1.this, "Vui lòng đợi");
-                sendVerificationCode("+84" + sdt.getText().toString());
+            }
+        });
+    }
 
-                
-                Intent intent = new Intent(quenmatkhau1.this, quenmatkhau2.class);
-                startActivity(intent);
-                finish();
+    private void khaibao() {
+        btn_taiday = findViewById(R.id.btn_taiday_quenmk);
+        btn_guiotp = findViewById(R.id.btn_guiotp);
+        sdt = findViewById(R.id.ed_sdt_quenmk);
+        img_check = findViewById(R.id.img_check_quenmk);
+        countryCodePicker = findViewById(R.id.ccp_quenmk);
+    }
+
+    public void verifyPhoneNumber(View view) {
+        final String sdt_hoanchinh = "+" + countryCodePicker.getFullNumber();
+
+        Query checkUser = FirebaseDatabase.getInstance().getReference("Users").orderByChild("Số điện thoại").equalTo(sdt_hoanchinh);
+        checkUser.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.exists()) {
+                    Intent intent = new Intent(quenmatkhau1.this,quenmatkhau2.class);
+                    intent.putExtra("Số điện thoại",sdt_hoanchinh);
+                    startActivity(intent);
+                    finish();
+                } else {
+                    Toast.makeText(quenmatkhau1.this,"Số điện thoại chưa được đăng ký",Toast.LENGTH_SHORT);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
             }
         });
 
-
-
-
-
-
-
     }
+
     private PhoneAuthProvider.OnVerificationStateChangedCallbacks
             mCallbacks = new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
-
-
-
-        //fail
         @Override
-        public void onVerificationFailed(FirebaseException e) {
-
+        public void onVerificationFailed(@NonNull FirebaseException e) {
+            Toast.makeText(quenmatkhau1.this,"Failed",Toast.LENGTH_SHORT);
         }
 
         @Override
-        public void onCodeSent(@NonNull String verificationId,
+        public void onCodeSent(@NonNull String s,
                                @NonNull PhoneAuthProvider.ForceResendingToken token) {
-            Log.d(TAG, "onCodeSent:" + verificationId);
-            ShowNotification.dismissProgressDialog();
-            Toast.makeText(getApplicationContext(), "Đã gửi OTP", Toast.LENGTH_SHORT).show();
-            mVerificationId = verificationId;
-            mResendToken = token;
+            super.onCodeSent(s,token);
+            verificationId = s;
         }
 
         @Override
         public void onVerificationCompleted(@NonNull PhoneAuthCredential phoneAuthCredential) {
-
+            final String code = phoneAuthCredential.getSmsCode();
         }
     };
 
-
-
     private void sendVerificationCode(String number){
-
         PhoneAuthOptions options =
                 PhoneAuthOptions.newBuilder(mAuth)
                         .setPhoneNumber(number)

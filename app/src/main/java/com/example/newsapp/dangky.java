@@ -77,9 +77,9 @@ public class dangky extends AppCompatActivity {
         btn_taiday.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(dangky.this, dangnhap.class);
+                /*Intent intent = new Intent(dangky.this, dangnhap.class);
                 startActivity(intent);
-                finish();
+                finish();*/
             }
         });
 
@@ -96,6 +96,7 @@ public class dangky extends AppCompatActivity {
                             } else {
                                 databaseReference.child("Users").child(st_sdt).child("Tên người dùng").setValue(st_ten);
                                 databaseReference.child("Users").child(st_sdt).child("Mật khẩu").setValue(st_matkhau);
+                                databaseReference.child("Users").child(st_sdt).child("Số điện thoại").setValue(st_sdt);
 
                                 Intent intent = new Intent(dangky.this, dangnhap.class);
                                 startActivity(intent);
@@ -114,7 +115,7 @@ public class dangky extends AppCompatActivity {
     }
 
     private void gangiatri() {
-        st_sdt = sdt.getText().toString().trim();
+        st_sdt = "+" + countryCodePicker.getFullNumber();
         st_ten = ten.getText().toString().trim();
         st_matkhau = matkhau.getText().toString().trim();
         st_nhaplaimk = nhaplaimk.getText().toString().trim();

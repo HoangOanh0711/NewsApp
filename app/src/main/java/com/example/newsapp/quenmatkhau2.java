@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.newsapp.TrangChu.ShowNotification;
@@ -34,8 +35,8 @@ public class quenmatkhau2<scrollView> extends AppCompatActivity {
 
     Button btn_xacnhan;
     private String st_sdt;
-    private EditText sdt;
-    EditText ed_otp1, ed_otp2, ed_otp3, ed_otp4, ed_otp5, ed_otp6, btn_taiday_quenmk;
+    TextView btn_guilai;
+    EditText ed_otp1, ed_otp2, ed_otp3, ed_otp4, ed_otp5, ed_otp6, btn_taiday_quenmk, sdt;
 
 
     private static final String TAG = "PhoneAuthActivity";
@@ -47,8 +48,6 @@ public class quenmatkhau2<scrollView> extends AppCompatActivity {
     private String mVerificationId;
     private PhoneAuthProvider.ForceResendingToken mResendToken;
     //private PhoneAuthProvider.OnVerificationStateChangedCallbacks mCallbacks;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -271,17 +270,9 @@ public class quenmatkhau2<scrollView> extends AppCompatActivity {
         }*/
     };
 
-
-
-
-
-
-
-
-
     private void khaibao() {
-
         btn_xacnhan = findViewById(R.id.btn_xacnhan);
+        btn_guilai = findViewById(R.id.btn_guilai_quenmk);
         ed_otp1 = findViewById(R.id.ed_otp1);
         ed_otp2 = findViewById(R.id.ed_otp2);
         ed_otp3 = findViewById(R.id.ed_otp3);
