@@ -132,6 +132,7 @@
                 android:hint="Nhập mật khẩu của bạn"
                 android:inputType="textPassword"
                 android:maxLength="20"
+                android:minHeight="48dp"
                 android:textColor="@color/den"
                 android:textSize="18sp" />
         </LinearLayout>
