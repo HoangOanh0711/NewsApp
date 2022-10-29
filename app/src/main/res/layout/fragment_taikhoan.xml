@@ -1,379 +1,330 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".TrangChu.taikhoan"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     >
-    <LinearLayout
-        android:orientation="vertical"
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
+        android:layout_height="160dp"
+        android:background="@drawable/corner_boder_green"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <LinearLayout
-            android:background="@drawable/corner_boder_green"
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="160dp">
-            <!--            <ImageView-->
-            <!--                android:id="@+id/img_signup_back"-->
-            <!--                android:layout_width="wrap_content"-->
-            <!--                android:layout_height="wrap_content"-->
-            <!--                android:src="@drawable/ic_baseline_arrow_back_24"-->
-            <!--                android:padding="5dp"-->
-            <!--                android:onClick="backFromRegister2nd"-->
-            <!--                />-->
-
-            <ImageView
-                android:id="@+id/img_caidat_anhdaidien"
-                android:layout_marginTop="30dp"
-                android:layout_marginLeft="30dp"
-                android:layout_gravity="center"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:background="@drawable/circle_drawable"
-                android:src="@drawable/ic_baseline_person_24"
-                />
-            <TextView
-                android:layout_marginTop="45dp"
-                android:layout_gravity="center"
-
-                android:id="@+id/txt_caidat_tecmmguoidung"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/roboto_bold"
-                android:text="User Name"
-                android:textSize="28sp"
-                android:layout_marginLeft="30dp"
-                android:textColor="@color/trang"
-                />
-        </LinearLayout>
-
-        <LinearLayout
-
-            android:padding="18dp"
-            android:background="@color/trang"
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            >
-
-            <TextView
-                android:id="@+id/txt_caidat_canhan"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:fontFamily="@font/roboto_bold"
-                android:text="Cá Nhân"
-                android:textAllCaps="true"
-                android:textColor="@color/xanhdam"
-                android:textSize="19dp" />
-
-            <LinearLayout
-                android:layout_marginTop="7dp"
-                android:layout_marginLeft="10dp"
-                android:orientation="horizontal"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-                <ImageButton
-                    android:background="@null"
-                    android:id="@+id/img_caidat_ttnd"
-                    android:src="@drawable/ic_baseline_person_24"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-
-                <TextView
-                    android:id="@+id/txt_caidat_ttnd"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:fontFamily="@font/roboto_bold"
-                    android:text="Thông tin người dùng"
-                    android:textColor="@color/den"
-                    android:textSize="19dp" />
-            </LinearLayout>
-            <View
-                android:layout_marginRight="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="5dp"
-                android:id="@+id/view_caidat_viewcn"
-                android:layout_below="@+id/lnl_ViecLam_phan1"
-                android:layout_width="wrap_content"
-                android:layout_height="1dp"
-                android:background="@color/xanh2"
-                />
-            <LinearLayout
-                android:layout_marginTop="8dp"
-                android:layout_marginLeft="10dp"
-                android:orientation="horizontal"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-                <ImageButton
-                    android:id="@+id/img_caidat_dmk"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@null"
-                    android:src="@drawable/ic_baseline_lock_24" />
-
-                <TextView
-                    android:id="@+id/txt_caidat_dmk"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:fontFamily="@font/roboto_bold"
-                    android:text="Đổi mật khẩu"
-                    android:textColor="@color/den"
-                    android:textSize="19sp" />
-            </LinearLayout>
-
-        </LinearLayout>
-        <View
-
-            android:id="@+id/view_caidat_view"
-            android:layout_below="@+id/lnl_ViecLam_phan1"
-            android:layout_width="wrap_content"
-            android:layout_height="5dp"
-            android:background="@color/xam"
-            />
-        <LinearLayout
-
-            android:padding="18dp"
-            android:background="@color/trang"
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            >
-            <TextView
-
-                android:id="@+id/txt_caidat_tienich"
-                android:textColor="@color/xanhdam"
-                android:fontFamily="@font/roboto_bold"
-                android:textSize="19dp"
-                android:layout_marginLeft="10dp"
-                android:text="@string/tienich"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-            <LinearLayout
-                android:layout_marginTop="7dp"
-                android:layout_marginLeft="10dp"
-                android:orientation="horizontal"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-                <ImageButton
-                    android:background="@null"
-                    android:id="@+id/img_caidat_thoitiet"
-                    android:src="@drawable/ic_baseline_wb_cloudy_24"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-                <TextView
-                    android:id="@+id/txt_caidat_thoitiet"
-                    android:layout_marginLeft="20dp"
-
-                    android:textSize="19sp"
-                    android:fontFamily="@font/roboto_bold"
-                    android:textColor="@color/den"
-                    android:text="@string/thoitiet"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-            </LinearLayout>
-
-            <View
-                android:layout_marginRight="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="5dp"
-                android:id="@+id/view_caidat_view1"
-                android:layout_below="@+id/lnl_ViecLam_phan1"
-                android:layout_width="wrap_content"
-                android:layout_height="1dp"
-                android:background="@color/xanh2"
-                />
-
-            <LinearLayout
-                android:layout_marginTop="8dp"
-                android:layout_marginLeft="10dp"
-                android:orientation="horizontal"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-                <ImageButton
-                    android:id="@+id/img_caidat_xoso"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@null"
-                    android:src="@drawable/ic_baseline_widgets_24" />
-                <TextView
-                    android:id="@+id/txt_caidat_xoso"
-                    android:layout_marginLeft="20dp"
-
-                    android:textSize="19sp"
-                    android:fontFamily="@font/roboto_bold"
-                    android:textColor="@color/den"
-                    android:text="@string/xoso"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-            </LinearLayout>
-
-            <View
-                android:layout_marginRight="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="5dp"
-                android:id="@+id/view_caidat_view2"
-                android:layout_below="@+id/lnl_ViecLam_phan1"
-                android:layout_width="wrap_content"
-                android:layout_height="1dp"
-                android:background="@color/xanh2"
-                />
-
-            <LinearLayout
-                android:layout_marginTop="8dp"
-                android:layout_marginLeft="10dp"
-                android:orientation="horizontal"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-                <ImageButton
-                    android:background="@null"
-                    android:id="@+id/img_caidat_giavang"
-                    android:src="@drawable/ic_baseline_volcano_24"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-                <TextView
-                    android:id="@+id/txt_caidat_giavang"
-                    android:layout_marginLeft="20dp"
-
-                    android:textSize="19sp"
-                    android:fontFamily="@font/roboto_bold"
-                    android:textColor="@color/den"
-                    android:text="@string/giavang"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-            </LinearLayout>
-
-            <View
-                android:layout_marginRight="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="5dp"
-                android:id="@+id/view_caidat_view3"
-                android:layout_below="@+id/lnl_ViecLam_phan1"
-                android:layout_width="wrap_content"
-                android:layout_height="1dp"
-                android:background="@color/xanh2"
-                />
-
-            <LinearLayout
-                android:layout_marginTop="8dp"
-                android:layout_marginLeft="10dp"
-                android:orientation="horizontal"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-                <ImageButton
-                    android:background="@null"
-                    android:id="@+id/img_caidat_lichviet"
-                    android:src="@drawable/ic_baseline_calendar_month_24"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-                <TextView
-                    android:id="@+id/txt_caidat_lichviet"
-                    android:layout_marginLeft="20dp"
-
-                    android:textSize="19sp"
-                    android:fontFamily="@font/roboto_bold"
-                    android:textColor="@color/den"
-                    android:text="@string/lichviet"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-            </LinearLayout>
-
-        </LinearLayout>
-
-        <View
-
-            android:id="@+id/view_caidat_view4"
-            android:layout_below="@+id/lnl_ViecLam_phan1"
-            android:layout_width="wrap_content"
-            android:layout_height="5dp"
-            android:background="@color/xam"
-            />
-
-        <LinearLayout
-            android:padding="18dp"
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <TextView
-                android:id="@+id/txt_caidat_nangcao"
-                android:textColor="@color/xanhdam"
-                android:fontFamily="@font/roboto_bold"
-                android:textSize="19dp"
-                android:layout_marginLeft="10dp"
-                android:text="@string/caidat"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-            <LinearLayout
-                android:layout_marginTop="7dp"
-                android:layout_marginLeft="10dp"
-                android:orientation="horizontal"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-                <ImageView
-                    android:id="@+id/img_caidat_chedo"
-                    android:src="@drawable/ic_baseline_nightlight_round_24"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-                <TextView
-                    android:id="@+id/txt_caidat_chedo"
-                    android:layout_marginLeft="20dp"
-                    android:textSize="19sp"
-                    android:textColor="@color/den"
-                    android:fontFamily="@font/roboto_bold"
-                    android:text="@string/chedotoi"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-                <!--                <Switch-->
-                <!--                    android:layout_marginLeft="150dp"-->
-                <!--                    android:layout_gravity="center"-->
-                <!--                    android:gravity="center"-->
-                <!--                    android:thumb="@drawable/thumb"-->
-                <!--                    app:track="@drawable/track"-->
-                <!--                    android:id="@+id/sw_taikhoan_sangtoi"-->
-                <!--                    android:layout_width="wrap_content"-->
-                <!--                    android:layout_height="wrap_content"-->
-                <!--                    />-->
-            </LinearLayout>
-
-        </LinearLayout>
-
-        <LinearLayout
-
-            android:layout_width="150dp"
-            android:layout_height="40dp"
+        <ImageView
+            android:id="@+id/img_caidat_anhdaidien"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:layout_gravity="center"
-            android:background="@drawable/corner_border_gray"
-            android:orientation="horizontal">
+            android:layout_marginStart="30dp"
+            android:background="@drawable/circle_drawable"
+            android:src="@drawable/ic_baseline_person_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txt_caidat_tecmmguoidung"
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="30dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="User Name"
+            android:textColor="@color/trang"
+            android:textSize="28sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/img_caidat_anhdaidien"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@color/trang"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">
+
+        <TextView
+            android:id="@+id/txt_caidat_canhan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="Cá Nhân"
+            android:textAllCaps="true"
+            android:textColor="@color/xanhdam"
+            android:textSize="20sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="5dp">
 
             <ImageView
-                android:id="@+id/img_caidat_dangxuat"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
+                android:id="@+id/img_caidat_ttnd"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
                 android:layout_marginLeft="10dp"
-                android:src="@drawable/ic_baseline_logout_24" />
+                android:src="@drawable/ic_baseline_person_24" />
 
             <TextView
-                android:id="@+id/txt_caidat_dangxuat"
+                android:id="@+id/txt_caidat_ttnd"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginLeft="15dp"
-                android:text="Đăng xuất"
-                android:textColor="@color/doo"
-                android:textSize="18sp"
-                android:fontFamily="@font/roboto_bold" />
+                android:layout_marginLeft="20dp"
+                android:fontFamily="@font/roboto_bold"
+                android:text="Thông tin người dùng"
+                android:textColor="@color/den"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/view_caidat_viewcn"
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:layout_below="@+id/lnl_ViecLam_phan1"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="8dp"
+            android:background="@color/xanh2" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+            <ImageView
+                android:id="@+id/img_caidat_dmk"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/ic_baseline_lock_24" />
+
+            <TextView
+                android:id="@+id/txt_caidat_dmk"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:fontFamily="@font/roboto_bold"
+                android:text="Đổi mật khẩu"
+                android:textColor="@color/den"
+                android:textSize="18sp" />
         </LinearLayout>
 
     </LinearLayout>
 
-</FrameLayout>
+    <View
+        android:id="@+id/view_caidat_view"
+        android:layout_width="wrap_content"
+        android:layout_height="5dp"
+        android:background="@color/xam"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout7" />
+
+
+    <LinearLayout
+
+        android:id="@+id/linearLayout8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@color/trang"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/view_caidat_view">
+
+        <TextView
+
+            android:id="@+id/txt_caidat_tienich"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="@string/tienich"
+            android:textColor="@color/xanhdam"
+            android:textSize="20sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+            <ImageView
+                android:id="@+id/img_caidat_thoitiet"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/ic_baseline_wb_cloudy_24" />
+
+            <TextView
+                android:id="@+id/txt_caidat_thoitiet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:fontFamily="@font/roboto_bold"
+                android:text="@string/thoitiet"
+                android:textColor="@color/den"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/view_caidat_view1"
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:layout_below="@+id/lnl_ViecLam_phan1"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="8dp"
+            android:background="@color/xanh2" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+            <ImageView
+                android:id="@+id/img_caidat_xoso"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/ic_baseline_widgets_24" />
+
+            <TextView
+                android:id="@+id/txt_caidat_xoso"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:fontFamily="@font/roboto_bold"
+                android:text="@string/xoso"
+                android:textColor="@color/den"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/view_caidat_view2"
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:layout_below="@+id/lnl_ViecLam_phan1"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="8dp"
+            android:background="@color/xanh2" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+            <ImageView
+                android:id="@+id/img_caidat_giavang"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/ic_baseline_volcano_24" />
+
+            <TextView
+                android:id="@+id/txt_caidat_giavang"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:fontFamily="@font/roboto_bold"
+                android:text="@string/giavang"
+                android:textColor="@color/den"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/view_caidat_view3"
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:layout_below="@+id/lnl_ViecLam_phan1"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="8dp"
+            android:background="@color/xanh2" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+            <ImageView
+                android:id="@+id/img_caidat_lichviet"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/ic_baseline_calendar_month_24" />
+
+            <TextView
+                android:id="@+id/txt_caidat_lichviet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:fontFamily="@font/roboto_bold"
+                android:text="@string/lichviet"
+                android:textColor="@color/den"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view_caidat_view4"
+        android:layout_width="wrap_content"
+        android:layout_height="5dp"
+        android:background="@color/xam"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout8" />
+
+    <LinearLayout
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:background="@drawable/corner_border_gray"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view_caidat_view4">
+
+        <ImageView
+            android:id="@+id/img_caidat_dangxuat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/ic_baseline_logout_24" />
+
+        <TextView
+            android:id="@+id/txt_caidat_dangxuat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="15dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="Đăng xuất"
+            android:textColor="@color/doo"
+            android:textSize="18sp" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
