@@ -1,0 +1,183 @@
+Index: app/src/main/java/com/example/newsapp/dangnhap.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.newsapp;\r\n\r\nimport androidx.appcompat.app.AppCompatActivity;\r\n\r\nimport android.content.Intent;\r\nimport android.os.Bundle;\r\nimport android.view.View;\r\nimport android.widget.Button;\r\nimport android.widget.TextView;\r\n\r\npublic class dangnhap extends AppCompatActivity {\r\n\r\n    TextView btn_quenmk,btn_taiday;\r\n    Button btn_dangnhap;\r\n\r\n    @Override\r\n    protected void onCreate(Bundle savedInstanceState) {\r\n        super.onCreate(savedInstanceState);\r\n        setContentView(R.layout.activity_dangnhap);\r\n\r\n        khaibao();\r\n\r\n        btn_quenmk.setOnClickListener(new View.OnClickListener() {\r\n            @Override\r\n            public void onClick(View view) {\r\n                Intent intent = new Intent(dangnhap.this, quenmatkhau1.class);\r\n                startActivity(intent);\r\n                finish();\r\n            }\r\n        });\r\n\r\n        btn_taiday.setOnClickListener(new View.OnClickListener() {\r\n            @Override\r\n            public void onClick(View view) {\r\n                Intent intent = new Intent(dangnhap.this, dangky.class);\r\n                startActivity(intent);\r\n                finish();\r\n            }\r\n        });\r\n\r\n        btn_dangnhap.setOnClickListener(new View.OnClickListener() {\r\n            @Override\r\n            public void onClick(View view) {\r\n                Intent intent = new Intent(dangnhap.this, trangchu.class);\r\n                startActivity(intent);\r\n                finish();\r\n            }\r\n        });\r\n    }\r\n\r\n    private void khaibao(){\r\n        btn_quenmk = findViewById(R.id.btn_quenmatkhau);\r\n        btn_taiday = findViewById(R.id.btn_taiday_dnhap);\r\n        btn_dangnhap = findViewById(R.id.btn_dangnhap_dnhap);\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/newsapp/dangnhap.java b/app/src/main/java/com/example/newsapp/dangnhap.java
+--- a/app/src/main/java/com/example/newsapp/dangnhap.java	
++++ b/app/src/main/java/com/example/newsapp/dangnhap.java	
+@@ -1,24 +1,52 @@
+ package com.example.newsapp;
+ 
++import androidx.annotation.Nullable;
+ import androidx.appcompat.app.AppCompatActivity;
+ 
+ import android.content.Intent;
+ import android.os.Bundle;
+ import android.view.View;
+ import android.widget.Button;
++import android.widget.ImageView;
+ import android.widget.TextView;
++import android.widget.Toast;
++
++import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
++import com.google.android.gms.auth.api.signin.GoogleSignInClient;
++import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
++import com.google.android.gms.auth.api.signin.GoogleSignIn;
++import com.google.android.gms.common.api.ApiException;
++import com.google.android.gms.tasks.Task;
+ 
+ public class dangnhap extends AppCompatActivity {
+ 
++
++    GoogleSignInOptions gso;
++    GoogleSignInClient gsc;
++    GoogleSignInAccount account;
++    ImageView btn_signin_gg;
+     TextView btn_quenmk,btn_taiday;
+     Button btn_dangnhap;
+ 
++
+     @Override
+     protected void onCreate(Bundle savedInstanceState) {
+         super.onCreate(savedInstanceState);
+         setContentView(R.layout.activity_dangnhap);
+-
+         khaibao();
++        /*đăng nhập gg*/
++        gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail().build();
++        gsc = GoogleSignIn.getClient(this, gso);
++        account = GoogleSignIn.getLastSignedInAccount(this);
++
++        btn_signin_gg.setOnClickListener(new View.OnClickListener() {
++            @Override
++            public void onClick(View view) {
++                signIn();
++            }
++        });
++
++        /*đăng nhập gg*/
+ 
+         btn_quenmk.setOnClickListener(new View.OnClickListener() {
+             @Override
+@@ -47,10 +75,40 @@
+             }
+         });
+     }
+-
++    /*đăng nhập gg*/
++    private void signIn()
++    {
++        Intent signIntent = gsc.getSignInIntent();
++        startActivityForResult(signIntent,1000);
++    }
++
++    @Override
++    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
++        super.onActivityResult(requestCode, resultCode, data);
++        if (requestCode == 1000)
++        {
++            Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
++            try {
++                task.getResult(ApiException.class);
++
++                navigateTrangchu();
++            } catch (ApiException e) {
++                Toast.makeText(getApplicationContext(),"Something went wrong", Toast.LENGTH_SHORT).show();
++            }
++        }
++    }
++
++    void navigateTrangchu()
++    {
++        finish();
++        Intent nextTrangchu = new Intent(dangnhap.this, trangchu.class);
++        startActivity(nextTrangchu);
++    }
++    /*đăng nhập gg*/
+     private void khaibao(){
+         btn_quenmk = findViewById(R.id.btn_quenmatkhau);
+         btn_taiday = findViewById(R.id.btn_taiday_dnhap);
+         btn_dangnhap = findViewById(R.id.btn_dangnhap_dnhap);
++        btn_signin_gg = findViewById(R.id.imageView4);
+     }
+ }
+\ No newline at end of file
+Index: app/src/main/res/layout/activity_dangnhap.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<androidx.constraintlayout.widget.ConstraintLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    tools:context=\".dangnhap\"\r\n    android:background=\"@drawable/bg_gradient_color2\">\r\n\r\n    <TextView\r\n        android:id=\"@+id/textView\"\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:layout_marginStart=\"25dp\"\r\n        android:fontFamily=\"@font/roboto_bold\"\r\n        android:text=\"Đăng nhập\"\r\n        android:textColor=\"@color/xanhdam\"\r\n        android:textSize=\"35sp\"\r\n        app:layout_constraintBottom_toTopOf=\"@+id/constraintLayout\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toTopOf=\"parent\" />\r\n\r\n    <ImageView\r\n        android:layout_width=\"250dp\"\r\n        android:layout_height=\"250dp\"\r\n        android:layout_marginTop=\"-100dp\"\r\n        android:layout_marginEnd=\"-100dp\"\r\n        android:background=\"@drawable/bg_tron\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintTop_toTopOf=\"parent\" />\r\n\r\n    <ImageView\r\n        android:id=\"@+id/imageView\"\r\n        android:layout_width=\"45dp\"\r\n        android:layout_height=\"45dp\"\r\n        android:layout_marginStart=\"30dp\"\r\n        android:layout_marginBottom=\"-20dp\"\r\n        android:background=\"@drawable/bg_tron\"\r\n        app:layout_constraintBottom_toTopOf=\"@+id/constraintLayout\"\r\n        app:layout_constraintStart_toStartOf=\"parent\" />\r\n\r\n    <androidx.constraintlayout.widget.ConstraintLayout\r\n        android:id=\"@+id/constraintLayout\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"550dp\"\r\n        android:background=\"@drawable/bg_khung_dnhap\"\r\n        app:layout_constraintBottom_toBottomOf=\"parent\">\r\n\r\n        <LinearLayout\r\n            android:id=\"@+id/linearLayout\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_marginTop=\"20dp\"\r\n            android:orientation=\"vertical\"\r\n            android:padding=\"20dp\"\r\n            app:layout_constraintEnd_toEndOf=\"parent\"\r\n            app:layout_constraintStart_toStartOf=\"parent\"\r\n            app:layout_constraintTop_toTopOf=\"parent\">\r\n\r\n            <TextView\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:fontFamily=\"@font/roboto_bold\"\r\n                android:text=\"Số điện thoại\"\r\n                android:textColor=\"@color/den\"\r\n                android:textSize=\"20sp\" />\r\n\r\n            <LinearLayout\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:orientation=\"horizontal\"\r\n                android:layout_marginTop=\"5dp\">\r\n\r\n                <com.hbb20.CountryCodePicker\r\n                    android:layout_width=\"wrap_content\"\r\n                    android:layout_height=\"wrap_content\"\r\n                    app:ccp_showNameCode=\"false\"\r\n                    app:ccp_flagBorderColor=\"@color/den\"\r\n                    app:ccp_defaultNameCode=\"VN\" />\r\n\r\n                <EditText\r\n                    android:id=\"@+id/ed_sdt_dnhap\"\r\n                    android:layout_width=\"match_parent\"\r\n                    android:layout_height=\"wrap_content\"\r\n                    android:fontFamily=\"@font/roboto_regular\"\r\n                    android:hint=\"Nhập số điện thoại của bạn\"\r\n                    android:inputType=\"phone\"\r\n                    android:maxLength=\"11\"\r\n                    android:textColor=\"@color/den\"\r\n                    android:textSize=\"18sp\" />\r\n\r\n            </LinearLayout>\r\n        </LinearLayout>\r\n\r\n        <LinearLayout\r\n            android:id=\"@+id/linearLayout2\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:orientation=\"vertical\"\r\n            android:padding=\"20dp\"\r\n            app:layout_constraintEnd_toEndOf=\"parent\"\r\n            app:layout_constraintStart_toStartOf=\"parent\"\r\n            app:layout_constraintTop_toBottomOf=\"@+id/linearLayout\">\r\n\r\n            <TextView\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:fontFamily=\"@font/roboto_bold\"\r\n                android:text=\"Mật khẩu\"\r\n                android:textColor=\"@color/den\"\r\n                android:textSize=\"20sp\" />\r\n\r\n            <EditText\r\n                android:id=\"@+id/ed_matkhau_dnhap\"\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:layout_marginTop=\"5dp\"\r\n                android:fontFamily=\"@font/roboto_regular\"\r\n                android:hint=\"Nhập mật khẩu của bạn\"\r\n                android:inputType=\"textPassword\"\r\n                android:maxLength=\"20\"\r\n                android:textColor=\"@color/den\"\r\n                android:textSize=\"18sp\" />\r\n        </LinearLayout>\r\n\r\n        <Button\r\n            android:id=\"@+id/btn_dangnhap_dnhap\"\r\n            android:layout_width=\"320dp\"\r\n            android:layout_height=\"60dp\"\r\n            android:layout_marginTop=\"50dp\"\r\n            android:backgroundTint=\"@color/xanhdam\"\r\n            android:fontFamily=\"@font/roboto_bold\"\r\n            android:text=\"Đăng nhập\"\r\n            android:textSize=\"18sp\"\r\n            app:cornerRadius=\"50dp\"\r\n            app:layout_constraintEnd_toEndOf=\"parent\"\r\n            app:layout_constraintStart_toStartOf=\"parent\"\r\n            app:layout_constraintTop_toBottomOf=\"@+id/linearLayout2\" />\r\n\r\n        <TextView\r\n            android:id=\"@+id/btn_quenmatkhau\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_marginTop=\"-15dp\"\r\n            android:layout_marginEnd=\"20dp\"\r\n            android:fontFamily=\"@font/roboto_bold\"\r\n            android:text=\"Quên mật khẩu?\"\r\n            android:textColor=\"@color/den\"\r\n            android:textSize=\"12sp\"\r\n            app:layout_constraintEnd_toEndOf=\"parent\"\r\n            app:layout_constraintTop_toBottomOf=\"@+id/linearLayout2\" />\r\n\r\n        <LinearLayout\r\n            android:id=\"@+id/linearLayout3\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_marginTop=\"5dp\"\r\n            android:gravity=\"center\"\r\n            android:orientation=\"horizontal\"\r\n            app:layout_constraintEnd_toEndOf=\"parent\"\r\n            app:layout_constraintStart_toStartOf=\"parent\"\r\n            app:layout_constraintTop_toBottomOf=\"@+id/btn_dangnhap_dnhap\">\r\n\r\n            <TextView\r\n                android:id=\"@+id/textView2\"\r\n                android:layout_width=\"wrap_content\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:fontFamily=\"@font/roboto_regular\"\r\n                android:text=\"Bạn chưa có tài khoản? Đăng ký\"\r\n                android:textColor=\"@color/den\"\r\n                android:textSize=\"12sp\" />\r\n\r\n            <TextView\r\n                android:id=\"@+id/btn_taiday_dnhap\"\r\n                android:layout_width=\"wrap_content\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:layout_marginStart=\"3dp\"\r\n                android:fontFamily=\"@font/roboto_bold\"\r\n                android:text=\"tại đây\"\r\n                android:textColor=\"@color/xanhdam\"\r\n                android:textSize=\"12sp\" />\r\n        </LinearLayout>\r\n\r\n        <androidx.constraintlayout.widget.ConstraintLayout\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:gravity=\"center\"\r\n            android:orientation=\"vertical\"\r\n            app:layout_constraintBottom_toBottomOf=\"parent\"\r\n            app:layout_constraintEnd_toEndOf=\"parent\"\r\n            app:layout_constraintStart_toStartOf=\"parent\"\r\n            app:layout_constraintTop_toBottomOf=\"@+id/linearLayout3\">\r\n\r\n            <LinearLayout\r\n                android:id=\"@+id/linearLayout4\"\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:gravity=\"center\"\r\n                android:orientation=\"horizontal\"\r\n                app:layout_constraintTop_toTopOf=\"parent\">\r\n\r\n                <View\r\n                    android:layout_width=\"100dp\"\r\n                    android:layout_height=\"1dp\"\r\n                    android:background=\"@color/den\" />\r\n\r\n                <TextView\r\n                    android:id=\"@+id/textView3\"\r\n                    android:layout_width=\"wrap_content\"\r\n                    android:layout_height=\"wrap_content\"\r\n                    android:fontFamily=\"@font/roboto_regular\"\r\n                    android:padding=\"10dp\"\r\n                    android:text=\"Hoặc đăng nhập bằng\"\r\n                    android:textColor=\"@color/den\"\r\n                    android:textSize=\"12sp\" />\r\n\r\n                <View\r\n                    android:layout_width=\"100dp\"\r\n                    android:layout_height=\"1dp\"\r\n                    android:background=\"@color/den\" />\r\n            </LinearLayout>\r\n\r\n            <ImageView\r\n                android:id=\"@+id/imageView4\"\r\n                android:layout_width=\"40dp\"\r\n                android:layout_height=\"40dp\"\r\n                android:layout_marginTop=\"10dp\"\r\n                android:src=\"@drawable/img_google\"\r\n                app:layout_constraintEnd_toStartOf=\"@+id/imageView5\"\r\n                app:layout_constraintStart_toStartOf=\"parent\"\r\n                app:layout_constraintTop_toBottomOf=\"@+id/linearLayout4\" />\r\n\r\n            <ImageView\r\n                android:id=\"@+id/imageView5\"\r\n                android:layout_width=\"40dp\"\r\n                android:layout_height=\"40dp\"\r\n                android:layout_marginTop=\"10dp\"\r\n                android:src=\"@drawable/img_facebook\"\r\n                app:layout_constraintEnd_toEndOf=\"parent\"\r\n                app:layout_constraintStart_toEndOf=\"@+id/imageView4\"\r\n                app:layout_constraintTop_toBottomOf=\"@+id/linearLayout4\" />\r\n\r\n\r\n        </androidx.constraintlayout.widget.ConstraintLayout>\r\n\r\n    </androidx.constraintlayout.widget.ConstraintLayout>\r\n\r\n</androidx.constraintlayout.widget.ConstraintLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/activity_dangnhap.xml b/app/src/main/res/layout/activity_dangnhap.xml
+--- a/app/src/main/res/layout/activity_dangnhap.xml	
++++ b/app/src/main/res/layout/activity_dangnhap.xml	
+@@ -228,7 +228,8 @@
+                 android:src="@drawable/img_google"
+                 app:layout_constraintEnd_toStartOf="@+id/imageView5"
+                 app:layout_constraintStart_toStartOf="parent"
+-                app:layout_constraintTop_toBottomOf="@+id/linearLayout4" />
++                app:layout_constraintTop_toBottomOf="@+id/linearLayout4"
++                android:clickable="true"/>
+ 
+             <ImageView
+                 android:id="@+id/imageView5"
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"DesignSurface\">\r\n    <option name=\"filePathToZoomLevelMap\">\r\n      <map>\r\n        <entry key=\"..\\:/APP/NewsApp/app/src/main/res/drawable/bg_gradient_color.xml\" value=\"0.1565\" />\r\n        <entry key=\"..\\:/APP/NewsApp/app/src/main/res/drawable/bg_gradient_color1.xml\" value=\"0.1565\" />\r\n        <entry key=\"..\\:/APP/NewsApp/app/src/main/res/drawable/bg_gradient_color2.xml\" value=\"0.1565\" />\r\n        <entry key=\"..\\:/APP/NewsApp/app/src/main/res/drawable/bg_khung_dnhap.xml\" value=\"0.1565\" />\r\n        <entry key=\"..\\:/APP/NewsApp/app/src/main/res/drawable/bg_khung_otp.xml\" value=\"0.1265\" />\r\n        <entry key=\"..\\:/APP/NewsApp/app/src/main/res/drawable/bg_tron.xml\" value=\"0.1565\" />\r\n        <entry key=\"..\\:/APP/NewsApp/app/src/main/res/drawable/ic_lock.xml\" value=\"0.129\" />\r\n        <entry key=\"..\\:/APP/NewsApp/app/src/main/res/drawable/ic_lock_click.xml\" value=\"0.129\" />\r\n        <entry key=\"..\\:/APP/NewsApp/app/src/main/res/drawable/ic_news.xml\" value=\"0.127\" />\r\n        <entry key=\"..\\:/APP/NewsApp/app/src/main/res/drawable/ic_trend.xml\" value=\"0.127\" />\r\n        <entry key=\"..\\:/APP/NewsApp/app/src/main/res/drawable/ic_user.xml\" value=\"0.127\" />\r\n        <entry key=\"..\\:/APP/NewsApp/app/src/main/res/drawable/nav_item_color_selected.xml\" value=\"0.127\" />\r\n        <entry key=\"..\\:/APP/NewsApp/app/src/main/res/layout/activity_dangky.xml\" value=\"0.22\" />\r\n        <entry key=\"..\\:/APP/NewsApp/app/src/main/res/layout/activity_dangnhap.xml\" value=\"0.22\" />\r\n        <entry key=\"..\\:/APP/NewsApp/app/src/main/res/layout/activity_quenmatkhau1.xml\" value=\"0.22\" />\r\n        <entry key=\"..\\:/APP/NewsApp/app/src/main/res/layout/activity_quenmatkhau2.xml\" value=\"0.12\" />\r\n        <entry key=\"..\\:/APP/NewsApp/app/src/main/res/layout/activity_quenmatkhau3.xml\" value=\"0.3333333333333333\" />\r\n        <entry key=\"..\\:/APP/NewsApp/app/src/main/res/layout/activity_quenmatkhau4.xml\" value=\"0.1796875\" />\r\n        <entry key=\"..\\:/APP/NewsApp/app/src/main/res/layout/activity_splash.xml\" value=\"0.1796875\" />\r\n        <entry key=\"..\\:/APP/NewsApp/app/src/main/res/layout/activity_trangchu.xml\" value=\"0.22\" />\r\n        <entry key=\"..\\:/APP/NewsApp/app/src/main/res/layout/fragment_fg_bongda.xml\" value=\"0.1796875\" />\r\n        <entry key=\"..\\:/APP/NewsApp/app/src/main/res/layout/fragment_fg_moi.xml\" value=\"0.19166666666666668\" />\r\n        <entry key=\"..\\:/APP/NewsApp/app/src/main/res/layout/fragment_fg_nong.xml\" value=\"0.19166666666666668\" />\r\n        <entry key=\"..\\:/APP/NewsApp/app/src/main/res/layout/fragment_fg_theodoi.xml\" value=\"0.1796875\" />\r\n        <entry key=\"..\\:/APP/NewsApp/app/src/main/res/layout/fragment_fg_tonghop.xml\" value=\"0.1796875\" />\r\n        <entry key=\"..\\:/APP/NewsApp/app/src/main/res/layout/fragment_taikhoan.xml\" value=\"0.1796875\" />\r\n        <entry key=\"..\\:/APP/NewsApp/app/src/main/res/layout/fragment_tintuc.xml\" value=\"0.1\" />\r\n        <entry key=\"..\\:/APP/NewsApp/app/src/main/res/layout/fragment_xuhuong.xml\" value=\"0.1796875\" />\r\n        <entry key=\"..\\:/APP/NewsApp/app/src/main/res/menu/bottom_navigation.xml\" value=\"0.17864583333333334\" />\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"ExternalStorageConfigurationManager\" enabled=\"true\" />\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_11\" default=\"true\" project-jdk-name=\"11\" project-jdk-type=\"JavaSDK\" />\r\n  <component name=\"VisualizationToolProject\">\r\n    <option name=\"state\">\r\n      <ProjectState>\r\n        <option name=\"scale\" value=\"0.1\" />\r\n      </ProjectState>\r\n    </option>\r\n  </component>\r\n</project>
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	
++++ b/.idea/misc.xml	
+@@ -3,45 +3,10 @@
+   <component name="DesignSurface">
+     <option name="filePathToZoomLevelMap">
+       <map>
+-        <entry key="..\:/APP/NewsApp/app/src/main/res/drawable/bg_gradient_color.xml" value="0.1565" />
+-        <entry key="..\:/APP/NewsApp/app/src/main/res/drawable/bg_gradient_color1.xml" value="0.1565" />
+-        <entry key="..\:/APP/NewsApp/app/src/main/res/drawable/bg_gradient_color2.xml" value="0.1565" />
+-        <entry key="..\:/APP/NewsApp/app/src/main/res/drawable/bg_khung_dnhap.xml" value="0.1565" />
+-        <entry key="..\:/APP/NewsApp/app/src/main/res/drawable/bg_khung_otp.xml" value="0.1265" />
+-        <entry key="..\:/APP/NewsApp/app/src/main/res/drawable/bg_tron.xml" value="0.1565" />
+-        <entry key="..\:/APP/NewsApp/app/src/main/res/drawable/ic_lock.xml" value="0.129" />
+-        <entry key="..\:/APP/NewsApp/app/src/main/res/drawable/ic_lock_click.xml" value="0.129" />
+-        <entry key="..\:/APP/NewsApp/app/src/main/res/drawable/ic_news.xml" value="0.127" />
+-        <entry key="..\:/APP/NewsApp/app/src/main/res/drawable/ic_trend.xml" value="0.127" />
+-        <entry key="..\:/APP/NewsApp/app/src/main/res/drawable/ic_user.xml" value="0.127" />
+-        <entry key="..\:/APP/NewsApp/app/src/main/res/drawable/nav_item_color_selected.xml" value="0.127" />
+-        <entry key="..\:/APP/NewsApp/app/src/main/res/layout/activity_dangky.xml" value="0.22" />
+-        <entry key="..\:/APP/NewsApp/app/src/main/res/layout/activity_dangnhap.xml" value="0.22" />
+-        <entry key="..\:/APP/NewsApp/app/src/main/res/layout/activity_quenmatkhau1.xml" value="0.22" />
+-        <entry key="..\:/APP/NewsApp/app/src/main/res/layout/activity_quenmatkhau2.xml" value="0.12" />
+-        <entry key="..\:/APP/NewsApp/app/src/main/res/layout/activity_quenmatkhau3.xml" value="0.3333333333333333" />
+-        <entry key="..\:/APP/NewsApp/app/src/main/res/layout/activity_quenmatkhau4.xml" value="0.1796875" />
+-        <entry key="..\:/APP/NewsApp/app/src/main/res/layout/activity_splash.xml" value="0.1796875" />
+-        <entry key="..\:/APP/NewsApp/app/src/main/res/layout/activity_trangchu.xml" value="0.22" />
+-        <entry key="..\:/APP/NewsApp/app/src/main/res/layout/fragment_fg_bongda.xml" value="0.1796875" />
+-        <entry key="..\:/APP/NewsApp/app/src/main/res/layout/fragment_fg_moi.xml" value="0.19166666666666668" />
+-        <entry key="..\:/APP/NewsApp/app/src/main/res/layout/fragment_fg_nong.xml" value="0.19166666666666668" />
+-        <entry key="..\:/APP/NewsApp/app/src/main/res/layout/fragment_fg_theodoi.xml" value="0.1796875" />
+-        <entry key="..\:/APP/NewsApp/app/src/main/res/layout/fragment_fg_tonghop.xml" value="0.1796875" />
+-        <entry key="..\:/APP/NewsApp/app/src/main/res/layout/fragment_taikhoan.xml" value="0.1796875" />
+-        <entry key="..\:/APP/NewsApp/app/src/main/res/layout/fragment_tintuc.xml" value="0.1" />
+-        <entry key="..\:/APP/NewsApp/app/src/main/res/layout/fragment_xuhuong.xml" value="0.1796875" />
+-        <entry key="..\:/APP/NewsApp/app/src/main/res/menu/bottom_navigation.xml" value="0.17864583333333334" />
++        <entry key="..\:/NewsApp/app/src/main/res/layout/activity_dangnhap.xml" value="0.25" />
+       </map>
+     </option>
+   </component>
+   <component name="ExternalStorageConfigurationManager" enabled="true" />
+   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK" />
+-  <component name="VisualizationToolProject">
+-    <option name="state">
+-      <ProjectState>
+-        <option name="scale" value="0.1" />
+-      </ProjectState>
+-    </option>
+-  </component>
+ </project>
+\ No newline at end of file

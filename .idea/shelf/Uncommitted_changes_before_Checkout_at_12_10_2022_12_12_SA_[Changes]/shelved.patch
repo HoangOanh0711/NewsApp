@@ -1,0 +1,72 @@
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"DesignSurface\">\r\n    <option name=\"filePathToZoomLevelMap\">\r\n      <map>\r\n        <entry key=\"..\\:/APP/NewsApp/app/src/main/res/drawable/bg_gradient_color.xml\" value=\"0.1565\" />\r\n        <entry key=\"..\\:/APP/NewsApp/app/src/main/res/drawable/bg_gradient_color1.xml\" value=\"0.1565\" />\r\n        <entry key=\"..\\:/APP/NewsApp/app/src/main/res/drawable/bg_gradient_color2.xml\" value=\"0.1565\" />\r\n        <entry key=\"..\\:/APP/NewsApp/app/src/main/res/drawable/bg_khung_dnhap.xml\" value=\"0.1565\" />\r\n        <entry key=\"..\\:/APP/NewsApp/app/src/main/res/drawable/bg_khung_otp.xml\" value=\"0.1265\" />\r\n        <entry key=\"..\\:/APP/NewsApp/app/src/main/res/drawable/bg_tron.xml\" value=\"0.1565\" />\r\n        <entry key=\"..\\:/APP/NewsApp/app/src/main/res/drawable/ic_lock.xml\" value=\"0.129\" />\r\n        <entry key=\"..\\:/APP/NewsApp/app/src/main/res/drawable/ic_lock_click.xml\" value=\"0.129\" />\r\n        <entry key=\"..\\:/APP/NewsApp/app/src/main/res/drawable/ic_news.xml\" value=\"0.127\" />\r\n        <entry key=\"..\\:/APP/NewsApp/app/src/main/res/drawable/ic_trend.xml\" value=\"0.127\" />\r\n        <entry key=\"..\\:/APP/NewsApp/app/src/main/res/drawable/ic_user.xml\" value=\"0.127\" />\r\n        <entry key=\"..\\:/APP/NewsApp/app/src/main/res/drawable/nav_item_color_selected.xml\" value=\"0.127\" />\r\n        <entry key=\"..\\:/APP/NewsApp/app/src/main/res/layout/activity_dangky.xml\" value=\"0.22\" />\r\n        <entry key=\"..\\:/APP/NewsApp/app/src/main/res/layout/activity_dangnhap.xml\" value=\"0.22\" />\r\n        <entry key=\"..\\:/APP/NewsApp/app/src/main/res/layout/activity_quenmatkhau1.xml\" value=\"0.22\" />\r\n        <entry key=\"..\\:/APP/NewsApp/app/src/main/res/layout/activity_quenmatkhau2.xml\" value=\"0.12\" />\r\n        <entry key=\"..\\:/APP/NewsApp/app/src/main/res/layout/activity_quenmatkhau3.xml\" value=\"0.3333333333333333\" />\r\n        <entry key=\"..\\:/APP/NewsApp/app/src/main/res/layout/activity_quenmatkhau4.xml\" value=\"0.1796875\" />\r\n        <entry key=\"..\\:/APP/NewsApp/app/src/main/res/layout/activity_splash.xml\" value=\"0.1796875\" />\r\n        <entry key=\"..\\:/APP/NewsApp/app/src/main/res/layout/activity_trangchu.xml\" value=\"0.22\" />\r\n        <entry key=\"..\\:/APP/NewsApp/app/src/main/res/layout/fragment_fg_bongda.xml\" value=\"0.1796875\" />\r\n        <entry key=\"..\\:/APP/NewsApp/app/src/main/res/layout/fragment_fg_moi.xml\" value=\"0.19166666666666668\" />\r\n        <entry key=\"..\\:/APP/NewsApp/app/src/main/res/layout/fragment_fg_nong.xml\" value=\"0.19166666666666668\" />\r\n        <entry key=\"..\\:/APP/NewsApp/app/src/main/res/layout/fragment_fg_theodoi.xml\" value=\"0.1796875\" />\r\n        <entry key=\"..\\:/APP/NewsApp/app/src/main/res/layout/fragment_fg_tonghop.xml\" value=\"0.1796875\" />\r\n        <entry key=\"..\\:/APP/NewsApp/app/src/main/res/layout/fragment_taikhoan.xml\" value=\"0.1796875\" />\r\n        <entry key=\"..\\:/APP/NewsApp/app/src/main/res/layout/fragment_tintuc.xml\" value=\"0.1\" />\r\n        <entry key=\"..\\:/APP/NewsApp/app/src/main/res/layout/fragment_xuhuong.xml\" value=\"0.1796875\" />\r\n        <entry key=\"..\\:/APP/NewsApp/app/src/main/res/menu/bottom_navigation.xml\" value=\"0.17864583333333334\" />\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"ExternalStorageConfigurationManager\" enabled=\"true\" />\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_11\" default=\"true\" project-jdk-name=\"11\" project-jdk-type=\"JavaSDK\" />\r\n  <component name=\"VisualizationToolProject\">\r\n    <option name=\"state\">\r\n      <ProjectState>\r\n        <option name=\"scale\" value=\"0.1\" />\r\n      </ProjectState>\r\n    </option>\r\n  </component>\r\n</project>
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	
++++ b/.idea/misc.xml	
+@@ -3,45 +3,10 @@
+   <component name="DesignSurface">
+     <option name="filePathToZoomLevelMap">
+       <map>
+-        <entry key="..\:/APP/NewsApp/app/src/main/res/drawable/bg_gradient_color.xml" value="0.1565" />
+-        <entry key="..\:/APP/NewsApp/app/src/main/res/drawable/bg_gradient_color1.xml" value="0.1565" />
+-        <entry key="..\:/APP/NewsApp/app/src/main/res/drawable/bg_gradient_color2.xml" value="0.1565" />
+-        <entry key="..\:/APP/NewsApp/app/src/main/res/drawable/bg_khung_dnhap.xml" value="0.1565" />
+-        <entry key="..\:/APP/NewsApp/app/src/main/res/drawable/bg_khung_otp.xml" value="0.1265" />
+-        <entry key="..\:/APP/NewsApp/app/src/main/res/drawable/bg_tron.xml" value="0.1565" />
+-        <entry key="..\:/APP/NewsApp/app/src/main/res/drawable/ic_lock.xml" value="0.129" />
+-        <entry key="..\:/APP/NewsApp/app/src/main/res/drawable/ic_lock_click.xml" value="0.129" />
+-        <entry key="..\:/APP/NewsApp/app/src/main/res/drawable/ic_news.xml" value="0.127" />
+-        <entry key="..\:/APP/NewsApp/app/src/main/res/drawable/ic_trend.xml" value="0.127" />
+-        <entry key="..\:/APP/NewsApp/app/src/main/res/drawable/ic_user.xml" value="0.127" />
+-        <entry key="..\:/APP/NewsApp/app/src/main/res/drawable/nav_item_color_selected.xml" value="0.127" />
+-        <entry key="..\:/APP/NewsApp/app/src/main/res/layout/activity_dangky.xml" value="0.22" />
+-        <entry key="..\:/APP/NewsApp/app/src/main/res/layout/activity_dangnhap.xml" value="0.22" />
+-        <entry key="..\:/APP/NewsApp/app/src/main/res/layout/activity_quenmatkhau1.xml" value="0.22" />
+-        <entry key="..\:/APP/NewsApp/app/src/main/res/layout/activity_quenmatkhau2.xml" value="0.12" />
+-        <entry key="..\:/APP/NewsApp/app/src/main/res/layout/activity_quenmatkhau3.xml" value="0.3333333333333333" />
+-        <entry key="..\:/APP/NewsApp/app/src/main/res/layout/activity_quenmatkhau4.xml" value="0.1796875" />
+-        <entry key="..\:/APP/NewsApp/app/src/main/res/layout/activity_splash.xml" value="0.1796875" />
+-        <entry key="..\:/APP/NewsApp/app/src/main/res/layout/activity_trangchu.xml" value="0.22" />
+-        <entry key="..\:/APP/NewsApp/app/src/main/res/layout/fragment_fg_bongda.xml" value="0.1796875" />
+-        <entry key="..\:/APP/NewsApp/app/src/main/res/layout/fragment_fg_moi.xml" value="0.19166666666666668" />
+-        <entry key="..\:/APP/NewsApp/app/src/main/res/layout/fragment_fg_nong.xml" value="0.19166666666666668" />
+-        <entry key="..\:/APP/NewsApp/app/src/main/res/layout/fragment_fg_theodoi.xml" value="0.1796875" />
+-        <entry key="..\:/APP/NewsApp/app/src/main/res/layout/fragment_fg_tonghop.xml" value="0.1796875" />
+-        <entry key="..\:/APP/NewsApp/app/src/main/res/layout/fragment_taikhoan.xml" value="0.1796875" />
+-        <entry key="..\:/APP/NewsApp/app/src/main/res/layout/fragment_tintuc.xml" value="0.1" />
+-        <entry key="..\:/APP/NewsApp/app/src/main/res/layout/fragment_xuhuong.xml" value="0.1796875" />
+-        <entry key="..\:/APP/NewsApp/app/src/main/res/menu/bottom_navigation.xml" value="0.17864583333333334" />
++        <entry key="..\:/NewsApp/app/src/main/res/layout/activity_dangnhap.xml" value="0.1606962663975782" />
+       </map>
+     </option>
+   </component>
+   <component name="ExternalStorageConfigurationManager" enabled="true" />
+-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK" />
+-  <component name="VisualizationToolProject">
+-    <option name="state">
+-      <ProjectState>
+-        <option name="scale" value="0.1" />
+-      </ProjectState>
+-    </option>
+-  </component>
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="11" project-jdk-type="JavaSDK" />
+ </project>
+\ No newline at end of file
+Index: .idea/gradle.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"GradleMigrationSettings\" migrationVersion=\"1\" />\r\n  <component name=\"GradleSettings\">\r\n    <option name=\"linkedExternalProjectsSettings\">\r\n      <GradleProjectSettings>\r\n        <option name=\"testRunner\" value=\"GRADLE\" />\r\n        <option name=\"distributionType\" value=\"DEFAULT_WRAPPED\" />\r\n        <option name=\"externalProjectPath\" value=\"$PROJECT_DIR$\" />\r\n        <option name=\"gradleJvm\" value=\"11\" />\r\n        <option name=\"modules\">\r\n          <set>\r\n            <option value=\"$PROJECT_DIR$\" />\r\n            <option value=\"$PROJECT_DIR$/app\" />\r\n          </set>\r\n        </option>\r\n      </GradleProjectSettings>\r\n    </option>\r\n  </component>\r\n</project>
+===================================================================
+diff --git a/.idea/gradle.xml b/.idea/gradle.xml
+--- a/.idea/gradle.xml	
++++ b/.idea/gradle.xml	
+@@ -1,6 +1,5 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+-  <component name="GradleMigrationSettings" migrationVersion="1" />
+   <component name="GradleSettings">
+     <option name="linkedExternalProjectsSettings">
+       <GradleProjectSettings>

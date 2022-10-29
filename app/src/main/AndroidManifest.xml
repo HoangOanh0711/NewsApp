@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.newsapp">
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="true"
@@ -14,7 +15,25 @@
         android:theme="@style/Theme.NewsApp"
         tools:targetApi="31">
         <activity
+            android:name=".quenmatkhau2"
+            android:exported="false" />
+        <activity
+            android:name=".dangky"
+            android:exported="false" />
+        <activity
             android:name=".dangnhap"
+            android:exported="false" />
+        <activity
+            android:name=".quenmatkhau3"
+            android:exported="false" />
+        <activity
+            android:name=".quenmatkhau1"
+            android:exported="false" />
+        <activity
+            android:name=".quenmatkhau4"
+            android:exported="false" />
+        <activity
+            android:name=".trangchu"
             android:exported="false" />
         <activity
             android:name=".splash"
