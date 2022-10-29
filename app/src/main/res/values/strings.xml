@@ -1,5 +1,11 @@
 <resources>
     <string name="app_name">iNews</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <string name="facebook_app_id">883816089450297</string>
+    <string name="fb_login_protocol_scheme">fb1234</string>
+    <string name="facebook_client_token">341cabc261df2b0bf9ea58d9d8cd8ff5</string>
+
+
 </resources>

@@ -21,6 +21,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.hbb20.CountryCodePicker;
+import com.facebook.FacebookSdk;
+import com.facebook.appevents.AppEventsLogger;
 
 public class dangnhap extends AppCompatActivity {
 
@@ -33,11 +35,14 @@ public class dangnhap extends AppCompatActivity {
     String st_sdt, st_matkhau;
     CountryCodePicker countryCodePicker;
     ImageView img_check;
+    ImageView imageView5;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dangnhap);
+        FacebookSdk.sdkInitialize(getApplicationContext());
+        //AppEventsLogger.activateApp(dangnhap.this);
 
         khaibao();
 
@@ -119,6 +124,16 @@ public class dangnhap extends AppCompatActivity {
                         Toast.makeText(dangnhap.this, "Lỗi", Toast.LENGTH_SHORT).show();
                     }
                 });
+            }
+        });
+
+        imageView5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(dangnhap.this, Facebook.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                startActivity(intent);
+
             }
         });
     }
