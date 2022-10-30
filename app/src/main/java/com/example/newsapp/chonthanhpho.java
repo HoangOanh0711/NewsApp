@@ -39,7 +39,10 @@ public class chonthanhpho extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Log.e("tp",adapterView.getItemAtPosition(i).toString());
+                String value=adapterView.getItemAtPosition(i).toString();
+                Intent intent = new Intent(chonthanhpho.this, quanlydiaphuong.class);
+                intent.putExtra("Địa phương đã chọn",value);
+                startActivity(intent);
             }
         });
 

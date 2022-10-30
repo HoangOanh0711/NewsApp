@@ -71,7 +71,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="50dp"
                     android:fontFamily="@font/roboto_bold"
-                    android:text="30 C"
+                    android:text="30ºC"
                     android:textColor="@color/trang"
                     android:textSize="50sp"
                     app:layout_constraintEnd_toEndOf="parent"

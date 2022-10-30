@@ -27,7 +27,7 @@
             android:name=".quanlydiaphuong"
             android:exported="false" />
         <activity
-            android:name=".Thoitiet.thoitiet"
+            android:name=".splash"
             android:exported="false" />
         <activity
             android:name=".TaiKhoan.doimatkhau"
@@ -70,7 +70,7 @@
             android:name=".TrangChu.trangchu"
             android:exported="false" />
         <activity
-            android:name=".splash"
+            android:name=".Thoitiet.thoitiet"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
