@@ -63,7 +63,7 @@ public class fg_moi extends Fragment {
 
         @Override
         protected Void doInBackground(Void... voids) {
-            try {
+            /*try {
                 String url = "https://tuoitre.vn/tin-moi-nhat.htm";
                 document = Jsoup.connect(url).get();
                 data = document.select("ul.list-news-content").select("li.news-item");
@@ -73,6 +73,21 @@ public class fg_moi extends Fragment {
                     String thoigian = data.select("p.sapo").eq(i).text();
                     String anhbao = data.select("a.img212x132.pos-rlt").eq(i).select("img").attr("src");
                     noiDungModelList.add(new NoiDungModel(tieude,thoigian,anhbao));
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }*/
+            try {
+                String url = "https://tuoitre.vn/tin-moi-nhat.htm";
+                document = Jsoup.connect(url).get();
+                data = document.select("ul.list-news-content").select("li.news-item");
+                int size = data.size();
+                for (int i=0; i<size;i++) {
+                    String tieude = data.select("h3.title-news").eq(i).text();
+                    String thoigian = data.select("p.sapo").eq(i).text();
+                    String anhbao = data.select("a.img212x132.pos-rlt").eq(i).select("img").attr("src");
+                    Log.e("dữ liệu",tieude.toString());
+                    //noiDungModelList.add(new NoiDungModel(tieude,thoigian,anhbao));
                 }
             } catch (Exception e) {
                 e.printStackTrace();
