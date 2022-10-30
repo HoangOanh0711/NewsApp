@@ -29,7 +29,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/roboto_regular"
-            android:text="@string/tphcm"
+            android:text="TP. Hồ Chí Minh"
             android:textColor="@color/trang"
             android:textSize="22sp"
             app:layout_constraintBottom_toBottomOf="parent"
