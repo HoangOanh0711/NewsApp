@@ -78,16 +78,21 @@ public class fg_moi extends Fragment {
                 e.printStackTrace();
             }*/
             try {
-                String url = "https://tuoitre.vn/tin-moi-nhat.htm";
+                String url = "https://tv.tuoitre.vn/";
                 document = Jsoup.connect(url).get();
-                data = document.select("ul.list-news-content").select("li.news-item");
+                data = document.select("div.box-highlight").select("ul").select("li.autonext-item");
                 int size = data.size();
                 for (int i=0; i<size;i++) {
-                    String tieude = data.select("h3.title-news").eq(i).text();
-                    String thoigian = data.select("p.sapo").eq(i).text();
-                    String anhbao = data.select("a.img212x132.pos-rlt").eq(i).select("img").attr("src");
+                    String tieude = data.select("a.name-video-list").eq(i).text();
+                    String thoigian = data.select("b.time-ago").eq(i).text();
+                    String anhbao = data.select("a.item").eq(i).select("img").attr("src");
+                    String timevideo = data.select("span.duration-video").eq(i).text();
                     Log.e("dữ liệu",tieude.toString());
-                    //noiDungModelList.add(new NoiDungModel(tieude,thoigian,anhbao));
+                    Log.e("anh",anhbao.toString());
+                    Log.e("timevideo",timevideo.toString());
+
+
+                    noiDungModelList.add(new NoiDungModel(tieude,thoigian,anhbao));
                 }
             } catch (Exception e) {
                 e.printStackTrace();

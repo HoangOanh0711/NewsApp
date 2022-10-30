@@ -12,6 +12,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.newsapp.R;
 import com.example.newsapp.TinTuc.fg_bongda;
 import com.example.newsapp.TinTuc.fg_moi;
@@ -79,6 +80,7 @@ public class CardTrangChu_Adapter extends RecyclerView.Adapter<CardTrangChu_Adap
         Bitmap bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
         holder.img_anhbao.setImageBitmap(bitmap);
         Picasso.get().load(noiDungModel.getAnhbao()).into(holder.img_anhbao);
+
     }
 
     @Override
