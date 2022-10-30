@@ -24,6 +24,8 @@
         <entry key="..\:/APP/NewsApp/app/src/main/res/layout/activity_chonthanhpho.xml" value="0.22" />
         <entry key="..\:/APP/NewsApp/app/src/main/res/layout/activity_dangky.xml" value="0.22" />
         <entry key="..\:/APP/NewsApp/app/src/main/res/layout/activity_dangnhap.xml" value="0.22" />
+        <entry key="..\:/APP/NewsApp/app/src/main/res/layout/activity_docbao.xml" value="0.1796875" />
+        <entry key="..\:/APP/NewsApp/app/src/main/res/layout/activity_doimatkhau.xml" value="0.1796875" />
         <entry key="..\:/APP/NewsApp/app/src/main/res/layout/activity_quanlydiaphuong.xml" value="0.22" />
         <entry key="..\:/APP/NewsApp/app/src/main/res/layout/activity_quenmatkhau1.xml" value="0.22" />
         <entry key="..\:/APP/NewsApp/app/src/main/res/layout/activity_quenmatkhau2.xml" value="0.12" />
@@ -31,7 +33,9 @@
         <entry key="..\:/APP/NewsApp/app/src/main/res/layout/activity_quenmatkhau4.xml" value="0.1796875" />
         <entry key="..\:/APP/NewsApp/app/src/main/res/layout/activity_splash.xml" value="0.1796875" />
         <entry key="..\:/APP/NewsApp/app/src/main/res/layout/activity_thoitiet.xml" value="0.16666666666666666" />
+        <entry key="..\:/APP/NewsApp/app/src/main/res/layout/activity_thongtinnguoidung.xml" value="0.1796875" />
         <entry key="..\:/APP/NewsApp/app/src/main/res/layout/activity_trangchu.xml" value="0.22" />
+        <entry key="..\:/APP/NewsApp/app/src/main/res/layout/activity_xoso.xml" value="0.1796875" />
         <entry key="..\:/APP/NewsApp/app/src/main/res/layout/card_thoitiet_ngang.xml" value="0.1796875" />
         <entry key="..\:/APP/NewsApp/app/src/main/res/layout/card_thoitiet_thanhpho.xml" value="0.3333333333333333" />
         <entry key="..\:/APP/NewsApp/app/src/main/res/layout/card_xuhuong.xml" value="0.1796875" />
@@ -43,6 +47,7 @@
         <entry key="..\:/APP/NewsApp/app/src/main/res/layout/fragment_fg_tonghop.xml" value="0.1796875" />
         <entry key="..\:/APP/NewsApp/app/src/main/res/layout/fragment_taikhoan.xml" value="0.22" />
         <entry key="..\:/APP/NewsApp/app/src/main/res/layout/fragment_tintuc.xml" value="0.1" />
+        <entry key="..\:/APP/NewsApp/app/src/main/res/layout/fragment_xoso.xml" value="0.1796875" />
         <entry key="..\:/APP/NewsApp/app/src/main/res/layout/fragment_xuhuong.xml" value="0.1" />
         <entry key="..\:/APP/NewsApp/app/src/main/res/menu/bottom_navigation.xml" value="0.17864583333333334" />
       </map>

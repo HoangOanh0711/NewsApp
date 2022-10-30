@@ -18,7 +18,7 @@
         android:theme="@style/Theme.NewsApp"
         tools:targetApi="31">
         <activity
-            android:name=".TrangChu.trangchu"
+            android:name=".chonthanhpho"
             android:exported="false" />
         <activity
             android:name=".DocBao.docbao"
@@ -67,10 +67,10 @@
             android:name=".TaiKhoan.quenmatkhau4"
             android:exported="false" />
         <activity
-            android:name=".splash"
+            android:name=".TrangChu.trangchu"
             android:exported="false" />
         <activity
-            android:name=".chonthanhpho"
+            android:name=".splash"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
