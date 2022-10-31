@@ -71,10 +71,6 @@ public class quanlydiaphuong extends AppCompatActivity {
         list.add(new Thoitiet3("TP. Hồ Chí Minh","Nhiều mây","32ºC",R.drawable.img_cloudy_day));
         list.add(new Thoitiet3("TP. Hồ Chí Minh","Nhiều mây","32ºC",R.drawable.img_cloudy_day));
         list.add(new Thoitiet3("TP. Hồ Chí Minh","Nhiều mây","32ºC",R.drawable.img_cloudy_day));
-        list.add(new Thoitiet3("TP. Hồ Chí Minh","Nhiều mây","32ºC",R.drawable.img_cloudy_day));
-        list.add(new Thoitiet3("TP. Hồ Chí Minh","Nhiều mây","32ºC",R.drawable.img_cloudy_day));
-        list.add(new Thoitiet3("TP. Hồ Chí Minh","Nhiều mây","32ºC",R.drawable.img_cloudy_day));
-        list.add(new Thoitiet3("TP. Hồ Chí Minh","Nhiều mây","32ºC",R.drawable.img_cloudy_day));
         return list;
     }
 

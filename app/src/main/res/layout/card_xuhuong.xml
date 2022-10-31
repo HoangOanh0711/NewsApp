@@ -1,246 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_marginTop="8dp"
-    app:cardElevation="8dp">
+    android:layout_margin="2dp"
+    app:cardElevation="3dp">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:orientation="vertical">
+        android:layout_margin="5dp">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_vertical">
-
-            <ImageView
-                android:layout_width="27dp"
-                android:layout_height="25dp"
-                android:src="@drawable/ic_trending_up"
-                app:tint="@color/xanh3"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="ĐANG ĐƯỢC QUAN TÂM"
-                android:fontFamily="@font/roboto_bold"
-                android:textColor="@color/xanh3"
-                android:textSize="23sp"
-                android:layout_marginStart="10dp"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="3"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp">
-
-            <ImageView
-                android:id="@+id/img_anhbao1_xuhuong"
-                android:layout_width="0dp"
-                android:layout_height="100dp"
-                android:layout_weight="1"
-                android:scaleType="centerCrop"
-                android:src="@drawable/img_news" />
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="2"
-                android:orientation="vertical"
-                android:layout_marginStart="10dp">
-
-                <TextView
-                    android:id="@+id/txt_tieude1_xuhuong"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Người đàn ông đi xe máy lọt xuống cống giữa đêm, vùng vẫy kêu cứu."
-                    android:fontFamily="@font/roboto_regular"
-                    android:textSize="20sp"
-                    android:textColor="@color/den"
-                    android:maxLines="3"/>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:weightSum="3"
-                    android:gravity="center_vertical"
-                    android:layout_marginTop="10dp">
-
-                    <ImageView
-                        android:id="@+id/img_trangbao1_xuhuong"
-                        android:layout_width="0dp"
-                        android:layout_height="18dp"
-                        android:layout_weight="1"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/tuoitre_logo" />
-
-                    <TextView
-                        android:id="@+id/txt_tgiandangbai1_xuhuong"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:fontFamily="@font/roboto_regular"
-                        android:text="2 giờ"
-                        android:textColor="@color/chuxam"
-                        android:textSize="15sp"
-                        android:layout_marginStart="30dp"/>
-                </LinearLayout>
-
-            </LinearLayout>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="3"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp">
-
-            <ImageView
-                android:id="@+id/img_anhbao2_xuhuong"
-                android:layout_width="0dp"
-                android:layout_height="100dp"
-                android:layout_weight="1"
-                android:scaleType="centerCrop"
-                android:src="@drawable/img_news" />
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="2"
-                android:orientation="vertical"
-                android:layout_marginStart="10dp">
-
-                <TextView
-                    android:id="@+id/txt_tieude2_xuhuong"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Người đàn ông đi xe máy lọt xuống cống giữa đêm, vùng vẫy kêu cứu."
-                    android:fontFamily="@font/roboto_regular"
-                    android:textSize="20sp"
-                    android:textColor="@color/den"
-                    android:maxLines="3"/>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:weightSum="3"
-                    android:gravity="center_vertical"
-                    android:layout_marginTop="10dp">
-
-                    <ImageView
-                        android:id="@+id/img_trangbao2_xuhuong"
-                        android:layout_width="0dp"
-                        android:layout_height="18dp"
-                        android:layout_weight="1"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/tuoitre_logo" />
-
-                    <TextView
-                        android:id="@+id/txt_tgiandangbai2_xuhuong"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:fontFamily="@font/roboto_regular"
-                        android:text="2 giờ"
-                        android:textColor="@color/chuxam"
-                        android:textSize="15sp"
-                        android:layout_marginStart="30dp"/>
-                </LinearLayout>
-
-            </LinearLayout>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="3"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp">
-
-            <ImageView
-                android:id="@+id/img_anhbao3_xuhuong"
-                android:layout_width="0dp"
-                android:layout_height="100dp"
-                android:layout_weight="1"
-                android:scaleType="centerCrop"
-                android:src="@drawable/img_news" />
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="2"
-                android:orientation="vertical"
-                android:layout_marginStart="10dp">
-
-                <TextView
-                    android:id="@+id/txt_tieude3_xuhuong"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Người đàn ông đi xe máy lọt xuống cống giữa đêm, vùng vẫy kêu cứu."
-                    android:fontFamily="@font/roboto_regular"
-                    android:textSize="20sp"
-                    android:textColor="@color/den"
-                    android:maxLines="3"/>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:weightSum="3"
-                    android:gravity="center_vertical"
-                    android:layout_marginTop="10dp">
-
-                    <ImageView
-                        android:id="@+id/img_trangbao3_xuhuong"
-                        android:layout_width="0dp"
-                        android:layout_height="18dp"
-                        android:layout_weight="1"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/tuoitre_logo" />
-
-                    <TextView
-                        android:id="@+id/txt_tgiandangbai3_xuhuong"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:fontFamily="@font/roboto_regular"
-                        android:text="2 giờ"
-                        android:textColor="@color/chuxam"
-                        android:textSize="15sp"
-                        android:layout_marginStart="30dp"/>
-                </LinearLayout>
-
-            </LinearLayout>
-
-        </LinearLayout>
+        <ImageView
+            android:id="@+id/img_vid_xuhuong"
+            android:layout_width="200dp"
+            android:layout_height="120dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/img_news"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/txt_xemthem_xuhuong"
+            android:id="@+id/txt_tieude_xuhuong"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:gravity="center_horizontal"
-            android:text="Xem thêm"
-            android:textSize="18sp" />
+            android:layout_marginStart="205dp"
+            android:fontFamily="@font/roboto_regular"
+            android:maxLines="4"
+            android:text="Người đàn ông đi xe máy lọt xuống cống giữa đêm, vùng vẫy kêu cứu. Người đàn ông đi xe máy lọt xuống cống giữa đêm"
+            android:textColor="@color/den"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/img_vid_xuhuong"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    </LinearLayout>
+        <TextView
+            android:id="@+id/txt_tgiandangbai_xuhuong"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="205dp"
+            android:layout_marginBottom="5dp"
+            android:fontFamily="@font/roboto_regular"
+            android:maxLines="1"
+            android:text="2 giờ"
+            android:textColor="@color/chuxam"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/img_vid_xuhuong" />
+
+        <TextView
+            android:id="@+id/txt_tgianvd_xuhuong"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_regular"
+            android:maxLines="3"
+            android:text="00:00"
+            android:textColor="@color/trang"
+            android:background="@color/den"
+            android:padding="3dp"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/img_vid_xuhuong" />
+
+        <ImageView
+            android:id="@+id/img_play_xuhuong"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginBottom="5dp"
+            android:src="@drawable/ic_play"
+            app:tint="@color/trang"
+            app:layout_constraintBottom_toBottomOf="@+id/img_vid_xuhuong"
+            app:layout_constraintStart_toStartOf="@+id/img_vid_xuhuong" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.cardview.widget.CardView>

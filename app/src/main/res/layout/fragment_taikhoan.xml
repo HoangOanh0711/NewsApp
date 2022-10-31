@@ -47,7 +47,7 @@
         android:id="@+id/linearLayout7"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:background="@color/trang"
         android:orientation="vertical"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">
@@ -67,6 +67,7 @@
             android:id="@+id/layout_caidat_ttnd"
             android:layout_width="match_parent"
             android:layout_height="35dp"
+            android:layout_marginTop="5dp"
             android:gravity="center_vertical"
             android:orientation="horizontal"
             android:padding="5dp">
@@ -143,7 +144,7 @@
         android:id="@+id/linearLayout8"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:background="@color/trang"
         android:orientation="vertical"
         app:layout_constraintTop_toBottomOf="@+id/view_caidat_view">
@@ -163,6 +164,7 @@
             android:id="@+id/layout_caidat_thoitiet"
             android:layout_width="match_parent"
             android:layout_height="35dp"
+            android:layout_marginTop="5dp"
             android:gravity="center_vertical"
             android:orientation="horizontal"
             android:padding="5dp">

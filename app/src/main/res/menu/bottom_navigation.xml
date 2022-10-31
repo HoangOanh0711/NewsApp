@@ -5,8 +5,8 @@
         android:icon="@drawable/ic_news"/>
 
     <item android:id="@+id/nav_xuhuong"
-        android:title="Xu hướng"
-        android:icon="@drawable/ic_trend"/>
+        android:title="Video"
+        android:icon="@drawable/ic_video"/>
 
     <item android:id="@+id/nav_taikhoan"
         android:title="Tài khoản"

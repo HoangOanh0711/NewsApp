@@ -67,10 +67,10 @@
             android:name=".TaiKhoan.quenmatkhau4"
             android:exported="false" />
         <activity
-            android:name=".TrangChu.trangchu"
+            android:name=".Thoitiet.thoitiet"
             android:exported="false" />
         <activity
-            android:name=".Thoitiet.thoitiet"
+            android:name=".TrangChu.trangchu"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

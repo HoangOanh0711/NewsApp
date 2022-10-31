@@ -63,7 +63,7 @@ public class fg_moi extends Fragment {
 
         @Override
         protected Void doInBackground(Void... voids) {
-            /*try {
+            try {
                 String url = "https://tuoitre.vn/tin-moi-nhat.htm";
                 document = Jsoup.connect(url).get();
                 data = document.select("ul.list-news-content").select("li.news-item");
@@ -76,8 +76,8 @@ public class fg_moi extends Fragment {
                 }
             } catch (Exception e) {
                 e.printStackTrace();
-            }*/
-            try {
+            }
+            /*try {
                 String url = "https://tv.tuoitre.vn/";
                 document = Jsoup.connect(url).get();
                 data = document.select("div.box-highlight").select("ul").select("li.autonext-item");
@@ -90,13 +90,11 @@ public class fg_moi extends Fragment {
                     Log.e("dữ liệu",tieude.toString());
                     Log.e("anh",anhbao.toString());
                     Log.e("timevideo",timevideo.toString());
-
-
                     noiDungModelList.add(new NoiDungModel(tieude,thoigian,anhbao));
                 }
             } catch (Exception e) {
                 e.printStackTrace();
-            }
+            }*/
 
             return null;
         }
