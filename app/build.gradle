@@ -22,6 +22,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+    packagingOptions{
+        exclude 'META-ÌN/services/javax.annotation.processing.Processor'
+    }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -50,6 +54,8 @@ dependencies {
 
 
     implementation platform('com.google.firebase:firebase-bom:31.0.1')
+
+    //implementation 'com.google.ads.mediation:facebook:6.11.0.1'
 
     implementation 'com.facebook.android:facebook-android-sdk:15.0.2'
 }

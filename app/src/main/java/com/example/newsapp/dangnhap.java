@@ -15,6 +15,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.facebook.CallbackManager;
+import com.facebook.login.LoginManager;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -23,6 +25,8 @@ import com.google.firebase.database.ValueEventListener;
 import com.hbb20.CountryCodePicker;
 import com.facebook.FacebookSdk;
 import com.facebook.appevents.AppEventsLogger;
+
+import java.util.Arrays;
 
 public class dangnhap extends AppCompatActivity {
 
@@ -37,11 +41,15 @@ public class dangnhap extends AppCompatActivity {
     ImageView img_check;
     ImageView imageView5;
 
+    //CallbackManager callbackManager;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dangnhap);
         FacebookSdk.sdkInitialize(getApplicationContext());
+
+        //callbackManager = CallbackManager.Factory.create();
         //AppEventsLogger.activateApp(dangnhap.this);
 
         khaibao();
@@ -127,9 +135,13 @@ public class dangnhap extends AppCompatActivity {
             }
         });
 
+        imageView5 = findViewById(R.id.imageView5);
+
+
         imageView5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                LoginManager.getInstance().logInWithReadPermissions(dangnhap.this, Arrays.asList("public_profile"));
                 Intent intent = new Intent(dangnhap.this, Facebook.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                 startActivity(intent);
