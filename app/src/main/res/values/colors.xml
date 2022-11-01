@@ -8,6 +8,7 @@
     <color name="den">#FF000000</color>
     <color name="trang">#FFFFFFFF</color>
     <color name="xam">#A4A4A4</color>
+    <color name="xamnhat">#E1DCDC</color>
     <color name="chuxam">#888888</color>
     <color name="nen">#F4F4F4</color>
     <color name="doo">#FF1414</color>
@@ -16,4 +17,7 @@
     <color name="xanhnhat">#88D5FC</color>
     <color name="xanhden">#334155</color>
     <color name="xanhdam">#186695</color>
+    <color name="vang">#fece2f</color>
+    <color name="xanhreunnhat">#EE079F8D</color>
+    <color name="xanhtrongsuot">#B32286C3</color>
 </resources>

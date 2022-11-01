@@ -1,0 +1,507 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".XoSo.xoso"
+    android:id="@+id/LayoutXoso"
+    >
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <ImageView
+            android:background="@null"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:id="@+id/img_xoso_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_arrow_back_24"
+            android:padding="5dp"
+            android:onClick="backFromXoso"
+            />
+        <!--        layout top-->
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+            <!--        layout top-->
+            <LinearLayout
+                android:background="@color/xanhreunnhat"
+                android:weightSum="2"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                >
+                <LinearLayout
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp">
+                    <ImageView
+                        android:layout_marginLeft="8dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_baseline_location_on_24"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="10dp"
+                        android:fontFamily="@font/roboto_bold"
+                        android:text="Miền Nam"
+                        android:textColor="@color/den"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="3dp"
+                    android:layout_height="50dp"
+                    android:background="@color/den"
+                    />
+
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp">
+                    <ImageView
+                        android:layout_marginLeft="8dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_baseline_calendar_month_24"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                    <TextView
+                        android:layout_marginLeft="10dp"
+                        android:textColor="@color/den"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/roboto_bold"
+                        android:layout_gravity="center"
+                        android:text="24/09/2022"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!--        kết thúc layout top-->
+
+            <TableLayout
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/bg_border"
+
+                android:weightSum="10"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+                <!--            table heading-->
+
+                <TableRow>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Gỉai"
+                        android:fontFamily="@font/roboto_bold"
+                        android:textColor="@color/trang"
+                        android:padding="10sp"
+                        android:textSize="18sp"
+                        android:layout_weight="2"
+                        android:gravity="center_horizontal"
+                        android:background="@drawable/bg_border"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Bạc Liêu"
+                        android:fontFamily="@font/roboto_bold"
+                        android:textColor="@color/trang"
+                        android:padding="10sp"
+                        android:textSize="18sp"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:background="@drawable/bg_border"
+                        />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:background="@drawable/bg_border"
+                        android:gravity="center_horizontal"
+                        android:padding="10sp"
+                        android:text="An Giang"
+                        android:fontFamily="@font/roboto_bold"
+                        android:textColor="@color/trang"
+                        android:textSize="18sp" />
+
+
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:gravity="center_horizontal"
+                        android:padding="10sp"
+                        android:text="G.8"
+                        android:textColor="@color/trang"
+                        android:textSize="20sp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:background="@drawable/bg_border"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="123456"
+                        android:textColor="@color/trang"
+                        android:padding="10sp"
+                        android:textSize="20sp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:background="@drawable/bg_border"
+                        />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="123456"
+                        android:textColor="@color/trang"
+                        android:padding="10sp"
+                        android:textSize="20sp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:background="@drawable/bg_border"/>
+                </TableRow>
+
+                <TableRow>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="G.7"
+                        android:textColor="@color/trang"
+                        android:padding="10sp"
+                        android:textSize="20sp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:layout_weight="2"
+                        android:gravity="center_horizontal"
+                        android:background="@drawable/bg_border"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:background="@drawable/bg_border"
+                        android:gravity="center_horizontal"
+                        android:padding="10sp"
+                        android:text="123456"
+                        android:textColor="@color/trang"
+                        android:textSize="20sp"
+                        android:fontFamily="@font/roboto_regular" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="123456"
+                        android:textColor="@color/trang"
+                        android:padding="10sp"
+                        android:textSize="20sp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:background="@drawable/bg_border"/>
+                </TableRow>
+
+                <TableRow>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="G.6"
+                        android:textColor="@color/trang"
+                        android:padding="10sp"
+                        android:textSize="20sp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:layout_weight="2"
+                        android:gravity="center_horizontal"
+                        android:background="@drawable/bg_border"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:padding="10sp"
+                        android:text="123456"
+                        android:textColor="@color/trang"
+                        android:textSize="20sp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:background="@drawable/bg_border" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="123456"
+                        android:textColor="@color/trang"
+                        android:padding="10sp"
+                        android:textSize="20sp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:background="@drawable/bg_border"/>
+                </TableRow>
+
+                <TableRow>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="G.5"
+                        android:textColor="@color/trang"
+                        android:padding="10sp"
+                        android:textSize="20sp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:layout_weight="2"
+                        android:gravity="center_horizontal"
+                        android:background="@drawable/bg_border"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="123456"
+                        android:textColor="@color/trang"
+                        android:padding="10sp"
+                        android:textSize="20sp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:background="@drawable/bg_border" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="123456"
+                        android:textColor="@color/trang"
+                        android:padding="10sp"
+                        android:textSize="20sp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:background="@drawable/bg_border"/>
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:background="@drawable/bg_border"
+                        android:fontFamily="@font/roboto_regular"
+                        android:gravity="center_horizontal"
+                        android:padding="10sp"
+                        android:text="G.4"
+                        android:textColor="@color/trang"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="123456"
+                        android:textColor="@color/trang"
+                        android:padding="10sp"
+                        android:textSize="20sp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:background="@drawable/bg_border" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="123456"
+                        android:textColor="@color/trang"
+                        android:padding="10sp"
+                        android:textSize="20sp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:background="@drawable/bg_border"/>
+                </TableRow>
+
+                <TableRow>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="G.3"
+                        android:textColor="@color/trang"
+                        android:padding="10sp"
+                        android:textSize="20sp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:layout_weight="2"
+                        android:gravity="center_horizontal"
+                        android:background="@drawable/bg_border" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="123456"
+                        android:textColor="@color/trang"
+                        android:padding="10sp"
+                        android:textSize="20sp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:background="@drawable/bg_border" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="123456"
+                        android:textColor="@color/trang"
+                        android:padding="10sp"
+                        android:textSize="20sp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:background="@drawable/bg_border"/>
+                </TableRow>
+
+                <TableRow>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="G.2"
+                        android:textColor="@color/trang"
+                        android:padding="10sp"
+                        android:textSize="20sp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:layout_weight="2"
+                        android:gravity="center_horizontal"
+                        android:background="@drawable/bg_border"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="123456"
+                        android:textColor="@color/trang"
+                        android:padding="10sp"
+                        android:textSize="20sp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:background="@drawable/bg_border"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="123456"
+                        android:textColor="@color/trang"
+                        android:padding="10sp"
+                        android:textSize="20sp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:background="@drawable/bg_border" />
+                </TableRow>
+
+                <TableRow>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="G.1"
+                        android:textColor="@color/trang"
+                        android:padding="10sp"
+                        android:textSize="20sp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:layout_weight="2"
+                        android:gravity="center_horizontal"
+                        android:background="@drawable/bg_border" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="123456"
+                        android:textColor="@color/trang"
+                        android:padding="10sp"
+                        android:textSize="20sp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:background="@drawable/bg_border"
+                        />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="123456"
+                        android:textColor="@color/trang"
+                        android:padding="10sp"
+                        android:textSize="20sp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:background="@drawable/bg_border" />
+                </TableRow>
+
+                <TableRow>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="G.0"
+                        android:textColor="@color/trang"
+                        android:padding="10sp"
+                        android:textSize="20sp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:layout_weight="2"
+                        android:gravity="center_horizontal"
+                        android:background="@drawable/bg_border" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="123456"
+                        android:textColor="@color/trang"
+                        android:padding="10sp"
+                        android:textSize="20sp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:background="@drawable/bg_border"
+                        />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="123456"
+                        android:textColor="@color/trang"
+                        android:padding="10sp"
+                        android:textSize="20sp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:background="@drawable/bg_border" />
+
+
+
+                </TableRow>
+            </TableLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+</ScrollView>

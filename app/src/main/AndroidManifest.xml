@@ -3,6 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.newsapp">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -14,7 +18,56 @@
         android:theme="@style/Theme.NewsApp"
         tools:targetApi="31">
         <activity
-            android:name=".dangnhap"
+            android:name=".Thoitiet.chonthanhpho"
+            android:exported="false" />
+        <activity
+            android:name=".DocBao.docbao"
+            android:exported="false"/>
+        <activity
+            android:name=".Thoitiet.quanlydiaphuong"
+            android:exported="false" />
+        <activity
+            android:name=".TrangChu.trangchu"
+            android:exported="false" />
+        <activity
+            android:name=".TaiKhoan.doimatkhau"
+            android:exported="false"/>
+        <activity
+            android:name=".TaiKhoan.thongtinnguoidung"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".LichVanNien.lichvannien"
+            android:exported="false"/>
+        <activity
+            android:name=".XoSo.xoso"
+            android:exported="false"/>
+        <activity
+            android:name=".GiaVang.giavang"
+            android:exported="false"/>
+        <activity
+            android:name=".TaiKhoan.quenmatkhau2"
+            android:exported="false" />
+        <activity
+            android:name=".TaiKhoan.dangky"
+            android:exported="false" />
+        <activity
+            android:name=".TaiKhoan.dangnhap"
+            android:exported="false" />
+        <activity
+            android:name=".TaiKhoan.quenmatkhau3"
+            android:exported="false" />
+        <activity
+            android:name=".TaiKhoan.quenmatkhau1"
+            android:exported="false" />
+        <activity
+            android:name=".TaiKhoan.quenmatkhau4"
+            android:exported="false" />
+        <activity
+            android:name=".Thoitiet.thoitiet"
             android:exported="false" />
         <activity
             android:name=".splash"

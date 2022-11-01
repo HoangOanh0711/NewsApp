@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TaiKhoan.doimatkhau"
+    android:background="@color/xanhnhat"
+    android:orientation="vertical"
+    android:id="@+id/LayoutDMK">
+
+    <ImageButton
+        android:id="@+id/img_dmk_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:background="@null"
+        android:src="@drawable/ic_baseline_arrow_back_25"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="25dp"
+        android:fontFamily="@font/roboto_bold"
+        android:gravity="center"
+        android:text="Đổi mật khẩu"
+        android:textColor="@color/xanhdam"
+        android:textSize="35sp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout10"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/linearLayout10"
+        android:layout_width="match_parent"
+        android:layout_height="550dp"
+        android:background="@drawable/bg_khung_dnhap"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent">
+        <!--layout mật khẩu hiện tại-->
+        <LinearLayout
+            android:id="@+id/linearLayout16"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="20dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/txt_doimatkhau_matkhauhientai"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_bold"
+                android:text="Mật khẩu hiện tại"
+                android:textColor="@color/den"
+                android:textSize="20sp" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/txtl_doimatkhau_MatKhau"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nhập mật khẩu hiện tại"
+                android:textColorHint="@color/den"
+                app:endIconTint="@color/den"
+                app:hintTextColor="@color/den"
+                app:passwordToggleEnabled="true"
+                app:passwordToggleTint="@color/den"
+                app:startIconTint="@color/den"
+                android:layout_marginTop="10dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/roboto_regular"
+                    android:inputType="textPassword"
+                    android:textColor="@color/den"
+                    android:textSize="16sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+        </LinearLayout>
+        <!--        kết thúc layout mật khẩu hiện tại-->
+
+        <!--        layout mật khẩu mới -->
+        <LinearLayout
+            android:id="@+id/linearLayout17"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout16">
+
+            <TextView
+                android:id="@+id/txt_doimatkhau_matkhaumoi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_bold"
+                android:text="Mật khẩu mới"
+                android:textColor="@color/den"
+                android:textSize="20sp" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/txtl_doimatkhau_MatKhau1"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:hint="Nhập mật khẩu mới"
+                android:textColorHint="@color/den"
+                app:endIconTint="@color/den"
+                app:hintTextColor="@color/den"
+                app:passwordToggleEnabled="true"
+                app:passwordToggleTint="@color/den"
+                app:startIconTint="@color/den">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:inputType="textPassword"
+                    android:textColor="@color/den"
+                    android:textSize="16sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/txtl_doimatkhau_MatKhaumoi"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:hint="Nhập lại mật khẩu mới"
+                android:textColorHint="@color/den"
+                app:endIconTint="@color/den"
+                app:hintTextColor="@color/den"
+                app:passwordToggleEnabled="true"
+                app:passwordToggleTint="@color/den"
+                app:startIconTint="@color/den">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/roboto_regular"
+                    android:inputType="textPassword"
+                    android:textColor="@color/den"
+                    android:textSize="16sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+            <!--        kết thúc layout mật khẩu mới-->
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_capnhat_dmk"
+            android:layout_width="320dp"
+            android:layout_height="60dp"
+            android:backgroundTint="@color/xanhdam"
+            android:fontFamily="@font/roboto_bold"
+            android:text="Cập nhật"
+            android:textSize="18sp"
+            app:cornerRadius="50dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout17"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

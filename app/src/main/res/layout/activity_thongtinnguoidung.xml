@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TaiKhoan.thongtinnguoidung"
+    android:background="@color/xanhnhat"
+    android:orientation="vertical"
+    android:id="@+id/LayoutTTND">
+
+    <ImageButton
+        android:id="@+id/img_thongtinnguoidung_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:background="@null"
+        android:src="@drawable/ic_baseline_arrow_back_25"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="25dp"
+        android:fontFamily="@font/roboto_bold"
+        android:gravity="center"
+        android:text="Thông tin cá nhân"
+        android:textColor="@color/xanhdam"
+        android:textSize="35sp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout9"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/linearLayout9"
+        android:layout_width="match_parent"
+        android:layout_height="550dp"
+        android:background="@drawable/bg_khung_dnhap"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent">
+        <!--layout ho va ten-->
+        <LinearLayout
+            android:id="@+id/linearLayout11"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="20dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_bold"
+                android:text="Họ và tên"
+                android:textColor="@color/den"
+                android:textSize="18sp" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtl_ttnd_hovaten"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:inputType="text"
+                android:textColorHint="@color/den"
+                android:textSize="16sp" />
+        </LinearLayout>
+        <!--        kết thúc layout ho ten-->
+        <!--        layout giới tính-->
+        <LinearLayout
+            android:id="@+id/linearLayout12"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout11">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_bold"
+                android:text="Giới tính"
+                android:textColor="@color/den"
+                android:textSize="18sp" />
+
+            <RadioGroup
+                android:id="@+id/rg_signup_GioiTinh"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="50dp"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rd_signup_Nam"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="40dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Nam" />
+
+                <RadioButton
+                    android:id="@+id/rd_signup_Nu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Nữ" />
+            </RadioGroup>
+
+        </LinearLayout>
+        <!--        kết thúc layout giới tính-->
+        <!--        layout ngày sinh -->
+        <LinearLayout
+            android:id="@+id/linearLayout13"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout12">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_bold"
+                android:text="Ngày sinh"
+                android:textColor="@color/den"
+                android:textSize="18sp" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtl_ttnd_ngaysinh"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:inputType="date"
+                android:textColorHint="@color/den"
+                android:textSize="16sp" />
+        </LinearLayout>
+        <!--        kết thúc layout ngày sinh-->
+        <!--        layout email -->
+        <LinearLayout
+            android:id="@+id/linearLayout14"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout13">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_bold"
+                android:text="Email"
+                android:textColor="@color/den"
+                android:textSize="18sp" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtl_ttnd_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:inputType="textEmailAddress"
+                android:textSize="16sp" />
+        </LinearLayout>
+        <!--        kết thúc layout email-->
+        <!--        layout sdt-->
+        <LinearLayout
+            android:id="@+id/linearLayout15"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout14">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_bold"
+                android:text="Số điện thoại"
+                android:textColor="@color/den"
+                android:textSize="18sp" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtl_ttnd_sodienthoai"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:inputType="phone"
+                android:textColorHint="@color/den"
+                android:textSize="16sp" />
+        </LinearLayout>
+        <!--        kết thúc layout sdt-->
+        <Button
+            android:id="@+id/btn_luuthongtin_thongtinngdung"
+            android:layout_width="320dp"
+            android:layout_height="60dp"
+            android:backgroundTint="@color/xanhdam"
+            android:fontFamily="@font/roboto_bold"
+            android:text="Lưu thông tin"
+            android:textSize="18sp"
+            app:cornerRadius="50dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout15"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

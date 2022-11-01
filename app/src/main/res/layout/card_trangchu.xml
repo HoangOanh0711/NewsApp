@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="2dp"
+    app:cardElevation="3dp"
+    android:id="@+id/layout_card_trangchu">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp">
+
+        <ImageView
+            android:id="@+id/img_anhbao_trangchu"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/img_news"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txt_tieude_trangchu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="125dp"
+            android:fontFamily="@font/roboto_regular"
+            android:maxLines="3"
+            android:text="Người đàn ông đi xe máy lọt xuống cống giữa đêm, vùng vẫy kêu cứu. Người đàn ông đi xe máy lọt xuống cống giữa đêm"
+            android:textColor="@color/den"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/img_anhbao_trangchu"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txt_tgiandangbai_trangchu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="125dp"
+            android:layout_marginBottom="5dp"
+            android:fontFamily="@font/roboto_regular"
+            android:maxLines="3"
+            android:text="2 giờ"
+            android:textColor="@color/chuxam"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/img_anhbao_trangchu"
+            app:layout_constraintTop_toBottomOf="@+id/txt_tieude_trangchu" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

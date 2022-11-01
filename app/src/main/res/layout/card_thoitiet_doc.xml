@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="60dp"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="10dp"
+    android:layout_marginEnd="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/xanhtrongsuot"
+        android:gravity="center"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/txt_thoigian_card1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="14h"
+            android:textColor="@color/trang"
+            android:textSize="16sp"
+            android:fontFamily="@font/roboto_regular"/>
+
+        <ImageView
+            android:id="@+id/img_thoitiet_card1"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/img_cloudy_day"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"/>
+
+        <TextView
+            android:id="@+id/txt_nhietdo_card1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_regular"
+            android:text="30 C"
+            android:textColor="@color/trang"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
