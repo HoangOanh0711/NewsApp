@@ -49,6 +49,7 @@ public class thoitiet extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(thoitiet.this, quanlydiaphuong.class);
+                overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_left);
                 startActivity(intent);
             }
         });

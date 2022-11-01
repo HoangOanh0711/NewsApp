@@ -73,6 +73,7 @@ public class quenmatkhau1 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(quenmatkhau1.this, dangnhap.class);
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_right);
                 startActivity(intent);
                 finish();
             }
@@ -82,6 +83,7 @@ public class quenmatkhau1 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(quenmatkhau1.this, quenmatkhau2.class);
+                overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_left);
                 startActivity(intent);
                 finish();
             }

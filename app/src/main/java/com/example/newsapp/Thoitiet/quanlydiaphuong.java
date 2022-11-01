@@ -49,6 +49,7 @@ public class quanlydiaphuong extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(quanlydiaphuong.this, chonthanhpho.class);
+                overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_left);
                 startActivity(intent);
             }
         });
@@ -57,6 +58,7 @@ public class quanlydiaphuong extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(quanlydiaphuong.this, thoitiet.class);
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_right);
                 startActivity(intent);
             }
         });
