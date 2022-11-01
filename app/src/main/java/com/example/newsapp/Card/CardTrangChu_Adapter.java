@@ -1,5 +1,7 @@
 package com.example.newsapp.Card;
 
+import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.util.Base64;
@@ -10,8 +12,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.newsapp.DocBao.docbao;
 import com.example.newsapp.R;
 import com.example.newsapp.TinTuc.fg_bongda;
 import com.example.newsapp.TinTuc.fg_moi;
@@ -25,42 +29,13 @@ import java.util.ArrayList;
 
 public class CardTrangChu_Adapter extends RecyclerView.Adapter<CardTrangChu_Adapter.ViewHolder> {
     private ArrayList<NoiDungModel> noiDungModelArrayList;
-    private fg_moi context_fg_moi;
-    private fg_bongda context_fg_bongda;
-    private fg_thoisu context_fg_thoisu;
-    private fg_thegioi context_fg_thegioi;
-    private fg_phapluat context_fg_phapluat;
-    private fg_nhipsong context_fg_nhipsong;
+    private ClickItem clickItem;
 
-    public CardTrangChu_Adapter(ArrayList<NoiDungModel> noiDungModelArrayList, fg_moi context) {
+    public CardTrangChu_Adapter(ArrayList<NoiDungModel> noiDungModelArrayList, ClickItem clickItem1) {
         this.noiDungModelArrayList = noiDungModelArrayList;
-        this.context_fg_moi = context;
+        this.clickItem = clickItem1;
     }
 
-    public CardTrangChu_Adapter(ArrayList<NoiDungModel> noiDungModelArrayList, fg_bongda context) {
-        this.noiDungModelArrayList = noiDungModelArrayList;
-        this.context_fg_bongda = context;
-    }
-
-    public CardTrangChu_Adapter(ArrayList<NoiDungModel> noiDungModelArrayList, fg_thoisu context) {
-        this.noiDungModelArrayList = noiDungModelArrayList;
-        this.context_fg_thoisu = context;
-    }
-
-    public CardTrangChu_Adapter(ArrayList<NoiDungModel> noiDungModelArrayList, fg_thegioi context) {
-        this.noiDungModelArrayList = noiDungModelArrayList;
-        this.context_fg_thegioi = context;
-    }
-
-    public CardTrangChu_Adapter(ArrayList<NoiDungModel> noiDungModelArrayList, fg_phapluat context) {
-        this.noiDungModelArrayList = noiDungModelArrayList;
-        this.context_fg_phapluat = context;
-    }
-
-    public CardTrangChu_Adapter(ArrayList<NoiDungModel> noiDungModelArrayList, fg_nhipsong context) {
-        this.noiDungModelArrayList = noiDungModelArrayList;
-        this.context_fg_nhipsong = context;
-    }
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -80,6 +55,12 @@ public class CardTrangChu_Adapter extends RecyclerView.Adapter<CardTrangChu_Adap
         holder.img_anhbao.setImageBitmap(bitmap);
         Picasso.get().load(noiDungModel.getAnhbao()).into(holder.img_anhbao);
 
+        holder.cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                clickItem.onClickItem(noiDungModel);
+            }
+        });
     }
 
     @Override
@@ -90,12 +71,14 @@ public class CardTrangChu_Adapter extends RecyclerView.Adapter<CardTrangChu_Adap
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         ImageView img_anhbao, img_tenbao;
         TextView txt_tieude, txt_thoigian;
+        CardView cardView;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             img_anhbao = itemView.findViewById(R.id.img_anhbao_trangchu);
             txt_tieude = itemView.findViewById(R.id.txt_tieude_trangchu);
             txt_thoigian = itemView.findViewById(R.id.txt_tgiandangbai_trangchu);
+            cardView = itemView.findViewById(R.id.layout_card_trangchu);
         }
 
         @Override

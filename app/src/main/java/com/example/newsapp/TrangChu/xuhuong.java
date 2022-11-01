@@ -1,5 +1,6 @@
 package com.example.newsapp.TrangChu;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -13,8 +14,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.airbnb.lottie.animation.content.Content;
 import com.example.newsapp.Card.CardTrangChu_Adapter;
 import com.example.newsapp.Card.CardXuHuong_Adapter;
+import com.example.newsapp.Card.ClickItem;
+import com.example.newsapp.Card.ClickItem1;
 import com.example.newsapp.Card.NoiDungModel;
 import com.example.newsapp.Card.XuHuongModel;
+import com.example.newsapp.DocBao.docbao;
 import com.example.newsapp.R;
 import com.example.newsapp.TinTuc.fg_moi;
 
@@ -41,8 +45,6 @@ public class xuhuong extends Fragment {
         view = inflater.inflate(R.layout.fragment_xuhuong, container, false);
         recyclerView = view.findViewById(R.id.recycler_fg_xuhuong);
 
-        cardXuHuong_adapter = new CardXuHuong_Adapter((ArrayList<XuHuongModel>) xuHuongModelList,this);
-
         Content content = new Content();
         content.execute();
 
@@ -59,7 +61,13 @@ public class xuhuong extends Fragment {
         @Override
         protected void onPostExecute(Void unused) {
             super.onPostExecute(unused);
-            cardXuHuong_adapter = new CardXuHuong_Adapter((ArrayList<XuHuongModel>) xuHuongModelList,xuhuong.this);
+            cardXuHuong_adapter = new CardXuHuong_Adapter((ArrayList<XuHuongModel>) xuHuongModelList, new ClickItem1() {
+                @Override
+                public void onClickItem(XuHuongModel xuHuongModel) {
+                    Intent intentgiavang = new Intent(getActivity(), docbao.class);
+                    startActivity(intentgiavang);
+                }
+            });
             recyclerView.setAdapter(cardXuHuong_adapter);
             cardXuHuong_adapter.notifyDataSetChanged();
         }

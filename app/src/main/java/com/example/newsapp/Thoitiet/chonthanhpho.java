@@ -1,23 +1,17 @@
-package com.example.newsapp;
+package com.example.newsapp.Thoitiet;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
 
 import android.content.Intent;
-import android.content.res.Resources;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 
-import com.example.newsapp.Thoitiet.thoitiet;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import com.example.newsapp.R;
 
 public class chonthanhpho extends AppCompatActivity {
     SearchView searchView;

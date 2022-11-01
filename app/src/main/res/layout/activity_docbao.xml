@@ -1,124 +1,233 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".DocBao.docbao"
-    android:background="@color/trang"
-    >
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    android:background="@color/trang">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_gradient_color1"
+        android:padding="10dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/img_quaylai_docbao"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="10dp"
+            android:src="@drawable/ic_arrow_back"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/trang" />
+
+        <TextView
+            android:id="@+id/txt_chude_docbao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="Thế giới"
+            android:textColor="@color/trang"
+            android:textSize="22sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/img_quaylai_docbao"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txt_cochu_docbao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:fontFamily="@font/roboto_regular"
+            android:text="Aa"
+            android:textColor="@color/trang"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/img_chiase_docbao"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/img_chiase_docbao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:src="@drawable/ic_share"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/trang" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/layout"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">
 
         <LinearLayout
-            android:background="@color/xanh3"
-            android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            >
-            <ImageView
-                android:layout_marginLeft="110dp"
-                android:layout_gravity="center"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:src="@drawable/img_logo"
-                />
+            android:orientation="vertical">
+
             <TextView
-                android:layout_marginRight="90dp"
-                android:layout_marginLeft="10dp"
-                android:layout_gravity="center"
-                android:textStyle="bold"
-                android:textColor="@color/trang"
-                android:textSize="32sp"
-                android:text="iNewS"
+                android:id="@+id/txt_tieude1_docbao"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                />
-        </LinearLayout>
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="10dp"
+                android:fontFamily="@font/roboto_bold"
+                android:text="Thời tiết 1-11: Bão số 7 lòng vòng trên biển, đất liền ngày nắng"
+                android:textColor="@color/den"
+                android:textSize="22sp" />
 
-        <LinearLayout
-            android:padding="10dp"
-            android:background="@color/trang"
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="610dp"
-            >
-            <ScrollView
+            <TextView
+                android:id="@+id/txt_tgian_docbao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:fontFamily="@font/roboto_regular"
+                android:text="01/11/2022 08:29 GMT+7"
+                android:textColor="@color/den"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/txt_tieude2_docbao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:fontFamily="@font/roboto_regular"
+                android:text="TTO - Hôm qua đến nay 1-11, bão số 7 di chuyển rất chậm và lòng vòng trên khu vực Bắc Biển Đông, hôm nay bão có khả năng đổi hướng di chuyển rồi suy yếu trong thời gian tới. Trên đất liền nước ta, thời tiết ổn định, ngày nắng ráo."
+                android:textColor="@color/den"
+                android:textSize="18sp" />
+
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
-                <androidx.recyclerview.widget.RecyclerView
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/img_anhbao_docbao"
                     android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/img_cloudy_day" />
+
+                <TextView
+                    android:id="@+id/txt_ghichuanh_docbao"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
                     android:layout_marginEnd="10dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:id="@+id/rcv_docbao_docbao"
-                    />
-            </ScrollView>
+                    android:fontFamily="@font/roboto_regular"
+                    android:gravity="center"
+                    android:text="Khu vực Bắc Bộ thời tiết ngày nắng, đêm và sáng trời lạnh đến rét - Ảnh: NAM TRẦN"
+                    android:textColor="@color/den"
+                    android:textSize="15sp" />
+            </LinearLayout>
 
+            <TextView
+                android:id="@+id/txt_noidung_docbao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:fontFamily="@font/roboto_regular"
+                android:text="Hôm nay dự báo sẽ có gió mạnh, sóng lớn trên khu vực Bắc Biển Đông, vịnh Bắc Bộ và vùng biển từ Quảng Trị đến Ninh Thuận. Nguyên nhân do ảnh hưởng của gió mùa đông bắc kết hợp hoàn lưu bão số 7. Cơ quan khí tượng cảnh báo các tàu thuyền hoạt động trên biển cần chú ý các bản tin để có nơi trú tránh an toàn.Hôm nay dự báo sẽ có gió mạnh, sóng lớn trên khu vực Bắc Biển Đông, vịnh Bắc Bộ và vùng biển từ Quảng Trị đến Ninh Thuận. Nguyên nhân do ảnh hưởng của gió mùa đông bắc kết hợp hoàn lưu bão số 7. Cơ quan khí tượng cảnh báo các tàu thuyền hoạt động trên biển cần chú ý các bản tin để có nơi trú tránh an toàn.Hôm nay dự báo sẽ có gió mạnh, sóng lớn trên khu vực Bắc Biển Đông, vịnh Bắc Bộ và vùng biển từ Quảng Trị đến Ninh Thuận. Nguyên nhân do ảnh hưởng của gió mùa đông bắc kết hợp hoàn lưu bão số 7. Cơ quan khí tượng cảnh báo các tàu thuyền hoạt động trên biển cần chú ý các bản tin để có nơi trú tránh an toàn.Hôm nay dự báo sẽ có gió mạnh, sóng lớn trên khu vực Bắc Biển Đông, vịnh Bắc Bộ và vùng biển từ Quảng Trị đến Ninh Thuận. Nguyên nhân do ảnh hưởng của gió mùa đông bắc kết hợp hoàn lưu bão số 7. Cơ quan khí tượng cảnh báo các tàu thuyền hoạt động trên biển cần chú ý các bản tin để có nơi trú tránh an toàn.Hôm nay dự báo sẽ có gió mạnh, sóng lớn trên khu vực Bắc Biển Đông, vịnh Bắc Bộ và vùng biển từ Quảng Trị đến Ninh Thuận. Nguyên nhân do ảnh hưởng của gió mùa đông bắc kết hợp hoàn lưu bão số 7. Cơ quan khí tượng cảnh báo các tàu thuyền hoạt động trên biển cần chú ý các bản tin để có nơi trú tránh an toàn.Hôm nay dự báo sẽ có gió mạnh, sóng lớn trên khu vực Bắc Biển Đông, vịnh Bắc Bộ và vùng biển từ Quảng Trị đến Ninh Thuận. Nguyên nhân do ảnh hưởng của gió mùa đông bắc kết hợp hoàn lưu bão số 7. Cơ quan khí tượng cảnh báo các tàu thuyền hoạt động trên biển cần chú ý các bản tin để có nơi trú tránh an toàn.Hôm nay dự báo sẽ có gió mạnh, sóng lớn trên khu vực Bắc Biển Đông, vịnh Bắc Bộ và vùng biển từ Quảng Trị đến Ninh Thuận. Nguyên nhân do ảnh hưởng của gió mùa đông bắc kết hợp hoàn lưu bão số 7. Cơ quan khí tượng cảnh báo các tàu thuyền hoạt động trên biển cần chú ý các bản tin để có nơi trú tránh an toàn."
+                android:textColor="@color/den"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/txt_tacgia_docbao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="15dp"
+                android:fontFamily="@font/roboto_regular"
+                android:text="LÊ PHAN"
+                android:textColor="@color/den"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="10dp"
+                android:fontFamily="@font/roboto_bold"
+                android:text="Tin liên quan"
+                android:textColor="@color/den"
+                android:textSize="22sp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcv_tinlienquan_docbao"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp" />
         </LinearLayout>
 
+    </ScrollView>
 
-        <LinearLayout
-            android:background="@color/trang"
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_gradient_color1"
+        android:padding="10dp"
+        app:layout_constraintBottom_toBottomOf="parent">
 
-            <ImageButton
-                android:background="@null"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:src="@drawable/ic_outline_favorite_border_24"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                />
-            <ImageButton
-                android:layout_marginLeft="50dp"
-                android:layout_marginTop="10dp"
-                android:background="@null"
-                android:src="@drawable/ic_baseline_chat_bubble_outline_24"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                />
+        <ImageView
+            android:id="@+id/img_like_docbao"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="10dp"
+            android:src="@drawable/ic_outline_favorite_border_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/trang" />
 
-            <ImageButton
-                android:layout_marginLeft="200dp"
-                android:background="@null"
-                android:layout_marginTop="10dp"
-                android:src="@drawable/ic_baseline_turned_in_not_24"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                />
-            <TextView
+        <ImageView
+            android:id="@+id/img_binhluan_docbao"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="20dp"
+            android:src="@drawable/ic_baseline_chat_bubble_outline_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/img_like_docbao"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.55"
+            app:tint="@color/trang" />
 
-                android:layout_marginTop="5dp"
-                android:layout_gravity="center"
-                android:layout_marginLeft="10dp"
-                android:textSize="24sp"
-                android:textColor="@color/den"
-                android:textStyle="bold"
-                android:text="A"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                />
-            <TextView
-                android:layout_marginTop="5dp"
-                android:gravity="center"
-                android:layout_gravity="center"
+        <ImageView
+            android:id="@+id/img_luubai_docbao"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginEnd="10dp"
+            android:src="@drawable/ic_baseline_turned_in_not_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/trang" />
 
-                android:textSize="24sp"
-                android:textColor="@color/den"
-                android:textStyle="bold"
-                android:text="a"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-        </LinearLayout>
-    </LinearLayout>
-</ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

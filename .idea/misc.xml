@@ -14,6 +14,7 @@
         <entry key="..\:/APP/NewsApp/app/src/main/res/drawable/bg_themdiaphuong.xml" value="0.161" />
         <entry key="..\:/APP/NewsApp/app/src/main/res/drawable/bg_tron.xml" value="0.1565" />
         <entry key="..\:/APP/NewsApp/app/src/main/res/drawable/corner_border_gray.xml" value="0.155" />
+        <entry key="..\:/APP/NewsApp/app/src/main/res/drawable/ic_baseline_chat_bubble_outline_24.xml" value="0.153" />
         <entry key="..\:/APP/NewsApp/app/src/main/res/drawable/ic_lock.xml" value="0.129" />
         <entry key="..\:/APP/NewsApp/app/src/main/res/drawable/ic_lock_click.xml" value="0.129" />
         <entry key="..\:/APP/NewsApp/app/src/main/res/drawable/ic_news.xml" value="0.127" />
@@ -24,7 +25,7 @@
         <entry key="..\:/APP/NewsApp/app/src/main/res/layout/activity_chonthanhpho.xml" value="0.22" />
         <entry key="..\:/APP/NewsApp/app/src/main/res/layout/activity_dangky.xml" value="0.22" />
         <entry key="..\:/APP/NewsApp/app/src/main/res/layout/activity_dangnhap.xml" value="0.22" />
-        <entry key="..\:/APP/NewsApp/app/src/main/res/layout/activity_docbao.xml" value="0.1796875" />
+        <entry key="..\:/APP/NewsApp/app/src/main/res/layout/activity_docbao.xml" value="0.22" />
         <entry key="..\:/APP/NewsApp/app/src/main/res/layout/activity_doimatkhau.xml" value="0.22" />
         <entry key="..\:/APP/NewsApp/app/src/main/res/layout/activity_quanlydiaphuong.xml" value="0.22" />
         <entry key="..\:/APP/NewsApp/app/src/main/res/layout/activity_quenmatkhau1.xml" value="0.22" />
@@ -43,8 +44,12 @@
         <entry key="..\:/APP/NewsApp/app/src/main/res/layout/fragment_fg_bongda.xml" value="0.1796875" />
         <entry key="..\:/APP/NewsApp/app/src/main/res/layout/fragment_fg_loai.xml" value="0.165625" />
         <entry key="..\:/APP/NewsApp/app/src/main/res/layout/fragment_fg_moi.xml" value="0.19166666666666668" />
+        <entry key="..\:/APP/NewsApp/app/src/main/res/layout/fragment_fg_nhipsong.xml" value="0.1796875" />
         <entry key="..\:/APP/NewsApp/app/src/main/res/layout/fragment_fg_nong.xml" value="0.19166666666666668" />
+        <entry key="..\:/APP/NewsApp/app/src/main/res/layout/fragment_fg_phapluat.xml" value="0.1796875" />
+        <entry key="..\:/APP/NewsApp/app/src/main/res/layout/fragment_fg_thegioi.xml" value="0.1796875" />
         <entry key="..\:/APP/NewsApp/app/src/main/res/layout/fragment_fg_theodoi.xml" value="0.1796875" />
+        <entry key="..\:/APP/NewsApp/app/src/main/res/layout/fragment_fg_thoisu.xml" value="0.1796875" />
         <entry key="..\:/APP/NewsApp/app/src/main/res/layout/fragment_fg_tonghop.xml" value="0.1796875" />
         <entry key="..\:/APP/NewsApp/app/src/main/res/layout/fragment_taikhoan.xml" value="0.22" />
         <entry key="..\:/APP/NewsApp/app/src/main/res/layout/fragment_tintuc.xml" value="0.1" />

@@ -2,6 +2,7 @@ package com.example.newsapp.TinTuc;
 
 import static android.content.ContentValues.TAG;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -13,7 +14,9 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.newsapp.Card.CardTrangChu_Adapter;
+import com.example.newsapp.Card.ClickItem;
 import com.example.newsapp.Card.NoiDungModel;
+import com.example.newsapp.DocBao.docbao;
 import com.example.newsapp.R;
 
 import org.jsoup.Jsoup;
@@ -39,7 +42,6 @@ public class fg_thoisu extends Fragment {
         view = inflater.inflate(R.layout.fragment_fg_thoisu, container, false);
         recyclerView = view.findViewById(R.id.recycler_fg_thoisu);
 
-        cardTrangChu_adapter = new CardTrangChu_Adapter((ArrayList<NoiDungModel>) noiDungModelList,this);
         Content content = new Content();
         content.execute();
 
@@ -55,7 +57,13 @@ public class fg_thoisu extends Fragment {
         @Override
         protected void onPostExecute(Void unused) {
             super.onPostExecute(unused);
-            cardTrangChu_adapter = new CardTrangChu_Adapter((ArrayList<NoiDungModel>) noiDungModelList, fg_thoisu.this);
+            cardTrangChu_adapter = new CardTrangChu_Adapter((ArrayList<NoiDungModel>) noiDungModelList, new ClickItem() {
+                @Override
+                public void onClickItem(NoiDungModel noiDungModel) {
+                    Intent intentgiavang = new Intent(getActivity(), docbao.class);
+                    startActivity(intentgiavang);
+                }
+            });
             recyclerView.setAdapter(cardTrangChu_adapter);
             cardTrangChu_adapter.notifyDataSetChanged();
         }

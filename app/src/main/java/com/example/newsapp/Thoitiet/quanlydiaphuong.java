@@ -1,4 +1,4 @@
-package com.example.newsapp;
+package com.example.newsapp.Thoitiet;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,11 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.newsapp.Thoitiet.Thoitiet1;
-import com.example.newsapp.Thoitiet.Thoitiet1_Adapter;
-import com.example.newsapp.Thoitiet.Thoitiet3;
-import com.example.newsapp.Thoitiet.Thoitiet3_Adapter;
-import com.example.newsapp.Thoitiet.thoitiet;
+import com.example.newsapp.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -52,7 +48,7 @@ public class quanlydiaphuong extends AppCompatActivity {
         btn_themdiaphuong.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(quanlydiaphuong.this,chonthanhpho.class);
+                Intent intent = new Intent(quanlydiaphuong.this, chonthanhpho.class);
                 startActivity(intent);
             }
         });

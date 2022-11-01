@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.newsapp.R;
@@ -27,11 +28,11 @@ import java.util.ArrayList;
 
 public class CardXuHuong_Adapter extends RecyclerView.Adapter<CardXuHuong_Adapter.ViewHolder> {
     private ArrayList<XuHuongModel> xuHuongModelArrayList;
-    private xuhuong context_xuhuong;
+    private ClickItem1 clickItem;
 
-    public CardXuHuong_Adapter(ArrayList<XuHuongModel> xuHuongModelArrayList, xuhuong context) {
+    public CardXuHuong_Adapter(ArrayList<XuHuongModel> xuHuongModelArrayList, ClickItem1 clickItem1) {
         this.xuHuongModelArrayList = xuHuongModelArrayList;
-        this.context_xuhuong = context;
+        this.clickItem = clickItem1;
     }
 
     @NonNull
@@ -54,6 +55,12 @@ public class CardXuHuong_Adapter extends RecyclerView.Adapter<CardXuHuong_Adapte
         holder.img_vid.setImageBitmap(bitmap);
         Picasso.get().load(xuHuongModel.getAnhbao()).into(holder.img_vid);
 
+        holder.cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                clickItem.onClickItem(xuHuongModel);
+            }
+        });
     }
 
     @Override
@@ -64,6 +71,7 @@ public class CardXuHuong_Adapter extends RecyclerView.Adapter<CardXuHuong_Adapte
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         ImageView img_vid, img_play;
         TextView txt_tieude, txt_tgiandangbai, txt_tgianvid;
+        CardView cardView;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -72,6 +80,7 @@ public class CardXuHuong_Adapter extends RecyclerView.Adapter<CardXuHuong_Adapte
             txt_tgiandangbai = itemView.findViewById(R.id.txt_tgiandangbai_xuhuong);
             txt_tgianvid = itemView.findViewById(R.id.txt_tgianvd_xuhuong);
             img_play = itemView.findViewById(R.id.img_play_xuhuong);
+            cardView = itemView.findViewById(R.id.layout_card_xuhuong);
         }
 
         @Override
