@@ -10,6 +10,7 @@
     android:layout_marginStart="10dp"
     app:cardCornerRadius="8dp"
     android:layout_marginBottom="8dp"
+    android:id="@+id/card_giavang"
     >
     <!--.............................................................................................-->
     <LinearLayout
@@ -41,6 +42,7 @@
             android:layout_height="match_parent"
             >
             <TextView
+                android:id="@+id/txt_giatienmua_cardgiavang"
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="10dp"
                 android:textColor="@color/trang"
@@ -51,6 +53,7 @@
                 android:layout_height="wrap_content"
                 />
             <TextView
+                android:id="@+id/txt_tangmua_cardgiavang"
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="10dp"
                 android:textColor="@color/xanhla"
@@ -61,6 +64,7 @@
                 android:layout_height="wrap_content"
                 />
             <TextView
+                android:id="@+id/txt_phantrammua_cardgiavang"
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="10dp"
                 android:textColor="@color/xanhla"
@@ -78,6 +82,7 @@
             android:layout_height="match_parent"
             >
             <TextView
+                android:id="@+id/txt_giatienban_cardgiavang"
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="10dp"
                 android:textColor="@color/trang"
@@ -88,6 +93,7 @@
                 android:layout_height="wrap_content"
                 />
             <TextView
+                android:id="@+id/txt_tangban_cardgiavang"
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="10dp"
                 android:textColor="@color/xanhla"
@@ -98,6 +104,7 @@
                 android:layout_height="wrap_content"
                 />
             <TextView
+                android:id="@+id/txt_phantramban_cardgiavang"
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="10dp"
                 android:textColor="@color/xanhla"
