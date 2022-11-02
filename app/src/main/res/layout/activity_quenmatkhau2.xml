@@ -66,6 +66,7 @@
                 android:textSize="20sp" />
 
             <TextView
+                android:id="@+id/txt_sdt_quenmk2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"

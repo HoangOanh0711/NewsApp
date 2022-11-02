@@ -31,13 +31,11 @@ import com.google.firebase.database.core.utilities.Pair;
 
 import java.util.concurrent.TimeUnit;
 
-public class quenmatkhau2<scrollView> extends AppCompatActivity {
+public class quenmatkhau2 extends AppCompatActivity {
 
     Button btn_xacnhan;
-    private String st_sdt;
-    TextView btn_guilai;
+    TextView btn_guilai, txt_sdt;
     EditText ed_otp1, ed_otp2, ed_otp3, ed_otp4, ed_otp5, ed_otp6, btn_taiday_quenmk, sdt;
-
 
     private static final String TAG = "PhoneAuthActivity";
 
@@ -59,8 +57,10 @@ public class quenmatkhau2<scrollView> extends AppCompatActivity {
         khaibao();
         setupOTPInput();
 
-        btn_xacnhan.setOnClickListener(new View.OnClickListener() {
+        txt_sdt.setText("Hãy điền OTP gồm 6 số vừa được gửi đến số điện thoại "+getIntent().getStringExtra("sdt"));
+        mVerificationId = getIntent().getStringExtra("otp");
 
+        btn_xacnhan.setOnClickListener(new View.OnClickListener() {
             //@Override
             public void onCodeSent(@NonNull String verificationId,
                                    @NonNull PhoneAuthProvider.ForceResendingToken token) {
@@ -224,8 +224,6 @@ public class quenmatkhau2<scrollView> extends AppCompatActivity {
 
             }
         });
-
-
     }
 
     private PhoneAuthProvider.OnVerificationStateChangedCallbacks
@@ -279,5 +277,6 @@ public class quenmatkhau2<scrollView> extends AppCompatActivity {
         ed_otp4 = findViewById(R.id.ed_otp4);
         ed_otp5 = findViewById(R.id.ed_otp5);
         ed_otp6 = findViewById(R.id.ed_otp6);
+        txt_sdt = findViewById(R.id.txt_sdt_quenmk2);
     }
 }

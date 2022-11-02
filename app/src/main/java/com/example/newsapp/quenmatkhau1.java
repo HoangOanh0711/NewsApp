@@ -54,7 +54,6 @@ public class quenmatkhau1 extends AppCompatActivity {
     ImageView img_check;
 
     FirebaseAuth mAuth;
-    String verificationId;
     ProgressDialog progressdialog;
 
     @Override
@@ -108,30 +107,41 @@ public class quenmatkhau1 extends AppCompatActivity {
             }
         });
 
-        mCallbacks = new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
-            @Override
-            public void onVerificationCompleted(PhoneAuthCredential credential) {
-                Log.d(TAG, "onVerificationCompleted:" + credential);
-            }
-
-            @Override
-            public void onVerificationFailed(FirebaseException e) {
-                Log.w(TAG, "onVerificationFailed", e);
-
-                if (e instanceof FirebaseAuthInvalidCredentialsException) {
-                } else if (e instanceof FirebaseTooManyRequestsException) {
-                }
-
-            }
-        };
-
         btn_guiotp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if (sdt.getText().toString().trim().isEmpty()) {
+                    Toast.makeText(quenmatkhau1.this,"Nhập số điện thoại của bạn",Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 progressdialog.show();
-                String str_sdt="+" + countryCodePicker.getFullNumber();
-                sendVerificationCode(str_sdt);
 
+                PhoneAuthProvider.getInstance().verifyPhoneNumber("+" + countryCodePicker.getFullNumber(),
+                        60, TimeUnit.SECONDS,quenmatkhau1.this,
+                        new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
+                            @Override
+                            public void onVerificationFailed(@NonNull FirebaseException e) {
+                                progressdialog.dismiss();
+                                Toast.makeText(quenmatkhau1.this, e.getMessage(), Toast.LENGTH_SHORT);
+                            }
+
+                            @Override
+                            public void onCodeSent(@NonNull String verificationId,
+                                                   @NonNull PhoneAuthProvider.ForceResendingToken token) {
+                                progressdialog.dismiss();
+                                Intent intent = new Intent(getApplicationContext(),quenmatkhau2.class);
+                                intent.putExtra("sdt","+" + countryCodePicker.getFullNumber());
+                                intent.putExtra("otp",verificationId);
+                                startActivity(intent);
+                            }
+
+                            @Override
+                            public void onVerificationCompleted(@NonNull PhoneAuthCredential phoneAuthCredential) {
+                                progressdialog.dismiss();
+                                final String code = phoneAuthCredential.getSmsCode();
+                            }
+                        }
+                );
             }
         });
     }
@@ -167,37 +177,6 @@ public class quenmatkhau1 extends AppCompatActivity {
             }
         });
 
-    }
-
-    private PhoneAuthProvider.OnVerificationStateChangedCallbacks
-            mCallbacks = new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
-        @Override
-        public void onVerificationFailed(@NonNull FirebaseException e) {
-            Toast.makeText(quenmatkhau1.this,"Failed",Toast.LENGTH_SHORT);
-        }
-
-        @Override
-        public void onCodeSent(@NonNull String s,
-                               @NonNull PhoneAuthProvider.ForceResendingToken token) {
-            super.onCodeSent(s,token);
-            verificationId = s;
-        }
-
-        @Override
-        public void onVerificationCompleted(@NonNull PhoneAuthCredential phoneAuthCredential) {
-            final String code = phoneAuthCredential.getSmsCode();
-        }
-    };
-
-    private void sendVerificationCode(String number){
-        PhoneAuthOptions options =
-                PhoneAuthOptions.newBuilder(mAuth)
-                        .setPhoneNumber(number)
-                        .setTimeout(60L, TimeUnit.SECONDS)
-                        .setActivity(this)
-                        .setCallbacks(mCallbacks)
-                        .build();
-        PhoneAuthProvider.verifyPhoneNumber(options);
     }
 
 }
