@@ -60,7 +60,7 @@ public class quenmatkhau2 extends AppCompatActivity {
         txt_sdt.setText("Hãy điền OTP gồm 6 số vừa được gửi đến số điện thoại "+getIntent().getStringExtra("sdt"));
         mVerificationId = getIntent().getStringExtra("otp");
 
-        btn_xacnhan.setOnClickListener(new View.OnClickListener() {
+        /*btn_xacnhan.setOnClickListener(new View.OnClickListener() {
             //@Override
             public void onCodeSent(@NonNull String verificationId,
                                    @NonNull PhoneAuthProvider.ForceResendingToken token) {
@@ -81,7 +81,7 @@ public class quenmatkhau2 extends AppCompatActivity {
                         ed_otp6.getText().toString();
                 verifyCode(otp);
                 //st_sdt = sdt.getText().toString().trim();
-                /*private void resendVerificationCode(String st_sdt,
+                *//*private void resendVerificationCode(String st_sdt,
                         PhoneAuthProvider.ForceResendingToken token) {
                     PhoneAuthOptions options =
                             PhoneAuthOptions.newBuilder(mAuth)
@@ -91,17 +91,54 @@ public class quenmatkhau2 extends AppCompatActivity {
                                     .setCallbacks(mCallbacks)
                                     .build();
                     PhoneAuthProvider.verifyPhoneNumber(options);
-                }*/
+                }*//*
                 Intent intent = new Intent(quenmatkhau2.this, quenmatkhau3.class);
                 startActivity(intent);
                 finish();
+            }
+        });*/
+
+        btn_xacnhan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (ed_otp1.getText().toString().isEmpty() ||
+                        ed_otp2.getText().toString().isEmpty() ||
+                        ed_otp3.getText().toString().isEmpty() ||
+                        ed_otp4.getText().toString().isEmpty() ||
+                        ed_otp5.getText().toString().isEmpty() ||
+                        ed_otp6.getText().toString().isEmpty()) {
+                    Toast.makeText(quenmatkhau2.this,"Nhập OTP đã được gửi qua số điện thoại",Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                String otp = ed_otp1.getText().toString() +
+                        ed_otp2.getText().toString() +
+                        ed_otp3.getText().toString() +
+                        ed_otp4.getText().toString() +
+                        ed_otp5.getText().toString() +
+                        ed_otp6.getText().toString();
+                if (mVerificationId!=null) {
+                    PhoneAuthCredential phoneAuthCredential = PhoneAuthProvider.getCredential(mVerificationId, otp);
+                    FirebaseAuth.getInstance().signInWithCredential(phoneAuthCredential).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if (task.isSuccessful()) {
+                                Intent intent = new Intent(getApplicationContext(), quenmatkhau3.class);
+                                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                startActivity(intent);
+                            } else {
+                                Toast.makeText(quenmatkhau2.this,"OTP sai, vui lòng nhập lại",Toast.LENGTH_SHORT).show();
+                                return;
+                            }
+                        }
+                    });
+                }
             }
         });
 
 
     }
 
-    private void verifyCode(String code) {
+    /*private void verifyCode(String code) {
         ShowNotification.showProgressDialog(quenmatkhau2.this, "Đang xác thực");
         PhoneAuthCredential credential = PhoneAuthProvider.getCredential(mVerificationId, code);
         signInWithPhoneAuthCredential(credential);
@@ -124,7 +161,7 @@ public class quenmatkhau2 extends AppCompatActivity {
                         }
                     }
                 });
-    }
+    }*/
     @Override
     public void onStop() {
         super.onStop();
@@ -226,7 +263,7 @@ public class quenmatkhau2 extends AppCompatActivity {
         });
     }
 
-    private PhoneAuthProvider.OnVerificationStateChangedCallbacks
+    /*private PhoneAuthProvider.OnVerificationStateChangedCallbacks
             mCallbacks = new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
 
         @Override
@@ -257,7 +294,7 @@ public class quenmatkhau2 extends AppCompatActivity {
             }
         }
 
-        /*@Override
+        *//*@Override
         public void onCodeSent(@NonNull String verificationId,
                                @NonNull PhoneAuthProvider.ForceResendingToken token) {
             Log.d(TAG, "onCodeSent:" + verificationId);
@@ -265,8 +302,8 @@ public class quenmatkhau2 extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "Đã gửi OTP", Toast.LENGTH_SHORT).show();
             mVerificationId = verificationId;
             mResendToken = token;
-        }*/
-    };
+        }*//*
+    };*/
 
     private void khaibao() {
         btn_xacnhan = findViewById(R.id.btn_xacnhan);
