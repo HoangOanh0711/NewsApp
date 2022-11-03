@@ -30,7 +30,6 @@ public class thongtinnguoidung extends AppCompatActivity {
             public void onClick(View view) {
                 // gọi intent cho nó chuyển về á
                 Intent intentTTND = new Intent(getApplicationContext(), taikhoan.class);
-                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_right);
                 startActivity(intentTTND);
              }
         });

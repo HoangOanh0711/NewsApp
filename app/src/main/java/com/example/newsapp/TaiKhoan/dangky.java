@@ -78,7 +78,6 @@ public class dangky extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(dangky.this, dangnhap.class);
-                overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_left);
                 startActivity(intent);
                 finish();
             }
@@ -99,7 +98,6 @@ public class dangky extends AppCompatActivity {
                                 databaseReference.child("Users").child(st_sdt).child("Mật khẩu").setValue(st_matkhau);
 
                                 Intent intent = new Intent(dangky.this, dangnhap.class);
-                                overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_left);
                                 startActivity(intent);
                             }
                         }

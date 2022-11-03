@@ -55,7 +55,6 @@ public class taikhoan extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intentgiavang = new Intent(getActivity(), giavang.class);
-                getActivity().overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_left);
                 startActivity(intentgiavang);
             }
         });
@@ -64,7 +63,6 @@ public class taikhoan extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intentxoso = new Intent(getActivity(), xoso.class);
-                getActivity().overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_left);
                 startActivity(intentxoso);
             }
         });
@@ -73,7 +71,6 @@ public class taikhoan extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intentlichviet = new Intent(getActivity(), lichvannien.class);
-                getActivity().overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_left);
                 startActivity(intentlichviet);
             }
         });
@@ -82,7 +79,6 @@ public class taikhoan extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intentttnd = new Intent(getActivity(), thongtinnguoidung.class);
-                getActivity().overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_left);
                 startActivity(intentttnd);
             }
         });
@@ -91,7 +87,6 @@ public class taikhoan extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intentdmk = new Intent(getActivity(), doimatkhau.class);
-                getActivity().overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_left);
                 startActivity(intentdmk);
             }
         });
@@ -100,7 +95,6 @@ public class taikhoan extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intentdmk = new Intent(getActivity(), com.example.newsapp.Thoitiet.thoitiet.class);
-                getActivity().overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_left);
                 startActivity(intentdmk);
             }
         });

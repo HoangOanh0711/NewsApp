@@ -105,14 +105,13 @@
             android:layout_height="3dp"
             android:background="@color/xam"
             />
-<!--        <androidx.recyclerview.widget.RecyclerView-->
-<!--            android:layout_marginEnd="10dp"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginStart="10dp"-->
-<!--            android:layout_marginBottom="40dp"-->
-<!--            android:id="@+id/rcv_khamphafrm_KhamPha"-->
-<!--            />-->
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_marginEnd="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="40dp"
+            android:id="@+id/rcv_giavang"/>
     </LinearLayout>
 
 

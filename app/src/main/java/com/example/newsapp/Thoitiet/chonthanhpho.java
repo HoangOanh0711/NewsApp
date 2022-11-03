@@ -35,7 +35,6 @@ public class chonthanhpho extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 String value=adapterView.getItemAtPosition(i).toString();
                 Intent intent = new Intent(chonthanhpho.this, quanlydiaphuong.class);
-                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_right);
                 intent.putExtra("Địa phương đã chọn",value);
                 startActivity(intent);
             }

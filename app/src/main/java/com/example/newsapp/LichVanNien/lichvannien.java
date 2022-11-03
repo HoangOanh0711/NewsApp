@@ -52,7 +52,6 @@ public class lichvannien extends AppCompatActivity {
 
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
             ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(lichvannien.this,pairs);
-            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_right);
             startActivity(intent,options.toBundle());
         }else {
             startActivity(intent);

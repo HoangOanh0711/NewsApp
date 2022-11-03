@@ -26,7 +26,6 @@ public class doimatkhau extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intentDMK = new Intent(getApplicationContext(), taikhoan.class);
                 startActivity(intentDMK);
-                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_right);
             }
         });
     }

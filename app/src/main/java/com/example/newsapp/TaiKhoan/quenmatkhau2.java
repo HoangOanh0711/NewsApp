@@ -28,7 +28,6 @@ public class quenmatkhau2 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(quenmatkhau2.this, quenmatkhau3.class);
-                overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_left);
                 startActivity(intent);
                 finish();
             }
