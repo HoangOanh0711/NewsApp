@@ -32,7 +32,7 @@
             android:name=".dangnhap"
             android:exported="false" />
         <activity
-            android:name=".quenmatkhau3"
+            android:name=".splash"
             android:exported="false" />
         <activity
             android:name=".quenmatkhau1"
@@ -44,7 +44,7 @@
             android:name=".trangchu"
             android:exported="false" />
         <activity
-            android:name=".splash"
+            android:name=".quenmatkhau3"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

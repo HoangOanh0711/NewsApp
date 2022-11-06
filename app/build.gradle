@@ -6,6 +6,8 @@ plugins {
 android {
     compileSdk 32
 
+    namespace 'com.example.newsapp'
+
     defaultConfig {
         applicationId "com.example.newsapp"
         minSdk 23
@@ -56,6 +58,10 @@ dependencies {
     implementation platform('com.google.firebase:firebase-bom:31.0.1')
 
     //implementation 'com.google.ads.mediation:facebook:6.11.0.1'
+
+    implementation 'com.google.android.gms:play-services-auth:20.3.0'
+
+    implementation platform('com.google.firebase:firebase-bom:31.0.2')
 
     implementation 'com.facebook.android:facebook-android-sdk:15.0.2'
 }

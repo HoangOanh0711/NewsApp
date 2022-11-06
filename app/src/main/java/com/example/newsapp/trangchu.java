@@ -12,6 +12,10 @@ import com.example.newsapp.TrangChu.AdapterViewPaper;
 import com.example.newsapp.TrangChu.taikhoan;
 import com.example.newsapp.TrangChu.tintuc;
 import com.example.newsapp.TrangChu.xuhuong;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
@@ -21,6 +25,9 @@ public class trangchu extends AppCompatActivity {
 
     ViewPager2 viewPager;
     BottomNavigationView bottomNavigationView;
+
+    GoogleSignInOptions gso;
+    GoogleSignInClient gsc;
 
     ArrayList<Fragment> fragmentArrayList = new ArrayList<>();
 
@@ -73,5 +80,12 @@ public class trangchu extends AppCompatActivity {
                 return true;
             }
         });
+
+        gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestEmail()
+                .build();
+        gsc = GoogleSignIn.getClient(this, gso);
+        GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
+
     }
 }

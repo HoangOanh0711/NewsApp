@@ -29,9 +29,9 @@ public class quenmatkhau3 extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_quenmatkhau3);
 
-        user = getIntent().getStringExtra("User");
-        pass = getIntent().getStringExtra("Pass");
-        Phone = getIntent().getStringExtra("phone");
+        user = getIntent().getStringExtra("Users");
+        pass = getIntent().getStringExtra("Mật khẩu");
+        Phone = getIntent().getStringExtra("");
 
         khaibao();
 
@@ -40,10 +40,10 @@ public class quenmatkhau3 extends AppCompatActivity {
             public void onClick(View view) {
                 //CheckInternet checkInternet = new CheckInternet();
 
-                String _Phone = getIntent().getStringExtra("Phone");
+                Phone = "0355736772";
                 String _newpass = ed_matkhau.getText().toString().trim();
-                DatabaseReference reference = FirebaseDatabase.getInstance().getReference("User");
-                reference.child(_Phone).child("pass").setValue(_newpass);
+                DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Users");
+                reference.child(Phone).child("Mật khẩu").setValue(_newpass);
                 startActivity(new Intent(getApplicationContext(), quenmatkhau4.class));
 
                 //Intent intent = new Intent(quenmatkhau3.this, quenmatkhau4.class);
