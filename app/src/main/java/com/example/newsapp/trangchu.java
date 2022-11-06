@@ -43,6 +43,15 @@ public class trangchu extends AppCompatActivity {
         fragmentArrayList.add(new xuhuong());
         fragmentArrayList.add(new taikhoan());
 
+        gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestEmail()
+                .build();
+        gsc = GoogleSignIn.getClient(this, gso);
+        GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
+        /*if (account != null){
+
+        }*/
+
         AdapterViewPaper viewPaperAdapter = new AdapterViewPaper(this, fragmentArrayList);
         viewPager.setAdapter(viewPaperAdapter);
         viewPager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
@@ -81,11 +90,7 @@ public class trangchu extends AppCompatActivity {
             }
         });
 
-        gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestEmail()
-                .build();
-        gsc = GoogleSignIn.getClient(this, gso);
-        GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
+
 
     }
 }

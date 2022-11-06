@@ -1,5 +1,8 @@
 package com.example.newsapp;
 
+
+import static android.content.ContentValues.TAG;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -23,6 +26,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -34,6 +38,8 @@ import com.facebook.FacebookSdk;
 import java.util.Arrays;
 
 public class dangnhap extends AppCompatActivity {
+
+
 
     DatabaseReference databaseReference = FirebaseDatabase.getInstance()
             .getReferenceFromUrl("https://newsapp-a5dc3-default-rtdb.firebaseio.com/");
@@ -50,6 +56,13 @@ public class dangnhap extends AppCompatActivity {
     GoogleSignInOptions gso;
     GoogleSignInClient gsc;
 
+    //GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
+
+
+    private FirebaseAuth auth;
+
+
+
     //CallbackManager callbackManager;
 
     @Override
@@ -57,6 +70,9 @@ public class dangnhap extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dangnhap);
         FacebookSdk.sdkInitialize(getApplicationContext());
+
+        auth = FirebaseAuth.getInstance();
+
 
         //callbackManager = CallbackManager.Factory.create();
         //AppEventsLogger.activateApp(dangnhap.this);
@@ -158,12 +174,17 @@ public class dangnhap extends AppCompatActivity {
             }
         });
 
+
+
         imageView4 = findViewById(R.id.imageView4);
+        auth = FirebaseAuth.getInstance();
         gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestEmail()
-                        .build();
+                .build();
 
         gsc = GoogleSignIn.getClient(this, gso);
+
+
         imageView4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -173,6 +194,9 @@ public class dangnhap extends AppCompatActivity {
         });
 
     }
+
+
+
 
     private void SignIn() {
         Intent intent = gsc.getSignInIntent();
@@ -187,18 +211,25 @@ public class dangnhap extends AppCompatActivity {
             Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
             try {
                 task.getResult(ApiException.class);
-                        Trangchu();
+                        Home();
             } catch (ApiException e) {
                 Toast.makeText(this, "Error", Toast.LENGTH_SHORT).show();
             }
         }
+
+            
     }
 
-    private void Trangchu() {
-        Intent intent = new Intent(dangnhap.this, trangchu.class);
-        startActivity(intent);
+    private void Home() {
         finish();
+        Intent intent = new Intent(getApplicationContext(), trangchu.class);
+        startActivity(intent);
     }
+
+
+
+
+
 
     private void khaibao(){
         btn_quenmk = findViewById(R.id.btn_quenmatkhau);
@@ -216,4 +247,8 @@ public class dangnhap extends AppCompatActivity {
         st_sdt = sdt.getText().toString().trim();
         st_matkhau = matkhau.getText().toString().trim();
     }
+
+
 }
+
+
