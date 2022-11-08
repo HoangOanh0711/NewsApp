@@ -79,6 +79,8 @@ public class fg_thoisu extends Fragment {
                     String tieude = data.select("h3.title-news").eq(i).text();
                     String thoigian = data.select("p.sapo").eq(i).text();
                     String anhbao = data.select("a.img212x132.pos-rlt").eq(i).select("img").attr("src");
+                    String linkbao = data.select("a.img212x132.pos-rlt").eq(i).text();
+                    Log.e("link bao",linkbao);
                     noiDungModelList.add(new NoiDungModel(tieude, thoigian, anhbao));
                 }
             } catch (Exception e) {

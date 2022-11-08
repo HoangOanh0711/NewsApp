@@ -19,6 +19,7 @@ import com.example.newsapp.Card.ClickItem1;
 import com.example.newsapp.Card.NoiDungModel;
 import com.example.newsapp.Card.XuHuongModel;
 import com.example.newsapp.DocBao.docbao;
+import com.example.newsapp.DocBao.docbaovideo;
 import com.example.newsapp.R;
 import com.example.newsapp.TinTuc.fg_moi;
 
@@ -64,7 +65,7 @@ public class xuhuong extends Fragment {
             cardXuHuong_adapter = new CardXuHuong_Adapter((ArrayList<XuHuongModel>) xuHuongModelList, new ClickItem1() {
                 @Override
                 public void onClickItem(XuHuongModel xuHuongModel) {
-                    Intent intentgiavang = new Intent(getActivity(), docbao.class);
+                    Intent intentgiavang = new Intent(getActivity(), docbaovideo.class);
                     startActivity(intentgiavang);
                 }
             });
@@ -84,6 +85,8 @@ public class xuhuong extends Fragment {
                     String tgiandangbai = data.select("b.time-ago").eq(i).text();
                     String anhbao = data.select("a.item").eq(i).select("img").attr("src");
                     String tgianvid = data.select("span.duration-video").eq(i).text();
+                    String linkbao = data.select("a.img212x132.pos-rlt").eq(i).text();
+                    Log.e("link bao",linkbao);
                     xuHuongModelList.add(new XuHuongModel(tieude,tgiandangbai,anhbao,tgianvid));
                 }
             } catch (Exception e) {

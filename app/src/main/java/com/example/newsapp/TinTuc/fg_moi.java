@@ -33,6 +33,7 @@ public class fg_moi extends Fragment {
     private List<NoiDungModel> noiDungModelList = new ArrayList<>();
     Elements data;
     Document document;
+    String linkbao;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -60,8 +61,9 @@ public class fg_moi extends Fragment {
             cardTrangChu_adapter = new CardTrangChu_Adapter((ArrayList<NoiDungModel>) noiDungModelList, new ClickItem() {
                 @Override
                 public void onClickItem(NoiDungModel noiDungModel) {
-                    Intent intentgiavang = new Intent(getActivity(), docbao.class);
-                    startActivity(intentgiavang);
+                    Intent intent = new Intent(getActivity(), docbao.class);
+                    intent.putExtra("Link báo",linkbao);
+                    startActivity(intent);
                 }
             });
             recyclerView.setAdapter(cardTrangChu_adapter);
@@ -79,29 +81,14 @@ public class fg_moi extends Fragment {
                     String tieude = data.select("h3.title-news").eq(i).text();
                     String thoigian = data.select("p.sapo").eq(i).text();
                     String anhbao = data.select("a.img212x132.pos-rlt").eq(i).select("img").attr("src");
+                    //linkbao = data.select("a.img212x132.pos-rlt").eq(i).text();
+                    linkbao = "abc.com";
+                    Log.e("link bao",linkbao);
                     noiDungModelList.add(new NoiDungModel(tieude,thoigian,anhbao));
                 }
             } catch (Exception e) {
                 e.printStackTrace();
             }
-            /*try {
-                String url = "https://tv.tuoitre.vn/";
-                document = Jsoup.connect(url).get();
-                data = document.select("div.box-highlight").select("ul").select("li.autonext-item");
-                int size = data.size();
-                for (int i=0; i<size;i++) {
-                    String tieude = data.select("a.name-video-list").eq(i).text();
-                    String thoigian = data.select("b.time-ago").eq(i).text();
-                    String anhbao = data.select("a.item").eq(i).select("img").attr("src");
-                    String timevideo = data.select("span.duration-video").eq(i).text();
-                    Log.e("dữ liệu",tieude.toString());
-                    Log.e("anh",anhbao.toString());
-                    Log.e("timevideo",timevideo.toString());
-                    noiDungModelList.add(new NoiDungModel(tieude,thoigian,anhbao));
-                }
-            } catch (Exception e) {
-                e.printStackTrace();
-            }*/
 
             return null;
         }

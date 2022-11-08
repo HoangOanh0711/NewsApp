@@ -48,10 +48,7 @@ dependencies {
     //lấy dữ liệu web báo
     implementation 'org.jsoup:jsoup:1.15.3'
 
-    //hỗ trợ ảnh
-    implementation 'com.squareup.picasso:picasso:2.8'
-
-    //chay gif
+    //hỗ trợ ảnh và gif
     implementation 'com.github.bumptech.glide:glide:4.14.2'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.14.2'
 

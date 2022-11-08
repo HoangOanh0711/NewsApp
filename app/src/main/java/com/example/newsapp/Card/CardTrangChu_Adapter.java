@@ -1,10 +1,5 @@
 package com.example.newsapp.Card;
 
-import android.content.Context;
-import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,15 +10,8 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.newsapp.DocBao.docbao;
+import com.bumptech.glide.Glide;
 import com.example.newsapp.R;
-import com.example.newsapp.TinTuc.fg_bongda;
-import com.example.newsapp.TinTuc.fg_moi;
-import com.example.newsapp.TinTuc.fg_nhipsong;
-import com.example.newsapp.TinTuc.fg_phapluat;
-import com.example.newsapp.TinTuc.fg_thegioi;
-import com.example.newsapp.TinTuc.fg_thoisu;
-import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -48,12 +36,13 @@ public class CardTrangChu_Adapter extends RecyclerView.Adapter<CardTrangChu_Adap
         NoiDungModel noiDungModel = noiDungModelArrayList.get(position);
         holder.txt_thoigian.setText(noiDungModel.getThoigian());
         holder.txt_tieude.setText(noiDungModel.getTieude());
+        Glide.with(holder.img_anhbao).load(noiDungModel.getAnhbao()).into(holder.img_anhbao);
 
-        String sImage = String.valueOf(Picasso.get().load(noiDungModel.getAnhbao()));
+        /*String sImage = String.valueOf(Picasso.get().load(noiDungModel.getAnhbao()));
         byte[] bytes = Base64.decode(sImage, Base64.DEFAULT);
         Bitmap bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
         holder.img_anhbao.setImageBitmap(bitmap);
-        Picasso.get().load(noiDungModel.getAnhbao()).into(holder.img_anhbao);
+        Picasso.get().load(noiDungModel.getAnhbao()).into(holder.img_anhbao);*/
 
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -3,6 +3,7 @@ package com.example.newsapp.TinTuc;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -79,7 +80,8 @@ public class fg_bongda extends Fragment {
                     String tieude = data.select("h3.title-news").eq(i).select("a").text();
                     String thoigian = data.select("p.sapo").eq(i).text();
                     String anhbao = data.select("a.img212x132.pos-rlt").eq(i).select("img").attr("src");
-                    //Log.e("Get data theo dõi", tieude.toString());
+                    String linkbao = data.select("a.img212x132.pos-rlt").eq(i).text();
+                    Log.e("link bao",linkbao);
                     noiDungModelList.add(new NoiDungModel(tieude,thoigian,anhbao));
                 }
             } catch (Exception e) {

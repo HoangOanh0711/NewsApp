@@ -15,8 +15,8 @@
 
         <ImageView
             android:id="@+id/img_vid_xuhuong"
-            android:layout_width="200dp"
-            android:layout_height="120dp"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
             android:scaleType="centerCrop"
             android:src="@drawable/img_news"
             app:layout_constraintStart_toStartOf="parent"
@@ -26,48 +26,44 @@
             android:id="@+id/txt_tieude_xuhuong"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="205dp"
             android:fontFamily="@font/roboto_regular"
             android:maxLines="4"
             android:text="Người đàn ông đi xe máy lọt xuống cống giữa đêm, vùng vẫy kêu cứu. Người đàn ông đi xe máy lọt xuống cống giữa đêm"
             android:textColor="@color/den"
             android:textSize="18sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/img_vid_xuhuong"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/img_vid_xuhuong" />
 
         <TextView
             android:id="@+id/txt_tgiandangbai_xuhuong"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="205dp"
-            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
             android:fontFamily="@font/roboto_regular"
             android:maxLines="1"
             android:text="2 giờ"
             android:textColor="@color/chuxam"
             android:textSize="15sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/img_vid_xuhuong" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_tieude_xuhuong" />
 
         <TextView
             android:id="@+id/txt_tgianvd_xuhuong"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@color/den"
             android:fontFamily="@font/roboto_regular"
             android:maxLines="3"
+            android:padding="3dp"
             android:text="00:00"
             android:textColor="@color/trang"
-            android:background="@color/den"
-            android:padding="3dp"
             android:textSize="14sp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/img_vid_xuhuong"
             app:layout_constraintEnd_toEndOf="@+id/img_vid_xuhuong" />
 
         <ImageView
             android:id="@+id/img_play_xuhuong"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:layout_marginStart="5dp"
             android:layout_marginBottom="5dp"
             android:src="@drawable/ic_play"

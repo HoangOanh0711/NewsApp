@@ -21,13 +21,16 @@
             android:name=".Thoitiet.chonthanhpho"
             android:exported="false" />
         <activity
+        android:name=".DocBao.docbaovideo"
+        android:exported="false"/>
+        <activity
             android:name=".DocBao.docbao"
             android:exported="false"/>
         <activity
             android:name=".Thoitiet.quanlydiaphuong"
             android:exported="false" />
         <activity
-            android:name=".TrangChu.trangchu"
+            android:name=".splash"
             android:exported="false" />
         <activity
             android:name=".TaiKhoan.doimatkhau"
@@ -70,7 +73,7 @@
             android:name=".Thoitiet.thoitiet"
             android:exported="false" />
         <activity
-            android:name=".splash"
+            android:name=".TrangChu.trangchu"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
