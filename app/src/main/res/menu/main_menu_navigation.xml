@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:title="TIỆN ÍCH"
+            >
+            <menu>
+                <group android:checkableBehavior="single">
+                    <item
+                        android:id="@+id/nav_thoitiet"
+                        android:title="Thời tiết"
+                       />
+                    <item
+                        android:id="@+id/nav_xoso"
+                        android:title="Xổ số"
+                        />
+
+                    <item
+                        android:id="@+id/nav_giavang"
+                        android:title="Giá vàng"
+                        android:icon="@drawable/ic_baseline_person_24"/>
+                    <item
+                        android:id="@+id/nav_lichviet"
+                        android:title="Lịch Việt"
+                        android:icon="@drawable/ic_baseline_person_24"/>
+                </group>
+            </menu>
+        </item>
+
+        <item android:title="CÀI ĐẶT NÂNG CAO">
+            <menu>
+                <group>
+                    <item
+                        android:id="@+id/nav_chedo"
+                        android:title="Chế độ tối" />
+
+                </group>
+            </menu>
+        </item>
+
+        <item
+            android:id="@+id/nav_logout"
+            android:title="Đăng xuất"
+            />
+
+    </group>
+</menu>

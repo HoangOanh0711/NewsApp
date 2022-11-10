@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">iNews</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="tienich">TIỆN ÍCH</string>
+    <string name="thoitiet">Thời tiết</string>
+    <string name="xoso">Xổ số</string>
+    <string name="giavang">Giá vàng</string>
+    <string name="lichviet">Lịch Việt</string>
+    <string name="caidat">CÀI ĐẶT NÂNG CAO</string>
+    <string name="chedotoi">Chế độ tối</string>
+    <string name="loai">loại</string>
+    <string name="mua">Mua (đ/I)</string>
+    <string name="ban">Bán (đ/I)</string>
+
+</resources>

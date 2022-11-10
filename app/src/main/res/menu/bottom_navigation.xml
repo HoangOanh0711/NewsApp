@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/nav_tintuc"
+        android:title="Tin tức"
+        android:icon="@drawable/ic_news"/>
+
+    <item android:id="@+id/nav_xuhuong"
+        android:title="Video"
+        android:icon="@drawable/ic_video"/>
+
+    <item android:id="@+id/nav_taikhoan"
+        android:title="Tài khoản"
+        android:icon="@drawable/ic_user"/>
+
+</menu>

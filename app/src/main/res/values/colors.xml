@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="xanh1">#9BE7FF</color>
+    <color name="xanh2">#64B5F6</color>
+    <color name="xanh3">#2286C3</color>
+    <color name="xanh4">#AEF0FF</color>
+    <color name="xanh5">#31C9B7</color>
+    <color name="den">#FF000000</color>
+    <color name="trang">#FFFFFFFF</color>
+    <color name="xam">#A4A4A4</color>
+    <color name="xamnhat">#E1DCDC</color>
+    <color name="chuxam">#888888</color>
+    <color name="nen">#F4F4F4</color>
+    <color name="doo">#FF1414</color>
+    <color name="xanhreu">#057B6D</color>
+    <color name="xanhla">#00FF19</color>
+    <color name="xanhnhat">#88D5FC</color>
+    <color name="xanhden">#334155</color>
+    <color name="xanhdam">#186695</color>
+    <color name="vang">#fece2f</color>
+    <color name="xanhreunnhat">#EE079F8D</color>
+    <color name="xanhtrongsuot">#B32286C3</color>
+</resources>
