@@ -43,7 +43,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".LichVanNien.lichvannien"
+            android:name=".TrangChu.trangchu"
             android:exported="false"/>
         <activity
             android:name=".XoSo.xoso"
@@ -73,7 +73,7 @@
             android:name=".Thoitiet.thoitiet"
             android:exported="false" />
         <activity
-            android:name=".TrangChu.trangchu"
+            android:name=".LichVanNien.lichvannien"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

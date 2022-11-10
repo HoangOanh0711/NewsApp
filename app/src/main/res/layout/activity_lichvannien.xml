@@ -39,8 +39,8 @@
     <CalendarView
         android:id="@+id/cld_lichvannien_lich"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-    </CalendarView>
+        android:layout_height="wrap_content"
+        android:dateTextAppearance="@style/TextAppearance.AppCompat.Medium" />
 
 
     <!--    <LinearLayout-->
