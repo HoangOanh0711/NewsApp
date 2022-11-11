@@ -23,22 +23,20 @@ import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class docbao extends AppCompatActivity {
-    String linkbao;
+    String linkbao,chude,tieude1,tgian,tieude2,anhbao,ndung,tacgia;
 
-    TextView txt_chude;
-    TextView txt_tieude1;
-    TextView txt_tgian;
-    TextView txt_tieude2;
-    TextView txt_ghichuanh;
-    TextView txt_ndung;
-    TextView txt_tacgia;
+    TextView txt_chude,txt_tieude1,txt_tgian,txt_tieude2,txt_ghichuanh,txt_ndung,txt_tacgia;
     RecyclerView rcv_lienquan;
     ImageView img_quaylai, img_anhbao;
 
     Elements data;
     Document document;
+
+    DocBaoModel docBaoModel;
+    private List<DocBaoModel> listthongtin = new ArrayList();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +50,18 @@ public class docbao extends AppCompatActivity {
 
         Content content = new Content();
         content.execute();
+
+
+    }
+
+    private void gangiatri() {
+        txt_chude.setText(chude);
+        txt_tieude1.setText(tieude1);
+        txt_tgian.setText(tgian);
+        txt_tieude2.setText(tieude2);
+        txt_ndung.setText(ndung);
+        txt_tacgia.setText(tacgia);
+        Glide.with(img_anhbao).load(anhbao).into(img_anhbao);
     }
 
     private void khaibao() {
@@ -87,11 +97,10 @@ public class docbao extends AppCompatActivity {
                 String url = linkbao;
                 Log.e("url", url);
                 document = Jsoup.connect(url).get();
-                //document = Jsoup.parseBodyFragment(url);
                 data = document.select("div.content");
 
                 String chude = data.select("div.content-left>div.bread-crumbs>ul>li.fl").eq(0).select("a").text();
-                //txt_chude.setText(chude);
+                txt_chude.setText(chude);
                 Log.e("chude", chude);
 
                 //txt_tieude1,txt_tgian,txt_tieude2,txt_ghichuanh,txt_ndung,txt_tacgia
@@ -109,16 +118,16 @@ public class docbao extends AppCompatActivity {
                 Log.e("tieu2",tieude2);
 
 
-                    //int size = data.select("div.column-first-second>div.main-content-body>div.content").size();
+                //int size = data.select("div.column-first-second>div.main-content-body>div.content").size();
 
 
-                    String anhbao = data.select("div.column-first-second>div.main-content-body>div.content").select("div.VCSortableInPreviewMode[type='photo']").select("img").attr("src");
-                    //img_anhbao.setAnhbao(anhbao);
-                    Log.e("anh",anhbao);
+                String anhbao = data.select("div.column-first-second>div.main-content-body>div.content").select("div.VCSortableInPreviewMode[type='photo']").select("img").attr("src");
+                //img_anhbao.setAnhbao(anhbao);
+                Log.e("anh",anhbao);
 
-                    String ndung = data.select("div.column-first-second>div.main-content-body>div.content>p").text();
-                    //txt_ndung.setText(ndung);
-                    Log.e("ndung",ndung);
+                String ndung = data.select("div.column-first-second>div.main-content-body>div.content>p").text();
+                //txt_ndung.setText(ndung);
+                Log.e("ndung",ndung);
 //                    for (int i=0; i<size;i++) {
 //                        Log.e("i", String.valueOf(0));
 //
@@ -154,7 +163,6 @@ public class docbao extends AppCompatActivity {
                 String tacgia = data.select("div.column-first-second>div.main-content-body>div.author").text();
                 //txt_tacgia.setText(tacgia);
                 Log.e("tacgia",tacgia);
-
 
 
             } catch (Exception e) {

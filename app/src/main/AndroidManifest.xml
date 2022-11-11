@@ -23,7 +23,7 @@
         android:name=".DocBao.docbaovideo"
         android:exported="false"/>
         <activity
-            android:name=".DocBao.docbao"
+            android:name=".LichVanNien.lichvannien"
             android:exported="false"/>
         <activity
             android:name=".Thoitiet.quanlydiaphuong"
@@ -42,7 +42,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".TrangChu.trangchu"
+            android:name=".DocBao.docbao"
             android:exported="false"/>
         <activity
             android:name=".XoSo.xoso"
@@ -72,7 +72,7 @@
             android:name=".Thoitiet.thoitiet"
             android:exported="false" />
         <activity
-            android:name=".LichVanNien.lichvannien"
+            android:name=".TrangChu.trangchu"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
