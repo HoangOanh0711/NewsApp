@@ -27,7 +27,7 @@
         <entry key="..\:/APP/NewsApp/app/src/main/res/layout/activity_dangnhap.xml" value="0.22" />
         <entry key="..\:/APP/NewsApp/app/src/main/res/layout/activity_docbao.xml" value="0.22" />
         <entry key="..\:/APP/NewsApp/app/src/main/res/layout/activity_doimatkhau.xml" value="0.22" />
-        <entry key="..\:/APP/NewsApp/app/src/main/res/layout/activity_giavang.xml" value="0.3333333333333333" />
+        <entry key="..\:/APP/NewsApp/app/src/main/res/layout/activity_giavang.xml" value="0.2050034746351633" />
         <entry key="..\:/APP/NewsApp/app/src/main/res/layout/activity_quanlydiaphuong.xml" value="0.22" />
         <entry key="..\:/APP/NewsApp/app/src/main/res/layout/activity_quenmatkhau1.xml" value="0.22" />
         <entry key="..\:/APP/NewsApp/app/src/main/res/layout/activity_quenmatkhau2.xml" value="0.22" />
@@ -67,7 +67,7 @@
   <component name="VisualizationToolProject">
     <option name="state">
       <ProjectState>
-        <option name="scale" value="0.1" />
+        <option name="scale" value="0.14666666666666667" />
       </ProjectState>
     </option>
   </component>
