@@ -34,6 +34,7 @@ public class fg_bongda extends Fragment {
     private List<NoiDungModel> noiDungModelList = new ArrayList<>();
     Elements data;
     Document document;
+    String linkbao;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -80,9 +81,8 @@ public class fg_bongda extends Fragment {
                     String tieude = data.select("h3.title-news").eq(i).select("a").text();
                     String thoigian = data.select("p.sapo").eq(i).text();
                     String anhbao = data.select("a.img212x132.pos-rlt").eq(i).select("img").attr("src");
-                    String linkbao = data.select("a.img212x132.pos-rlt").eq(i).text();
-                    Log.e("link bao",linkbao);
-                    noiDungModelList.add(new NoiDungModel(tieude,thoigian,anhbao));
+                    linkbao = "https://tuoitre.vn" + data.select("a.img212x132.pos-rlt").eq(i).attr("href");
+                    noiDungModelList.add(new NoiDungModel(tieude,thoigian,anhbao,linkbao));
                 }
             } catch (Exception e) {
                 e.printStackTrace();

@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.airbnb.lottie.animation.content.Content;
+import com.bumptech.glide.Glide;
 import com.example.newsapp.Card.CardTrangChu_Adapter;
 import com.example.newsapp.Card.ClickItem;
 import com.example.newsapp.Card.NoiDungModel;
@@ -26,7 +27,13 @@ import java.util.ArrayList;
 public class docbao extends AppCompatActivity {
     String linkbao;
 
-    TextView txt_chude,txt_tieude1,txt_tgian,txt_tieude2,txt_ghichuanh,txt_ndung,txt_tacgia;
+    TextView txt_chude;
+    TextView txt_tieude1;
+    TextView txt_tgian;
+    TextView txt_tieude2;
+    TextView txt_ghichuanh;
+    TextView txt_ndung;
+    TextView txt_tacgia;
     RecyclerView rcv_lienquan;
     ImageView img_quaylai, img_anhbao;
 
@@ -78,16 +85,78 @@ public class docbao extends AppCompatActivity {
         protected Void doInBackground(Void... voids) {
             try {
                 String url = linkbao;
+                Log.e("url", url);
                 document = Jsoup.connect(url).get();
-                data = document.select("ul.list-news-content").select("li.news-item");
-                int size = data.size();
-                for (int i=0; i<size;i++) {
-                    String tieude = data.select("h3.title-news").eq(i).text();
-                    String thoigian = data.select("p.sapo").eq(i).text();
-                    String anhbao = data.select("a.img212x132.pos-rlt").eq(i).select("img").attr("src");
-                    //linkbao = data.select("a.img212x132.pos-rlt").eq(i).text();
-                    Log.e("link bao",linkbao);
-                }
+                //document = Jsoup.parseBodyFragment(url);
+                data = document.select("div.content");
+
+                String chude = data.select("div.content-left>div.bread-crumbs>ul>li.fl").eq(0).select("a").text();
+                //txt_chude.setText(chude);
+                Log.e("chude", chude);
+
+                //txt_tieude1,txt_tgian,txt_tieude2,txt_ghichuanh,txt_ndung,txt_tacgia
+
+                String tieude1 = data.select("div.content-detail>div.w980>h1.article-title").text();
+                //txt_tieude1.setText(tieude1);
+                Log.e("tieu1",tieude1);
+
+                String tgian = data.select("div.content-detail>div.w980>div.date-time").text();
+                //txt_tgian.setText(tgian);
+                Log.e("time",tgian);
+
+                String tieude2 = data.select("div.column-first-second>div.main-content-body>h2.sapo").text();
+                //txt_tieude2.setText(tieude2);
+                Log.e("tieu2",tieude2);
+
+
+                    //int size = data.select("div.column-first-second>div.main-content-body>div.content").size();
+
+
+                    String anhbao = data.select("div.column-first-second>div.main-content-body>div.content").select("div.VCSortableInPreviewMode[type='photo']").select("img").attr("src");
+                    //img_anhbao.setAnhbao(anhbao);
+                    Log.e("anh",anhbao);
+
+                    String ndung = data.select("div.column-first-second>div.main-content-body>div.content>p").text();
+                    //txt_ndung.setText(ndung);
+                    Log.e("ndung",ndung);
+//                    for (int i=0; i<size;i++) {
+//                        Log.e("i", String.valueOf(0));
+//
+////                        if (data.select("div.main-content-body").select("div.content").select("p.VCObjectBoxRelatedNewsItemSapo").eq(i).text()!="") {
+////                            continue;
+////                        }
+//
+//                        if (data.select("div.main-content-body").select("div.content").select("div.VCSortableInPreviewMode").select("a.detail-img-lightbox").eq(i).select("img").attr("src")!=""){
+//                            String anhbao = data.select("div.main-content-body").select("div.content").select("div.VCSortableInPreviewMode").eq(0).select("img").attr("src");
+//                            //img_anhbao.setAnhbao(anhbao);
+//                            //Glide.with(img_anhbao).load(anhbao).into(img_anhbao);
+//                            Log.e("anh",anhbao);
+//                        }
+//
+////                        if (data.select("div.main-content-body").select("div.content").select("p").eq(i).text()!=""){
+////                            String ndung1 = data.select("div.main-content-body").select("div.content").select("p").eq(i).text();
+////                            //txt_ndung.setText(ndung1);
+////                            Log.e("ndung1",ndung1);
+////                        }
+//                        if (data.select("div.main-content-body").select("div.content").eq(i).select("span").text()!=""){
+//                            String ndung2 = data.select("div.main-content-body").select("div.content").eq(0).select("span").text();
+//                            //txt_ndung.setText(ndung2);
+//                            Log.e("ndung2",ndung2);
+//                        }
+//
+////                        if (data.select("div.main-content-body").select("div.content").select("div.VCSortableInPreviewMode").eq(i).select("p.VCObjectBoxRelatedNewsItemSapo").text()!="") {
+////                            break;
+////                        }
+//
+//
+//                    }
+
+                String tacgia = data.select("div.column-first-second>div.main-content-body>div.author").text();
+                //txt_tacgia.setText(tacgia);
+                Log.e("tacgia",tacgia);
+
+
+
             } catch (Exception e) {
                 e.printStackTrace();
             }

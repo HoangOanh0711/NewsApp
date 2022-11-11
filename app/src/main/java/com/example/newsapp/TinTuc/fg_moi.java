@@ -81,10 +81,8 @@ public class fg_moi extends Fragment {
                     String tieude = data.select("h3.title-news").eq(i).text();
                     String thoigian = data.select("p.sapo").eq(i).text();
                     String anhbao = data.select("a.img212x132.pos-rlt").eq(i).select("img").attr("src");
-                    //linkbao = data.select("a.img212x132.pos-rlt").eq(i).text();
-                    linkbao = "abc.com";
-                    Log.e("link bao",linkbao);
-                    noiDungModelList.add(new NoiDungModel(tieude,thoigian,anhbao));
+                    linkbao = "https://tuoitre.vn" + data.select("a.img212x132.pos-rlt").eq(i).attr("href");
+                    noiDungModelList.add(new NoiDungModel(tieude,thoigian,anhbao,linkbao));
                 }
             } catch (Exception e) {
                 e.printStackTrace();
